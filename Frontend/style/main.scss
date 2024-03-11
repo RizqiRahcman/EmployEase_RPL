@@ -1,5 +1,39 @@
+body {
+  background-color: #ffffff;
+  font-family: "Assistant", sans-serif;
+  // color: ;
+}
 .navbar-brand {
   img {
-    max-height: 25px;
+    max-height: 40px;
+  }
+}
+.navbar-light {
+  .navbar-nav {
+    .nav-link {
+      font-weight: 500;
+    }
+  }
+}
+.btn-daftar {
+  background-color: transparent;
+  color: #ff6000;
+  font-weight: bolder;
+
+  &:hover {
+    background-color: transparent;
+    color: #ff914f;
+    font-weight: bolder;
+  }
+}
+.btn-login {
+  background-color: #ff6000;
+  color: #fff;
+  font-weight: bolder;
+
+  &:hover {
+    background-color: #ff914f;
+    color: #fff;
+    font-weight: bolder;
   }
 }
