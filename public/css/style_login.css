@@ -1,0 +1,160 @@
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 180px; /* Ubah sesuai ukuran logo Anda */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-form {
+    width: 408px;
+    height: 50;
+    margin-top: 20px;
+}
+
+/* Welcome Back */
+.welcome-text {
+    font-family: 'outfit';
+    color: black;
+    font-size: 32px; 
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* email dan password */
+.form-label {
+    font-family: 'epilogue';
+    font-size: 16px;
+    font-weight: 700;
+    color: #515B6F;
+}
+.form-control::placeholder{
+    color: #A8ADB7;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'epilogue';
+}
+input[type="email"], input[type="password"] {
+   height: 50px;
+   border-color: #D6DDEB;
+}
+input[type="email"]:focus, input[type="password"]:focus {
+    box-shadow: 0 0 7px #FFE6C7; /* Mengubah bayangan saat box aktif */
+} 
+
+/* check box Remember me */
+.form-check-input {
+    margin-right: 17px;
+    margin-bottom: 20px;
+}
+.form-check-label {
+    font-family: 'epilogue';
+    font-size: 16px;
+    font-weight: 400;
+    color: #515B6F;
+}
+/* Mengubah style shadow box saat checkbox aktif */
+input[type="checkbox"]:focus {
+    box-shadow: 0 0 5px #FFE6C7; /* Mengubah bayangan saat box aktif */
+  }
+input[type="checkbox"]:checked {
+    background-color: #FF6000; /* Mengubah warna latar belakang saat box dicentang */
+    box-shadow: 0 0 5px #FFE6C7;
+}
+input[type="checkbox"]:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px #FFE6C7; 
+}
+
+  
+/* button login */
+.btn {
+    width: 408px;
+    background-color: #FF6000;
+    color: white;
+}
+.login.btn {
+    font-family: 'epilogue';
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.login.btn:hover {
+    background-color: #ff914f;
+    color: white;
+    font-weight: bold;
+}
+.btn:active, .btn:focus {
+    background-color: white !important;
+    color: #ff914f !important;
+    font-weight: 500 !important;
+    outline: none !important; /* Menghapus outline saat button difokuskan */
+}
+
+/* sign up */
+.sign-up-text {
+    font-size: 16px;
+    margin-top: 25px;
+    font-family: 'epilogue';
+    color: #202430;
+    font-weight: 400;
+}
+#sign-up-link {
+    color:#FF6000; /* Anda bisa mengganti 'orange' dengan warna atau kode hex yang Anda inginkan */
+    text-decoration: none;
+    font-weight:bold;
+    font-family: 'inter';
+}
+#sign-up-link:hover {
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+/* button jenis user login */
+.jenis.btn-group {
+    margin-left: 90px;
+    justify-content: center; /* Menempatkan button di tengah */
+    align-items: center;
+}
+.btn-group input[type="radio"] {
+    display: none;
+}
+.btn-group label {
+    font-family: 'epilogue';
+    font-size: 14px;
+    font-weight: 650;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    padding: 8px 16px; /* Mengubah ukuran button */
+    background-color: transparent;
+    color: #454545;
+    cursor: pointer;
+    border-radius: 8px !important; /* Membuat sudut button menjadi bulat */
+}
+.btn-group input[type="radio"]:checked + label:hover {
+    background-color: #FFE6C7 !important;
+    color: black !important;
+    font-weight: 650 !important;
+}
+.btn-group input[type="radio"]:checked + label {
+    background-color: #FFE6C7;
+    color: black;
+    font-weight: 650 !important;
+}
+
+.gambar {
+    background-image: url('../image/bg_login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.col-6 {
+    background-color: white;
+}
