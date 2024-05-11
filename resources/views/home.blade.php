@@ -81,9 +81,10 @@
       <div class="container">
         <div class="row">
           <div class="col-7 d-flex align-items-center">
-            <div>
+          <div class="head">
               <h1 class="jargon">
-                One Step <br />Closer To Your <br />New Job
+                One Step <br />Closer To Your <br />
+                <span>New Job</span>
               </h1>
               <p class="mt-3">
                 An excellent platform for individuals seeking to <br />elevate
@@ -91,26 +92,60 @@
                 about the startup scene.
               </p>
               <!-- Search Bar -->
-              <div class="container-fluid">
-                <div class="input-group mb-3">
+              <form class="d-flex mt-4 p-0">
+                <div class="input-group" style="margin-right: 4px">
+                  <span class="input-group-text"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="23"
+                      height="23"
+                      fill="currentColor"
+                      class="bi bi-search"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                      /></svg
+                  ></span>
                   <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Posisi kerja"
-                    aria-label="Job Position"
+                    class="form-control me-2"
+                    type="Kata Kunci"
+                    placeholder="Posisi Kerja"
+                    aria-label="Posisi Kerja"
                   />
-                  <i data-feather="briefcase"></i>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Lokasi"
-                    aria-label="Location"
-                  />
-                  <button class="btn btn-outline-secondary" type="button">
-                    Cari
-                  </button>
                 </div>
-              </div>
+                <div class="input-group" style="margin-right: 10px">
+                  <span class="input-group-text"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="23"
+                      height="23"
+                      fill="currentColor"
+                      class="bi bi-geo-alt-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                      /></svg
+                  ></span>
+                  <input
+                    class="form-control me-2"
+                    type="Lokasi"
+                    placeholder="Lokasi"
+                    aria-label="Lokasi"
+                  />
+                </div>
+                <button class="btn btn-primary btn-lg btn-carip" type="submit">
+                  Cari
+                </button>
+              </form>
+              <p class="popular">
+                Populer: <a href="#"> UI/UX Designer</a>,<a href="#">
+                  Ux Researcher</a
+                >
+                ,<a href="#"> Android</a> ,
+                <a href="#"> Admin</a>
+              </p>
             </div>
           </div>
 
@@ -129,7 +164,7 @@
     </section>
 
     <!-- Kategori Pekerjaan Section -->
-    <section id="categories" class="section-padding border-top">
+    <section id="categories" class="section-padding mt-3">
       <<div class="container">
         <div class="row">
           <div class="col-12">
@@ -142,7 +177,7 @@
           </div>
         </div>
         <!-- Row 1 -->
-        <div class="row g-4 text-center">
+        <div class="company-card row g-4 text-center">
           <div class="col-lg-3 col-sm-6">
             <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
@@ -153,6 +188,7 @@
             </div></a>
           </div>
           <div class="col-lg-3 col-sm-6">
+            <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -169,9 +205,10 @@
                 </svg>
               </div>
               <h5 class="mt-4 mb-3">Pemasaran</h5>
-            </div>
+            </div> </a>
           </div>
           <div class="col-lg-3 col-sm-6">
+            <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -189,9 +226,10 @@
                 </svg>
               </div>
               <h5 class="mt-4 mb-3">Sales</h5>
-            </div>
+            </div> </a>
           </div>
           <div class="col-lg-3 col-sm-6">
+            <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -212,23 +250,25 @@
               </div>
               <h5 class="mt-4 mb-3">Keuangan</h5>
             </div>
-          </div>
+          </div> </a>
         </div>
         <!-- Row 2 -->
         <div
-          class="row g-5 text-center"
+          class="company-cardd row g-5 text-center"
           style="margin-top: 24px; margin-bottom: 24px"
         >
-          <div class="col-lg-3 col-sm-6">
+          <div class="col-lg-3 col-sm-6"> <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <i data-feather="monitor"></i>
               </div>
               <h5 class="mt-4 mb-3">Teknologi</h5>
             </div>
-          </div>
+          </div> </a>
 
-          <div class="col-lg-3 col-sm-6">
+          <div class="col-lg-3 col-sm-6"> <a href="#">
+
+          
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -245,10 +285,10 @@
                 </svg>
               </div>
               <h5 class="mt-4 mb-3">Teknisi</h5>
-            </div>
+            </div></a>
           </div>
 
-          <div class="col-lg-3 col-sm-6">
+          <div class="col-lg-3 col-sm-6"> <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -265,9 +305,9 @@
                 </svg>
               </div>
               <h5 class="mt-4 mb-3">Bisnis</h5>
-            </div>
+            </div> </a>
           </div>
-          <div class="col-lg-3 col-sm-6">
+          <div class="col-lg-3 col-sm-6"> <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -284,7 +324,7 @@
                 </svg>
               </div>
               <h5 class="mt-4 mb-3">SDM</h5>
-            </div>
+            </div> </a>
           </div>
         </div>
       </div>
@@ -303,11 +343,12 @@
 
         <div class="row">
           <!-- Job Card -->
-          <div class="col-md-6 col-lg-4">
+          <div class="cardjob col-md-6 col-lg-4">
+
             <div class="card job-card">
               <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="company-logo me-3">
+                <div class="d-flex align-items-center mb-3 me-3">
+                  <div class="company-logo ">
                     <img
                       src="image/logo pertamina.png"
                       alt="logo pt"
@@ -325,7 +366,7 @@
                 <a href="#" class="job-category">Design</a>
               </div>
             </div>
-          </div>
+          </div> 
           <div class="col-md-6 col-lg-4">
             <div class="card job-card">
               <div class="card-body">
