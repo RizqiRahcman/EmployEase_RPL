@@ -52,23 +52,23 @@
 
           <!-- Mobile Button -->
           <form class="form-inline d-sm-block d-md-none">
-            <button class="btn btn-daftar btn-navbar-right my-2 my-sm-0 px-4">
+            <a class="btn btn-daftar btn-navbar-right my-2 my-sm-0 px-4" href="{{ route('login') }}">
               Masuk
-            </button>
-            <button class="btn btn-login btn-navbar-right my-2 my-sm-0">
+            </a>
+            <a class="btn btn-login btn-navbar-right my-2 my-sm-0"href="/signup">
               Daftar
-            </button>
+            </a>
           </form>
         </div>
         
         <!-- Dekstop Button -->
         <form class="form-inline my-lg-0 d-none d-md-block">
-          <button class="btn btn-daftar btn-navbar-right my-2 my-sm-0 px-4">
+          <a class="btn btn-daftar btn-navbar-right my-2 my-sm-0 px-4" href="{{ route('login') }}">
             Masuk
-          </button>
-          <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
+          </a>
+          <a class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" href="/signup">
             Daftar
-          </button>
+          </a>
         </form>
         <!-- <button class="btn btn-outline-success" type="button">Masuk</button> -->
       </nav>
