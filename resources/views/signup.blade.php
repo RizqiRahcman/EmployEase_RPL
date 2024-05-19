@@ -45,31 +45,79 @@
                         <label for="company" class="btn">Company</label>
                     </div>
                     <h2 class="welcome-text">Find your dream job here!</h2>
-                    <form>
+                    <form method="POST" action="{{ route('simpanregistrasi') }}" id="jobSeekerForm">
+                        {{ csrf_field() }}
                         <!-- Perubahan kelas dari 'form-group' menjadi 'mb-3' untuk margin bottom -->
                         <div class="mb-3">
-                            <label for="fullName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
-                        </div>                        
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="first_name" id="firstName" placeholder="Enter first name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="last_name" id="lastName" placeholder="Enter last name" required>
+                        </div>   
+                        <input type="hidden" name="role" value="pelamar">                     
+                        <div class="mb-3">
+                            <label for="email_pelamar" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" name="email" id="email_pelamar" aria-describedby="emailHelp" placeholder="Enter email address" required>
                         </div>
-                        <button class="login btn">Continue</button>
+                        <div class="mb-3">
+                            <label for="pass_pelamar" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="pass_pelamar" placeholder="Enter password" required>
+                        </div>
+                        <button type="submit" class="login btn">Continue</button>
+                    </form>
+                    <form method="POST" action="{{ route('simpanregistrasi') }}" id="companyForm" style="display: none;">
+                        {{ csrf_field() }}
+                        <!-- Perubahan kelas dari 'form-group' menjadi 'mb-3' untuk margin bottom -->
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" name="first_name" id="companyName" placeholder="Enter company name" required>
+                        </div>
+                        <input type="hidden" name="last_name" value="">
+                        <input type="hidden" name="role" value="perusahaan">
+                        <div class="mb-3">
+                            <label for="companyEmail" class="form-label">Company Email Address</label>
+                            <input type="email" class="form-control" name="email" id="companyEmail" aria-describedby="emailHelp" placeholder="Enter company email address" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="companyPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="companyPassword" placeholder="Enter password" required>
+                        </div>
+                        <button type="submit" class="login btn">Continue</button>
+                        <div id="message" style="display:none;"></div>
                     </form>
                     <h3 class="sign-up-text"> Already have an account? <a id="sign-up-link" href="/login">Login</a></h3>
-                    <h4 class="policy-text">By clicking 'Continue', you acknowledge that you have read and accept the<a
-                        id="terms-link"> Terms of Service</a> and <a id="policy-link">Privacy Policy</a>
+                    <h4 class="policy-text">By clicking 'Continue', you acknowledge that you have read and accept the <a id="terms-link">Terms of Service</a> and <a id="policy-link">Privacy Policy</a>
                     </h4>
                 </div>
-            </div>            
+            </div>                   
         </div>
     </div>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jobSeekerRadio = document.getElementById('jobSeeker');
+            const companyRadio = document.getElementById('company');
+            const jobSeekerForm = document.getElementById('jobSeekerForm');
+            const companyForm = document.getElementById('companyForm');
+            
+            function toggleForm() {
+                if (jobSeekerRadio.checked) {
+                    jobSeekerForm.style.display = 'block';
+                    companyForm.style.display = 'none';
+                } else {
+                    jobSeekerForm.style.display = 'none';
+                    companyForm.style.display = 'block';
+                }
+            }
+            
+            jobSeekerRadio.addEventListener('change', toggleForm);
+            companyRadio.addEventListener('change', toggleForm);
+            
+            // Set initial state
+            toggleForm();
+        });
+    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
