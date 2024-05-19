@@ -21,31 +21,44 @@ class LoginController extends Controller
     //         // Autentikasi gagal
     //         dd('Login gagal!');
     //     }
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('login');
+    }
 
     public function postlogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect('/Daftar-Perusahaan');
         }    
         return redirect('/signup');
     }
 
-    // public function registrasi(){
-    //     return view('signup');
-    // }
+    public function registrasi(){
+        return view('signup');
+    }
 
-    // public function simpanregistrasi(Request $request){
-    //     // dd($request->all());
+    public function simpanregistrasi(Request $request){
+        // Validasi data
+        $request->validate([
+            'first_name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required',
+            'role' => 'required',
+        ]);
 
-    //     User::create([
-    //         'name' => $request->name,
-    //         'role' => $request->role, // Gunakan nilai 'role' dari request
-    //         'email' => $request->email,
-    //         'password' => bcrypt($request->password),
-    //         'remember_token' => Str::random(60),
-    //     ]);
+        // Buat pengguna baru
+        User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'role' => $request->role,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(60),
+        ]); 
         
 
-    //     return view('welcome');
+        return view('login');
 
-    // }
+    }
+
 }
