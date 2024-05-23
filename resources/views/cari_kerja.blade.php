@@ -4,8 +4,12 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Cari Pekerjaan</title>
+
+    {{-- bs --}}
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/style_cari.css">
+
+    {{-- css --}}
+    <link rel="stylesheet" href="css_carikerja/main.css">
 
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -23,7 +27,7 @@
   <!-- Nav up -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/logedin">
           <img src="image/logo.png" alt="Logo Employease" />
         </a>
 
@@ -41,10 +45,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Cari Kerja</a>
+              <a class="nav-link" href="#" style="color: #ff6000">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" >Daftar Perusahaan</a>
+              <a class="nav-link" href="/Daftar-Perusahaan" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -60,7 +64,7 @@
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="#" alt="profile" />
-              Nama Akun 
+              {{ Auth::user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Lihat Akun</a></li>
@@ -82,23 +86,24 @@
       </nav>
     </div>
     <div class="head">
+      <div class="bg-dark"></div>
       <figure class="text-center">
-          <h1 style="color: #FFE6C7; font-weight: bold;">A well-known quote, contained in a blockquote element.</h1>
-          <p style="color: #FFE6C7;">Loren ipsum</p>
+        <h1 style="color: #FFE6C7; font-weight: bold;">A well-known quote, contained in a blockquote element.</h1>
+        <p style="color: #FFE6C7;">Loren ipsum</p>
       </figure>
       <form class="d-flex">
-            <div class="input-group">
-                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input class="form-control me-2" type="Kata Kunci" placeholder="Kata Kunci" aria-label="Kata Kunci">
-            </div>
-            <div class="input-group">
-            <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
-            <input class="form-control me-2" type="Lokasi" placeholder="Lokasi" aria-label="Lokasi">
-            </div>
-            <button class="btn btn-outline-success" type="submit">Search</button>
+        <div class="input-group" style="margin-right: 4px;">
+          <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input class="form-control me-2" type="Kata Kunci" placeholder="Kata Kunci" aria-label="Kata Kunci">
+        </div>
+        <div class="input-group" style="margin-right: 12px;">
+          <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
+          <input class="form-control me-2" type="Lokasi" placeholder="Lokasi" aria-label="Lokasi">
+        </div>
+        <button class="btn btn-primary btn-carip" type="submit">Cari Pekerjaan</button>
       </form>
     </div>
-
+    
     <div class="container">
         <div class="row">
             <!-- Kolom untuk kategori pekerjaan -->
@@ -183,15 +188,47 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h4>Semua <a class="pekerjaan">Pekerjaan</a></h4>
+                        <h5>Menampilkan <a class="">#</a> hasil</h5>
                     </div>
                     <div class="col-lg-4 text-right">
-                        <span>Sort by: </span>
-                        <select>
+                        <span>Sort By : </span>
+                        <select class="border-0">
                             <option selected>Location</option>
+                            <option selected>1</option>
+                            <option selected>2</option>
                             <!-- Add more options as needed -->
                         </select>
                     </div>
                 </div>
+
+                <!-- pekerjaan -->
+                <div class="box"> 
+                  <div class="box-profile"></div>
+                  <div class="row box-text">
+                    <p class="a nopadding">Python Programmer</p>
+                      <div class="col-lg-5 nopadding">
+                        <p class="b">2 hari yang lalu</p>
+                      </div>
+                    <div class="col-lg-1 nopadding">
+                        <p class="rounded-circle"></p>
+                    </div>
+                    <div class="col-lg-6">
+                      <p class="b">Semarang Indonesia</p>
+                    </div>
+                    <div class="box-waktu">
+                      <p class="c">Penuh waktu</p>
+                    </div>
+                    <div class="col-lg-1">
+                        <p class="vertical-line"></p>
+                    </div>
+                    <div class="box-bidang">
+                      <p class="d">Teknologi</p>
+                    </div>
+                    <div class="box-pengalaman">
+                      <p class="e">Pemula</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-apply"type="button">Apply</button>
             </div>
              
         </div>
@@ -205,7 +242,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f2c387131d.js" crossorigin="anonymous"></script>
     <script>
-      src="js/script_cari.js"
+      src="script_carikarja.js"
+      feather.replace();
     </script>  
 
 </body>

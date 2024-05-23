@@ -26,7 +26,7 @@
 <!-- Nav up -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/logedin">
           <img src="image/logo.png" alt="Logo Employease" />
         </a>
 
@@ -44,10 +44,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Cari Kerja</a>
+              <a class="nav-link" href="/Cari-Kerja">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" >Daftar Perusahaan()</a>
+              <a class="nav-link selected" href="#" style="color: #ff6000" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -71,7 +71,7 @@
                 <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
                 <li><a class="dropdown-item" href="#">Pengaturan</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}">Log Out</a></li>
+                <li><a class="dropdown-item" href="/">Log Out</a></li>
             </ul>
           </li>
             <div class="notif">

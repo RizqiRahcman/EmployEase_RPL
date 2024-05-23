@@ -7,8 +7,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/logedin', function () {
+    return view('home_login');
+});
+
 Route::get('/Daftar-Perusahaan', function () {
     return view('dafPerusahaan');
+});
+
+Route::get('/Cari-Kerja', function () {
+    return view('cari_kerja');
 });
 
 // Route::get('/login', function () {

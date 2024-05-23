@@ -1,0 +1,333 @@
+:root {
+  --c-dark: #212529;
+  --c-brand: #ff6000;
+  --c-brand-light: #ff914f;
+  --c-brand-rgb: 255, 96, 0;
+  --body: #727272;
+  --c-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+  --transition: all 0.5s ease;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: "Epilogue", sans-serif;
+}
+
+.theme-shadow {
+  box-shadow: var(--c-box-shadow);
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 350;
+}
+
+.btn-daftar {
+  background-color: transparent;
+  color: #ff6000;
+  font-weight: 500;
+}
+.btn-daftar:hover {
+  background-color: transparent;
+  color: #ff914f;
+  font-weight: 500;
+}
+
+.btn-login {
+  background-color: #ff6000;
+  color: #fff;
+  font-weight: 500;
+}
+.btn-login:hover {
+  background-color: #ff914f;
+  color: #fff;
+  font-weight: 500;
+}
+
+.jargon {
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+.mt-3 {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.iconbox {
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--c-brand-rgb), 0.1);
+  color: var(--c-brand);
+  font-size: 34px;
+  flex: none;
+  border-radius: 8px;
+}
+
+.d-flex {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+}
+span.input-group-text{
+  background: transparent;
+  border: 0px;
+}
+  
+input.form-control{
+  border: 0px;
+  border-radius: 0px;
+  border-bottom: 1px solid #BDBDBD;
+  padding-bottom: 5px;  
+}
+
+  /* Daftar Perusahaan */
+.head {
+  /* background-image: url("../cari kerja/image/bg.png"); */
+  padding: 144px;
+  position: relative;
+}
+
+.bg-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/bg_carikerja.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5);
+  z-index: -1;
+}
+
+.image-thumnail {
+  width: 300px; /* Lebar container gambar */
+  height: 200px; /* Tinggi container gambar */
+  background-image: url('path/to/image.jpg'); /* URL gambar yang akan ditampilkan */
+  background-size: cover; /* Menyesuaikan gambar agar sesuai dengan ukuran container */
+  background-position: left; /* Posisi gambar di tengah container */
+  background-repeat: no-repeat; /* Tidak mengulang gambar */
+}
+
+.mt-4{
+  color: var(--c-dark);
+  fill-opacity: 50%;
+}
+
+h6{
+  color: var(--body);
+}
+
+.row {
+    margin-top: 50px;
+}
+
+.klasifikasi {
+    font-family: 'epilogue';
+    color: #454545;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.form-check-input {
+    margin-top: 10px;
+}
+.form-check-label {
+    color: #6C6C6C;
+    margin-top: 10px;
+    font-family: 'inter';
+    font-weight: medium;
+}
+input[type="checkbox"]:focus {
+    box-shadow: 0 0 5px #FFE6C7; /* Mengubah bayangan saat box aktif */
+  }
+input[type="checkbox"]:checked {
+    background-color: #FF6000; /* Mengubah warna latar belakang saat box dicentang */
+    box-shadow: 0 0 5px #FFE6C7;
+}
+input[type="checkbox"]:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px #FFE6C7; 
+}
+
+.btn-primary{
+  background-color: var(--c-brand);
+  border-color: var(--c-brand);
+}
+
+.btn-primary:hover{
+  background-color: var(--c-brand-light);
+  border-color: var(--c-brand-light);
+}
+
+h4 {
+    color: #454545;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'inter';
+    font-size: 48px;
+}
+.pekerjaan {
+    text-decoration: none;
+    color: #FE7A36;
+}
+.col-lg-3 {
+    margin-top: 50px;
+}
+.col-lg-4 {
+    text-align: right;
+    margin-top: 20px;
+    color: #454545;
+    font-family: 'inter';
+    font-size: 16px;
+    font-weight: medium;
+}
+
+.box {
+  margin-top: 20px;
+  width: 802px;
+  height: 147px;
+  border: 1px solid #BDBDBD; 
+  border-radius: 12px;
+  display: flex; /* Menambahkan ini untuk mengatur layout box */
+  padding: 0;
+}
+.box-profile {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  margin: 23px;
+}
+.row.box-text {
+  width: 480px;
+  height: 127px;
+  display: flex;
+  align-items: flex-start; /* Menengahkan teks secara vertikal */
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.rounded-circle {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 4px;
+  height: 4px;
+  background-color: #7C8493;
+}
+.nopadding {
+  padding: 0 !important;
+}
+
+h5 {
+  color: #454545;
+  font-family: 'inter';
+  font-size: 16px;
+  font-weight: medium;
+}
+
+p.a{
+  margin:flex;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  font-family: 'inter';
+  font-weight: 600;
+  font-size: 20px;
+}
+p.b{
+  margin:flex;
+  margin-bottom: 0px;
+}
+
+/* waktu */
+.box-waktu{
+  margin-right: 12px;
+  background-color: #EEFAF7;
+  display: flex;
+  align-items: flex-start;
+  width: fit-content;
+  height: 34px;
+  border-radius: 80px;
+}
+p.c{
+  color: #56CDAD;
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0px 0px 0px !important;
+  margin-top: 6.5px !important;
+  font-family: 'inter';
+  font-size: 14px;
+  font-weight: 600;
+}
+/* bidang */
+.box-bidang{
+  margin-right: 10px;
+  display: flex;
+  align-items: flex-start;
+  width: fit-content;
+  height: 34px;
+  border: 1px solid #FFB836;
+  border-radius: 80px;
+}
+p.d{
+  color: #FFB836;
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0px 0px 0px !important;
+  margin-top: 6.5px !important;
+  font-family: 'inter';
+  font-size: 14px;
+  font-weight: 600;
+}
+/* pembatas */
+.vertical-line {
+  border: 1px solid #D6DDEB;
+  height: 34px;
+  position: absolute;
+  margin: 0 !important;
+}
+/* pengelaman */
+.box-pengalaman{
+  margin-right: 10px;
+  display: flex;
+  align-items: flex-start;
+  width: fit-content;
+  height: 34px;
+  border: 1px solid #4640DE;
+  border-radius: 80px;
+}
+p.e{
+  color: #4640DE;
+  display: flex !important;
+  align-items: flex-start !important;
+  margin: 0px 0px 0px !important;
+  margin-top: 6.5px !important;
+  font-family: 'inter';
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-apply{
+  margin: 23px;
+  background-color: #FF6000;
+  font-family: 'inter';
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  width: 164px;
+  height: 50px;
+}
+.btn-apply:hover{
+  background-color: var(--c-brand-light);
+  border-color: var(--c-brand-light);
+}

@@ -13,6 +13,9 @@ body {
   font-family: "Epilogue", sans-serif;
 }
 
+
+
+
 .theme-shadow {
   box-shadow: var(--c-box-shadow);
 }
@@ -23,28 +26,6 @@ body {
 
 .navbar-light .navbar-nav .nav-link {
   font-weight: 350;
-}
-
-.btn-daftar {
-  background-color: transparent;
-  color: #ff6000;
-  font-weight: 500;
-}
-.btn-daftar:hover {
-  background-color: transparent;
-  color: #ff914f;
-  font-weight: 500;
-}
-
-.btn-login {
-  background-color: #ff6000;
-  color: #fff;
-  font-weight: 500;
-}
-.btn-login:hover {
-  background-color: #ff914f;
-  color: #fff;
-  font-weight: 500;
 }
 
 .jargon {

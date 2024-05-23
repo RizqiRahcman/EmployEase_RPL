@@ -49,7 +49,7 @@
               <a class="nav-link" href="#">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" >Daftar Perusahaan()</a>
+              <a class="nav-link selected" href="#" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -61,7 +61,7 @@
             </button>
           </form>
         </div>
-        <!-- Dekstop Button -->
+        <!-- ccount menu-->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="#" alt="profile" />
