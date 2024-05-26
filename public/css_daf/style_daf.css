@@ -14,8 +14,6 @@ body {
 }
 
 
-
-
 .theme-shadow {
   box-shadow: var(--c-box-shadow);
 }
@@ -51,6 +49,7 @@ body {
   border-radius: 8px;
 }
 
+/* kategori perusahaan */
 .category {
   position: relative;
   overflow: hidden;
@@ -148,4 +147,106 @@ input.form-control{
 
 h6{
   color: var(--body);
+}
+
+/* Perusahaan rekomendasi */
+
+.section-tittle h1 {
+  font-weight: 650;
+}
+
+.section-tittle a {
+  color: #ff6000;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 500;
+}
+
+.section-tittle span {
+  color: #ff6000;
+}
+
+.card {
+  border-radius: 15px;
+  padding-bottom: 2rem;
+}
+
+.card-body a {
+  text-decoration: none;
+}
+
+.card-body a:hover {
+  background-color: var(--c-brand-light);
+  color: white;
+}
+
+.card-body {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.company-logo img {
+  width: 70px;
+  height: auto;
+}
+
+.job-card {
+  margin-bottom: 1rem;
+  font-family: outfit;
+}
+
+.job-category {
+  background-color: #ff6c00;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  font-family: outfit;
+}
+
+.company-logo {
+  border-radius: 50%;
+  padding: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* footer */
+.footer-dark .row img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.footer-dark {
+  background-color: #343a40;
+  color: white;
+  padding: 2rem 0;
+  font-family: epilogue;
+}
+
+.footer-dark .footer-column {
+  margin-bottom: 1rem;
+}
+
+.footer-dark a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-dark a:hover {
+  text-decoration: underline;
+}
+
+.footer-dark .social-icons {
+  text-align: right;
+}
+
+.footer-dark .social-icons a {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-left: 0.5rem;
+  color: white;
 }
