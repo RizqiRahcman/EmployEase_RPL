@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->enum('role', ['perusahaan', 'pelamar']);
             $table->string('email')->unique();
+            $table->binary('image')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
