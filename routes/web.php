@@ -41,6 +41,10 @@ Route::get('/Up-Loker', function () {
     return view('upLoker');
 });
 
+Route::get('/DashComp', function () {
+    return view('dashboardComp');
+});
+
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
 Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
