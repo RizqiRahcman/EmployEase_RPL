@@ -26,7 +26,7 @@
     <script type="text/javascript">
       $(document).ready(function() {
 
-          $('#nama_kota').keyup(function() {
+          $('#nama').keyup(function() {
               var query = $(this).val();
               if (query != '') {
                   var _token = $('input[name="csrf-token"]').val();
@@ -38,8 +38,8 @@
                           _token: _token
                       },
                       success: function(data) {
-                          $('#nama_kota').fadeIn();
-                          $('#nama_kota').html(data);
+                          $('#nama').fadeIn();
+                          $('#nama').html(data);
                       }
                   });
               }
@@ -47,7 +47,7 @@
 
           $(document).on('click', 'li', function() {
               $('#search_lokasi').val($(this).text());
-              $('#nama_kota').fadeOut();
+              $('#nama').fadeOut();
           });
 
       });
@@ -131,8 +131,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <div class="input-group" style="margin-right: 12px;">
           <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
-          <input type="search" class="form-control" name="search_lokasi" id="search_lokasi" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1">
-          <div id="nama_kota"></div>
+          <input type="search" class="form-control" list="nama" name="search_lokasi" id="search_lokasi" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1">
+          <datalist id="nama">
+          </datalist>
         </div>
         <button class="btn btn-primary btn-carip" type="submit">Cari Perusahaan</button>
       </form>
