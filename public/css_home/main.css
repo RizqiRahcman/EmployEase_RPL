@@ -17,6 +17,11 @@ body {
     box-shadow: var(--c-box-shadow);
 }
 
+.profil-gambar {
+    max-width: 28px;
+    max-height: 28px;
+    border-radius: 14px;
+  }
 .navbar-brand img {
     max-height: 40px;
 }

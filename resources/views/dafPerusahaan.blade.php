@@ -19,10 +19,41 @@
     
     <!-- CSS style  -->
     <link rel="stylesheet" href="css_daf/style_daf.css" />
-    
+
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+          $('#nama_kota').keyup(function() {
+              var query = $(this).val();
+              if (query != '') {
+                  var _token = $('input[name="csrf-token"]').val();
+                  $.ajax({
+                      url: '/ajax-autocomplete',
+                      method: "GET",
+                      data: {
+                          query: query,
+                          _token: _token
+                      },
+                      success: function(data) {
+                          $('#nama_kota').fadeIn();
+                          $('#nama_kota').html(data);
+                      }
+                  });
+              }
+          });
+
+          $(document).on('click', 'li', function() {
+              $('#search_lokasi').val($(this).text());
+              $('#nama_kota').fadeOut();
+          });
+
+      });
+
+</script>
+
   </head>
   <body>
 <!-- Nav up -->
@@ -64,7 +95,7 @@
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{{ asset('storage/profile-user/' . Auth::user()->image) }}" alt="profile" />
+                <img src="image/contoh.png" class="profil-gambar" alt="profile" />
                 {{ Auth::user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,7 +104,7 @@
                 <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
                 <li><a class="dropdown-item" href="#">Pengaturan</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/">Log Out</a></li>
+                <li><a class="dropdown-item" href="{{ route ('logout') }}">Log Out</a></li>
             </ul>
           </li>
             <div class="notif">
@@ -97,9 +128,11 @@
           <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
           <input class="form-control me-2" type="Kata Kunci" placeholder="Kata Kunci" aria-label="Kata Kunci">
         </div>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <div class="input-group" style="margin-right: 12px;">
           <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
-          <input class="form-control me-2" type="Lokasi" placeholder="Lokasi" aria-label="Lokasi">
+          <input type="search" class="form-control" name="search_lokasi" id="search_lokasi" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1">
+          <div id="nama_kota"></div>
         </div>
         <button class="btn btn-primary btn-carip" type="submit">Cari Perusahaan</button>
       </form>
