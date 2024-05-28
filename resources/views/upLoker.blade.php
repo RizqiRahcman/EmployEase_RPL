@@ -20,7 +20,39 @@
     <!-- CSS style  -->
     <link rel="stylesheet" href="css_uploker/style_upLoker.css" />
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#search_lokasi').keyup(function() {
+              var query = $(this).val();
+              if (query != '') {
+                  var _token = $('meta[name="csrf-token"]').attr('content');
+                  $.ajax({
+                      url: '/ajax-autocomplete',
+                      method: "GET",
+                      data: {
+                          query: query,
+                          _token: _token
+                      },
+                      success: function(data) {
+                          $('#autocomplete-results').fadeIn();
+                          $('#autocomplete-results').html(data);
+                      }
+                  });
+              } else {
+                  $('#autocomplete-results').fadeOut();
+              }
+          });
+  
+          $(document).on('click', 'li', function() {
+              $('#search_lokasi').val($(this).text());
+              $('#autocomplete-results').fadeOut();
+          });
+      });
+    </script>
 
+  </head>
+  <body>
     <!-- Navbar Start -->
    <div class="container-fluid">
    <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -45,17 +77,11 @@
                 <label for="jobDescription" class="form-label">Deskripsi Pekerjaan</label>
                 <textarea class="form-control" id="jobDescription" rows="3" placeholder="Masukkan deskripsi pekerjaan yang ditawarkan"></textarea>
             </div>
-            <div class="mb-3">
+            <div class="mb-3" style="margin-right: 12px; position: relative;">
                 <label for="state location" class="form-label">Kota</label>
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Masukkan lokasi penempatan berdasarkan Kabupaten/Kota (misalnya Semarang)">
-                <datalist id="datalistOptions">
-                <option value="Semarang">
-                <option value="Bandung">
-                <option value="Malang">
-                <option value="Surabaya">
-                <option value="Yogyakarta">
-                </datalist>
-                <!-- <textarea class="form-control" id="jobDescription" rows="3" placeholder="Masukkan deskripsi pekerjaan yang ditawarkan"></textarea> -->
+                <input class="form-control" id="search_lokasi" placeholder="Masukkan lokasi penempatan berdasarkan Kabupaten/Kota (misalnya Semarang)">
+                <div id="autocomplete-results" class="dropdown-menu position-absolute"  style="display: none; z-index: 1000;"></div>
+                <meta name="csrf-token" content="{{ csrf_token() }}">
             </div>
             <div class="mb-3">
                 <label for="location" class="form-label">Alamat Penempatan</label>
