@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
@@ -31,8 +32,8 @@ Route::get('/Company-Profile', function () {
     return view('profilePerusahaan');
 });
 
-Route::get('/Search', function () {
-    return view('cariKerja');
+Route::get('/profil', function () {
+    return view('profil_jobseeker');
 });
 
 Route::get('/Up-Loker', function () {
@@ -44,3 +45,5 @@ Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin'
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/signup', [LoginController::class, 'registrasi'])->name('registrasi');
 Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
+
+Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');

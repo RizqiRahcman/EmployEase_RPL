@@ -20,10 +20,10 @@
   </head>
 
   <body>
-    <!-- Navbar -->
+    <!-- Nav up -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/logedin">
           <img src="image/logo.png" alt="Logo Employease" />
         </a>
 
@@ -44,47 +44,44 @@
               <a class="nav-link" href="/Cari-Kerja">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Daftar-Perusahaan"
-                >Daftar Perusahaan</a
-              >
+              <a class="nav-link" href="/Daftar-Perusahaan" >Daftar Perusahaan</a>
             </li>
           </ul>
-
           <!-- Mobile Button -->
-          <form class="form-inline d-sm-block d-md-none">
-            <a class="btn btn-daftar btn-navbar-right my-2 my-sm-0 px-4" href="{{ route('login') }}">
+          <form class="form-inline d-sm-block d-lg-none">
+            <button class="btn btn-daftar btn-navbar-right my-2 my-sm-0 px-4">
               Masuk
-            </a>
-            <a class="btn btn-login btn-navbar-right my-2 my-sm-0"href="/signup">
+            <button class="btn btn-login btn-navbar-right my-2 my-sm-0">
               Daftar
-            </a>
+            </button>
           </form>
         </div>
-        
         <!-- Dekstop Button -->
-        <!-- account menu -->
-        <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="#" alt="profile" />
-            {{ Auth::user()->first_name }}
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Lihat Akun</a></li>
-            <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
-            <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
-            <li><a class="dropdown-item" href="#">Pengaturan</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Log Out</a></li>
-          </ul>
-        </li>
-        <div class="notif">
-          <button class="btn btn-light">
-            <i data-feather="bell"></i>
-          </button>
-        </div>
+          <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="#" alt="profile" />
+              {{ Auth::user()->first_name }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
+              <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
+              <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
+              <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Log Out</a></li>
+            </ul>
+          </li>
+            <div class="notif">
+              <button class="btn btn-light">
+                <i data-feather="bell"></i>
+              </button>
+            </div>
+          
+
         <!-- <button class="btn btn-outline-success" type="button">Masuk</button> -->
       </nav>
     </div>
+    
 
     <!-- Header -->
     <!-- Main Contain -->
@@ -588,6 +585,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f2c387131d.js" crossorigin="anonymous"></script>
     <script>
       feather.replace();
     </script>

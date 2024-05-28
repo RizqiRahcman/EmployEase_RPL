@@ -25,7 +25,7 @@
     
   </head>
   <body>
-<!-- Nav up -->
+    <!-- Nav up -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="/logedin">
@@ -39,17 +39,17 @@
           data-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="/Cari-Kerja">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link selected" href="#" style="color: #ff6000" >Daftar Perusahaan</a>
+              <a class="nav-link" href="/Daftar-Perusahaan" style="color: #ff6000" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -64,16 +64,16 @@
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{{ asset('storage/profile-user/' . Auth::user()->image) }}" alt="profile" />
-                {{ Auth::user()->first_name }}
+              <img src="#" alt="profile" />
+              {{ Auth::user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Lihat Akun</a></li>
-                <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
-                <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
-                <li><a class="dropdown-item" href="#">Pengaturan</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/">Log Out</a></li>
+              <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
+              <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
+              <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
+              <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{ route('logout') }}">Log Out</a></li>
             </ul>
           </li>
             <div class="notif">
