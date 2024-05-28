@@ -60,7 +60,7 @@
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="#" alt="profile" />
+              <img src="image/contoh.png" class="profil-gambar" alt="profile" />
               {{ Auth::user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -69,7 +69,7 @@
               <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
               <li><a class="dropdown-item" href="#">Pengaturan</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+              <li><a class="dropdown-item" href="/">Log Out</a></li>
             </ul>
           </li>
             <div class="notif">

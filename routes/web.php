@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SearchController;
 
 Route::get('/', function () {
     return view('home');
@@ -36,10 +37,15 @@ Route::get('/profil', function () {
     return view('profil_jobseeker');
 });
 
+
 Route::get('/From-Lamaran', function () {
     return view('form_lamaran');
 });
 
+
+Route::get('/Up-Loker', function () {
+    return view('upLoker');
+});
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
 Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
@@ -48,3 +54,4 @@ Route::get('/signup', [LoginController::class, 'registrasi'])->name('registrasi'
 Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
 
 Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');
+Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);

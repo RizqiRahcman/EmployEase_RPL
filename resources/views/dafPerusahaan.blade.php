@@ -12,17 +12,48 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
     
     <!-- CSS style  -->
     <link rel="stylesheet" href="css_daf/style_daf.css" />
-    
+
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+          $('#nama').keyup(function() {
+              var query = $(this).val();
+              if (query != '') {
+                  var _token = $('input[name="csrf-token"]').val();
+                  $.ajax({
+                      url: '/ajax-autocomplete',
+                      method: "GET",
+                      data: {
+                          query: query,
+                          _token: _token
+                      },
+                      success: function(data) {
+                          $('#nama').fadeIn();
+                          $('#nama').html(data);
+                      }
+                  });
+              }
+          });
+
+          $(document).on('click', 'li', function() {
+              $('#search_lokasi').val($(this).text());
+              $('#nama').fadeOut();
+          });
+
+      });
+
+</script>
+
   </head>
   <body>
     <!-- Nav up -->
@@ -97,9 +128,12 @@
           <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
           <input class="form-control me-2" type="Kata Kunci" placeholder="Kata Kunci" aria-label="Kata Kunci">
         </div>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <div class="input-group" style="margin-right: 12px;">
           <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
-          <input class="form-control me-2" type="Lokasi" placeholder="Lokasi" aria-label="Lokasi">
+          <input type="search" class="form-control" list="nama" name="search_lokasi" id="search_lokasi" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1">
+          <datalist id="nama">
+          </datalist>
         </div>
         <button class="btn btn-primary btn-carip" type="submit">Cari Perusahaan</button>
       </form>
