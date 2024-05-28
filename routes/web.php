@@ -36,6 +36,11 @@ Route::get('/profil', function () {
     return view('profil_jobseeker');
 });
 
+Route::get('/From-Lamaran', function () {
+    return view('form_lamaran');
+});
+
+
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
 Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
