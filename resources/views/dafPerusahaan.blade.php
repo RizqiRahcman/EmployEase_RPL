@@ -12,8 +12,8 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
     
@@ -56,7 +56,7 @@
 
   </head>
   <body>
-<!-- Nav up -->
+    <!-- Nav up -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="/logedin">
@@ -70,17 +70,17 @@
           data-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="/Cari-Kerja">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link selected" href="#" style="color: #ff6000" >Daftar Perusahaan</a>
+              <a class="nav-link" href="/Daftar-Perusahaan" style="color: #ff6000" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -95,16 +95,16 @@
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="image/contoh.png" class="profil-gambar" alt="profile" />
-                {{ Auth::user()->first_name }}
+              <img src="#" alt="profile" />
+              {{ Auth::user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
-                <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
-                <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
-                <li><a class="dropdown-item" href="#">Pengaturan</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ route ('logout') }}">Log Out</a></li>
+              <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
+              <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
+              <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
+              <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{ route('logout') }}">Log Out</a></li>
             </ul>
           </li>
             <div class="notif">
