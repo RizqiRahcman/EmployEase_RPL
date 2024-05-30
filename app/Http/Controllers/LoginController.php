@@ -28,9 +28,9 @@ class LoginController extends Controller
 
     public function postlogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/Daftar-Perusahaan');
+            return redirect('/logedin');
         }    
-        return redirect('/signup');
+        return redirect('/signup'); 
     }
 
     public function registrasi(){

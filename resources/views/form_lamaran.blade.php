@@ -60,6 +60,15 @@
                     <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
                     <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
                 </div>
+
+                <!-- Phone Number Input -->
+                <div class="form-floating mb-3">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input class="form-control" id="phoneNumber" type="tel" placeholder="081234567890" pattern="[0-9]*" inputmode="numeric" data-sb-validations="required" />
+                    <div class="invalid-feedback" data-sb-feedback="phoneNumber:required">Phone Number is required.</div>
+                    <div class="invalid-feedback" data-sb-feedback="phoneNumber:pattern">Phone Number is not valid.</div>
+                </div>
+
     
                 <!-- Message Input -->
                 <div class="form-floating mb-3">

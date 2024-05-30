@@ -38,7 +38,7 @@ Route::get('/profil', function () {
 });
 
 
-Route::get('/From-Lamaran', function () {
+Route::get('/Form-Lamaran', function () {
     return view('form_lamaran');
 });
 
