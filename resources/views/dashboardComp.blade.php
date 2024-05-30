@@ -74,7 +74,7 @@
               />
               <div>
                 <span class="text-muted d-block">Company</span>
-                <span class="h5 mb-0">Pertamina</span>
+                <span class="h5 mb-0">{{ Auth::user()->first_name }}</span>
                 <i class="bi bi-chevron-down"></i>
               </div>
             </div>

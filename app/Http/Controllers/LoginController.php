@@ -28,7 +28,13 @@ class LoginController extends Controller
 
     public function postlogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/logedin');
+            // Periksa peran pengguna
+            $user = Auth::user();
+            if ($user->role == 'pelamar') {
+                return redirect('/logedin');
+            } elseif ($user->role == 'perusahaan') {
+                return redirect('/DashComp');
+            }
         }    
         return redirect('/signup'); 
     }
