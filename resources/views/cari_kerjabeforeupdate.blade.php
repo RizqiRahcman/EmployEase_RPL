@@ -4,12 +4,12 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Cari Pekerjaan</title>
-    
+
     {{-- bs --}}
     <link rel="stylesheet" href="css/bootstrap.css">
 
     {{-- css --}}
-    <link rel="stylesheet" href="css_carikerja/style_carikerja.css">
+    <link rel="stylesheet" href="css_carikerja/main.css">
 
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -72,10 +72,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Cari Kerja</a>
+              <a class="nav-link" href="#" style="color: #ff6000">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" >Daftar Perusahaan</a>
+              <a class="nav-link" href="/Daftar-Perusahaan" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -90,16 +90,16 @@
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="#" alt="profile" />
+              <img src="image/contoh.png" class="profil-gambar" alt="profile" />
               {{ Auth::user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Lihat Akun</a></li>
+              <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
               <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
               <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
               <li><a class="dropdown-item" href="#">Pengaturan</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+              <li><a class="dropdown-item" href="/">Log Out</a></li>
             </ul>
           </li>
             <div class="notif">
@@ -222,236 +222,44 @@
                     <div class="col-lg-4 text-right">
                         <span>Sort By : </span>
                         <select class="border-0">
-                            <option selected>Lokasi</option>
-                            <option selected>Terbaru</option>
+                            <option selected>Location</option>
+                            <option selected>1</option>
+                            <option selected>2</option>
                             <!-- Add more options as needed -->
                         </select>
                     </div>
                 </div>
-              
-          <div class="container justify-content-center">
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang">
-                      <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman">
-                      <p class="e">Pemula</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-            </div>
-          </div>
-          
-            <div class="container">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span class="move" data-feather="chevron-left"></span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span class="move" data-feather="chevron-right"></span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
 
+                <!-- pekerjaan -->
+                <div class="box"> 
+                  <div class="box-profile"></div>
+                  <div class="row box-text">
+                    <p class="a nopadding">Python Programmer</p>
+                      <div class="col-lg-5 nopadding">
+                        <p class="b">2 hari yang lalu</p>
+                      </div>
+                    <div class="col-lg-1 nopadding">
+                        <p class="rounded-circle"></p>
+                    </div>
+                    <div class="col-lg-6">
+                      <p class="b">Semarang Indonesia</p>
+                    </div>
+                    <div class="box-waktu">
+                      <p class="c">Penuh waktu</p>
+                    </div>
+                    <div class="col-lg-1">
+                        <p class="vertical-line"></p>
+                    </div>
+                    <div class="box-bidang">
+                      <p class="d">Teknologi</p>
+                    </div>
+                    <div class="box-pengalaman">
+                      <p class="e">Pemula</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-apply"type="button">Apply</button>
+            </div>
+             
         </div>
     </div>
     
@@ -463,7 +271,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f2c387131d.js" crossorigin="anonymous"></script>
     <script>
-      src="script_carikerja.js"
+      src="script_carikarja.js"
       feather.replace();
     </script>  
 
