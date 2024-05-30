@@ -68,42 +68,43 @@
 
     <!-- Navbar Ends -->
     <div class="container mt-5">
-        <form>
+        <form id="pekerjaanForm" method="POST" action="{{ route('pekerjaan.store') }}">
+            {{ csrf_field() }}
             <div class="mb-3">
                 <label for="position" class="form-label">Posisi / Jabatan</label>
-                <input type="text" class="form-control" id="position" placeholder="Masukkan posisi atau jabatan yang dibutuhkan (misalnya Cyber Security Analyst)">
+                <input type="text" class="form-control" id="position" name="posisi" placeholder="Masukkan posisi atau jabatan yang dibutuhkan (misalnya Cyber Security Analyst)">
             </div>
             <div class="mb-3">
                 <label for="jobDescription" class="form-label">Deskripsi Pekerjaan</label>
-                <textarea class="form-control" id="jobDescription" rows="3" placeholder="Masukkan deskripsi pekerjaan yang ditawarkan"></textarea>
+                <textarea class="form-control" id="jobDescription" name="desc_pekerjaan" rows="3" placeholder="Masukkan deskripsi pekerjaan yang ditawarkan"></textarea>
             </div>
             <div class="mb-3" style="margin-right: 12px; position: relative;">
                 <label for="state location" class="form-label">Kota</label>
-                <input class="form-control" id="search_lokasi" placeholder="Masukkan lokasi penempatan berdasarkan Kabupaten/Kota (misalnya Semarang)">
+                <input class="form-control" name="nama_kota" id="search_lokasi" placeholder="Masukkan lokasi penempatan berdasarkan Kabupaten/Kota (misalnya Semarang)">
                 <div id="autocomplete-results" class="dropdown-menu position-absolute"  style="display: none; z-index: 1000;"></div>
                 <meta name="csrf-token" content="{{ csrf_token() }}">
             </div>
             <div class="mb-3">
                 <label for="location" class="form-label">Alamat Penempatan</label>
-                <input type="text" class="form-control" id="location" placeholder="Masukkan alamat penempatan (misalnya Jl.Taman Siswa no.2)">
+                <input type="text" class="form-control" name="alamat" id="location" placeholder="Masukkan alamat penempatan (misalnya Jl.Taman Siswa no.2)">
             </div>
             <div class="mb-3">
                 <label class="form-label">Tipe Pekerjaan</label>
                 <div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobType" id="fullTime" value="fullTime">
+                        <input class="form-check-input" type="radio" name="tipe" id="fullTime" value="fullTime">
                         <label class="form-check-label" for="fullTime">Full Time</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobType" id="partTime" value="partTime">
+                        <input class="form-check-input" type="radio" name="tipe" id="partTime" value="partTime">
                         <label class="form-check-label" for="partTime">Part Time</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobType" id="contract" value="contract">
+                        <input class="form-check-input" type="radio" name="tipe" id="contract" value="contract">
                         <label class="form-check-label" for="contract">Contract</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobType" id="internship" value="internship">
+                        <input class="form-check-input" type="radio" name="tipe" id="internship" value="internship">
                         <label class="form-check-label" for="internship">Internship</label>
                     </div>
                 </div>
@@ -112,23 +113,23 @@
                 <label class="form-label">Kategori Pekerjaan</label>
                 <div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobCategory" id="design" value="design">
+                        <input class="form-check-input" type="radio" name="kategori" id="design" value="design">
                         <label class="form-check-label" for="design">Desain</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobCategory" id="technology" value="technology">
+                        <input class="form-check-input" type="radio" name="kategori" id="technology" value="technology">
                         <label class="form-check-label" for="technology">Teknologi</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobCategory" id="marketing" value="marketing">
+                        <input class="form-check-input" type="radio" name="kategori" id="marketing" value="marketing">
                         <label class="form-check-label" for="marketing">Pemasaran</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobCategory" id="finance" value="finance">
+                        <input class="form-check-input" type="radio" name="kategori" id="finance" value="finance">
                         <label class="form-check-label" for="finance">Keuangan</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jobCategory" id="other" value="other">
+                        <input class="form-check-input" type="radio" name="kategori" id="other" value="other">
                         <label class="form-check-label" for="other">Lainnya</label>
                         <input type="text" class="form-control" id="otherCategory" placeholder="Kategori lain" style="display:none;">
                     </div>
@@ -138,23 +139,23 @@
                 <label class="form-label">Penawaran Gaji</label>
                 <div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="salaryRange" id="range1" value="range1">
+                        <input class="form-check-input" type="radio" name="gaji" id="range1" value="range1">
                         <label class="form-check-label" for="range1">Kurang dari Rp 1.000.000</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="salaryRange" id="range2" value="range2">
+                        <input class="form-check-input" type="radio" name="gaji" id="range2" value="range2">
                         <label class="form-check-label" for="range2">Rp 1.000.000 - Rp 2.500.000</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="salaryRange" id="range3" value="range3">
+                        <input class="form-check-input" type="radio" name="gaji" id="range3" value="range3">
                         <label class="form-check-label" for="range3">Rp 2.500.001 - Rp 4.000.000</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="salaryRange" id="range4" value="range4">
+                        <input class="form-check-input" type="radio" name="gaji" id="range4" value="range4">
                         <label class="form-check-label" for="range4">Rp 4.000.001 - Rp 5.500.000</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="salaryRange" id="range5" value="range5">
+                        <input class="form-check-input" type="radio" name="gaji" id="range5" value="range5">
                         <label class="form-check-label" for="range5">Lebih dari Rp 5.500.000</label>
                     </div>
                 </div>
@@ -162,7 +163,7 @@
         </form>
         <div class="button-submit d-flex justify-content-end mb-5">
             <button type="button" class="btn btn-outline-primary btn-draf ">Simpan Draf</button>
-            <button type="submit" class="btn btn-primary btn-send">Kirim</button>
+            <button type="button" onclick="submitForm()" class="btn btn-primary btn-send">Kirim</button>
         </div>
     </div>
 
@@ -170,6 +171,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="jquery/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="../js/uploker.js"></script>
+    <script>
+        function submitForm() {
+            document.getElementById("pekerjaanForm").submit();
+        }
+    </script>
   </body>
 </html>

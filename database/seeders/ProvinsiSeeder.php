@@ -20,10 +20,10 @@ class ProvinsiSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         // Hapus semua data di tabel provinsi
-        DB::table('provinsi')->delete();
+        DB::table('provinsis')->delete();
 
         // Insert data baru ke tabel provinsi
-        DB::table('provinsi')->insert([
+        DB::table('provinsis')->insert([
             ['id' => 1, 'nama' => 'Aceh'],
             ['id' => 2, 'nama' => 'Sumatera Utara'],
             ['id' => 3, 'nama' => 'Sumatera Selatan'],

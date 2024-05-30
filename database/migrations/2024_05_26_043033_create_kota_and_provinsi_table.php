@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('provinsi', function (Blueprint $table) {
+        Schema::create('provinsis', function (Blueprint $table) {
             $table->id()->unsigned()->unique();
             $table->string('nama');
             $table->timestamps();
         });
-        Schema::create('kota', function (Blueprint $table) {
+        Schema::create('kotas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->unsignedBigInteger('provinsi_id');
@@ -32,7 +32,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kota');
-        Schema::dropIfExists('provinsi');
+        Schema::dropIfExists('kotas');
+        Schema::dropIfExists('provinsis');
     }
 };

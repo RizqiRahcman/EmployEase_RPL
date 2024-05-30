@@ -16,7 +16,7 @@ class KotaSeeder extends Seeder
     public function run()
     {
         // Hapus data kota jika ada sebelumnya
-        DB::table('kota')->truncate();
+        DB::table('kotas')->truncate();
 
         // Data kota
         $kota = [
@@ -536,6 +536,6 @@ class KotaSeeder extends Seeder
         ];
 
         // Masukkan data kota ke dalam database
-        DB::table('kota')->insert($kota);
+        DB::table('kotas')->insert($kota);
     }
 }
