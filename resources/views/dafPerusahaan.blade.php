@@ -25,11 +25,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-
-          $('#nama').keyup(function() {
+          $('#search_lokasi').keyup(function() {
               var query = $(this).val();
               if (query != '') {
-                  var _token = $('input[name="csrf-token"]').val();
+                  var _token = $('meta[name="csrf-token"]').attr('content');
                   $.ajax({
                       url: '/ajax-autocomplete',
                       method: "GET",
@@ -38,24 +37,27 @@
                           _token: _token
                       },
                       success: function(data) {
-                          $('#nama').fadeIn();
-                          $('#nama').html(data);
+                          $('#autocomplete-results').fadeIn();
+                          $('#autocomplete-results').html(data);
                       }
                   });
+              } else {
+                  $('#autocomplete-results').fadeOut();
               }
           });
-
+  
           $(document).on('click', 'li', function() {
               $('#search_lokasi').val($(this).text());
-              $('#nama').fadeOut();
+              $('#autocomplete-results').fadeOut();
           });
-
       });
-
-</script>
+    </script>
+  
+  
 
   </head>
   <body>
+    
     <!-- Nav up -->
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -126,15 +128,17 @@
           <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
           <input class="form-control me-2" type="Kata Kunci" placeholder="Kata Kunci" aria-label="Kata Kunci">
         </div>
-        <meta name="csrf-token" content="{{ csrf_token() }}">
         <div class="input-group" style="margin-right: 12px;">
           <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
           <input type="search" class="form-control" list="nama" name="search_lokasi" id="search_lokasi" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1">
-          <datalist id="nama">
-          </datalist>
+          <div id="autocomplete-results" class="dropdown-menu position-absolute"  style="display: none; z-index: 1000;"></div>
+            <meta name="csrf-token" content="{{ csrf_token() }}">
         </div>
+        <div id="autocomplete-results" class="dropdown-menu" style="display: none; position: absolute;"></div>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <button class="btn btn-primary btn-carip" type="submit">Cari Perusahaan</button>
       </form>
+      
     </div>
     
     <!-- Kategori perusahaan -->

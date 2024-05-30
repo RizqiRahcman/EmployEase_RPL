@@ -13,6 +13,36 @@
 
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#search_lokasi').keyup(function() {
+              var query = $(this).val();
+              if (query != '') {
+                  var _token = $('meta[name="csrf-token"]').attr('content');
+                  $.ajax({
+                      url: '/ajax-autocomplete',
+                      method: "GET",
+                      data: {
+                          query: query,
+                          _token: _token
+                      },
+                      success: function(data) {
+                          $('#autocomplete-results').fadeIn();
+                          $('#autocomplete-results').html(data);
+                      }
+                  });
+              } else {
+                  $('#autocomplete-results').fadeOut();
+              }
+          });
+  
+          $(document).on('click', 'li', function() {
+              $('#search_lokasi').val($(this).text());
+              $('#autocomplete-results').fadeOut();
+          });
+      });
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,7 +123,9 @@
         </div>
         <div class="input-group" style="margin-right: 12px;">
           <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
-          <input class="form-control me-2" type="Lokasi" placeholder="Lokasi" aria-label="Lokasi">
+          <input type="search" class="form-control" list="nama" name="search_lokasi" id="search_lokasi" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1">
+          <div id="autocomplete-results" class="dropdown-menu position-absolute"  style="display: none; z-index: 1000;"></div>
+          <meta name="csrf-token" content="{{ csrf_token() }}">
         </div>
         <button class="btn btn-primary btn-carip" type="submit">Cari Pekerjaan</button>
       </form>
