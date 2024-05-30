@@ -37,6 +37,12 @@ Route::get('/profil', function () {
     return view('profil_jobseeker');
 });
 
+
+Route::get('/Form-Lamaran', function () {
+    return view('form_lamaran');
+});
+
+
 Route::get('/Up-Loker', function () {
     return view('upLoker');
 });

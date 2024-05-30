@@ -67,11 +67,9 @@
               <img src="#" alt="profile" />
               Nama Akun 
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Lihat Akun</a></li>
-              <li><a class="dropdown-item" href="#">Lowongan tersimpan</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
               <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
-              <li><a class="dropdown-item" href="#">Pengaturan</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Log Out</a></li>
             </ul>
