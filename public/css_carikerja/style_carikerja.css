@@ -13,6 +13,12 @@ body {
     font-family: "Epilogue", sans-serif;
 }
 
+.profil-gambar {
+    max-width: 28px;
+    max-height: 28px;
+    border-radius: 14px;
+}
+
 .theme-shadow {
     box-shadow: var(--c-box-shadow);
 }
@@ -198,7 +204,7 @@ h4 {
     height: 100px;
     border: 0px;
     margin: 23px;
-    background-image: url("image/company.png");
+    background-image: url("../image/logo\ pertamina.png");
     background-size: cover; /* Memastikan gambar mengisi kotak tanpa distorsi */
     background-position: center;
 }

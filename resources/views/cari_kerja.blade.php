@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 
     {{-- css --}}
-    <link rel="stylesheet" href="css_carikerja/main.css">
+    <link rel="stylesheet" href="css_carikerja/style_carikerja.css">
 
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -208,7 +208,7 @@
                         <input class="form-check-input" type="checkbox" value="" id="internshipCheck">
                         <label class="form-check-label" for="internshipCheck">Senior</label>
                     </div>
-                    <!-- Add more filters as needed -->
+                    <!-- Add more filters as needed  -->
                 </aside>
             </div>
     
@@ -227,22 +227,18 @@
                             <option selected>2</option>
                             <!-- Add more options as needed -->
                         </select>
-                    </div>
-                </div>
+                  </div>
+              </div>
 
                 <!-- pekerjaan -->
-                <div class="box"> 
+                 <div class="box"> 
                   <div class="box-profile"></div>
                   <div class="row box-text">
                     <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-5 nopadding">
-                        <p class="b">2 hari yang lalu</p>
-                      </div>
-                    <div class="col-lg-1 nopadding">
-                        <p class="rounded-circle"></p>
-                    </div>
-                    <div class="col-lg-6">
-                      <p class="b">Semarang Indonesia</p>
+                      <div class="col-lg-12 nopadding ">
+                        <p class="b d-inline">2 hari yang lalu</p>
+                        <i class="icon-circle" data-feather="circle"></i>
+                      <p class="bb d-inline">Semarang Indonesia</p>
                     </div>
                     <div class="box-waktu">
                       <p class="c">Penuh waktu</p>
@@ -258,8 +254,80 @@
                     </div>
                   </div>
                   <button class="btn btn-apply"type="button">Apply</button>
+                </div>
+                <!-- pekerjaan -->
+                <div class="box"> 
+                  <div class="box-profile"></div>
+                  <div class="row box-text">
+                    <p class="a nopadding">Python Programmer</p>
+                      <div class="col-lg-12 nopadding ">
+                        <p class="b d-inline">2 hari yang lalu</p>
+                        <i class="icon-circle" data-feather="circle"></i>
+                      <p class="bb d-inline">Semarang Indonesia</p>
+                    </div>
+                    <div class="box-waktu">
+                      <p class="c">Penuh waktu</p>
+                    </div>
+                    <div class="col-lg-1">
+                        <p class="vertical-line"></p>
+                    </div>
+                    <div class="box-bidang">
+                      <p class="d">Teknologi</p>
+                    </div>
+                    <div class="box-pengalaman">
+                      <p class="e">Pemula</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-apply"type="button">Apply</button>
+                </div>
+                <!-- pekerjaan -->
+                <div class="box"> 
+                  <div class="box-profile"></div>
+                  <div class="row box-text">
+                    <p class="a nopadding">Python Programmer</p>
+                      <div class="col-lg-12 nopadding ">
+                        <p class="b d-inline">2 hari yang lalu</p>
+                        <i class="icon-circle" data-feather="circle"></i>
+                      <p class="bb d-inline">Semarang Indonesia</p>
+                    </div>
+                    <div class="box-waktu">
+                      <p class="c">Penuh waktu</p>
+                    </div>
+                    <div class="col-lg-1">
+                        <p class="vertical-line"></p>
+                    </div>
+                    <div class="box-bidang">
+                      <p class="d">Teknologi</p>
+                    </div>
+                    <div class="box-pengalaman">
+                      <p class="e">Pemula</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-apply"type="button">Apply</button>
+                </div>
+          </div>
+        </div>
+
+        <div class="container">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span class="move" data-feather="chevron-left"></span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span class="move" data-feather="chevron-right"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
-             
+
         </div>
     </div>
     
