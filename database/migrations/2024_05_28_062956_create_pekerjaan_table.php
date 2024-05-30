@@ -11,9 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('perkerjaan', function (Blueprint $table) {
-            $table->id();
+        Schema::create('pekerjaans', function (Blueprint $table) {
+            $table->id()->unsigned()->unique();
+            $table->string('posisi');
+            $table->longText('desc_pekerjaan');
+            $table->unsignedBigInteger('kota_id');
+            $table->string('alamat');
+            $table->string('tipe');
+            $table->string('kategori');
+            $table->string('gaji');
+            $table->string('slug');
+            $table->unsignedBigInteger('perusahaan_id');
             $table->timestamps();
+
+            $table->foreign('perusahaan_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -22,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('perkerjaan');
+        Schema::dropIfExists('pekerjaans');
     }
 };
