@@ -43,18 +43,20 @@
             <a
               href="#"
               class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-              ><i class="fas fa-file me-2"></i>Lamaran Saya</a
+              ><i class="fas fa-file me-2"></i>Pelamar</a
             >
             <a
               href="#"
               class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-              ><i class="fas fa-search me-2"></i>Cari Kerja</a
+              ><i class="fas fa-search me-2"></i>Lowongan</a
             >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-              ><i class="fas fa-building me-2"></i>Daftar Perusahaan</a
-            >
+            <div>
+              <a
+                href="#"
+                class=" text-danger list-group-item list-group-item-action bg-transparent second-text fw-bold"
+                ><i class="fas fa-power-off me-2"></i>log Out</a
+              >
+            </div>
           </div>
         </div>
         <!-- Sidebar End -->
