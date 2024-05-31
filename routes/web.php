@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\PekerjaanController;
 
 Route::get('/', function () {
     return view('home');
@@ -49,7 +50,7 @@ Route::get('/Up-Loker', function () {
 
 Route::get('/DashComp', function () {
     return view('dashboardComp');
-});
+})->name('dashboard.company');
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
 Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
@@ -59,3 +60,5 @@ Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->
 
 Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');
 Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);
+
+Route::post('/pekerjaan', [PekerjaanController::class, 'store'])->name('pekerjaan.store');

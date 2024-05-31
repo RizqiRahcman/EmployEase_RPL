@@ -11,7 +11,7 @@ class SearchController extends Controller
     {
         if ($request->get('query')) {
             $query = $request->get('query');
-            $data = DB::table('kota')
+            $data = DB::table('kotas')
                 ->where('nama', 'LIKE', "%{$query}%")
                 ->take(5)
                 ->get();
