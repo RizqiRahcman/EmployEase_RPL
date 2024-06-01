@@ -1,110 +1,103 @@
 :root {
-  --c-dark: #212529;
-  --c-brand: #ff6000;
-  --c-brand-light: #ff914f;
-  --c-bg-light : #fff6f0
-  --c-brand-rgb: 255, 96, 0;
-  --body: #727272;
-  --c-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
-  --transition: all 0.5s ease;
+    --c-dark: #212529;
+    --c-brand: #ff6000;
+    --c-brand-light: #ff914f;
+    --c-bg-light: #fff6f0;
+    --c-brand-rgb: 255, 96, 0;
+    --body: #727272;
+    --c-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --transition: all 0.5s ease;
 }
 body {
-  background-color: #ffffff;
-  font-family: "Epilogue", sans-serif;
+    background-color: #ffffff;
+    font-family: "Epilogue", sans-serif;
 }
 
 /* Sidebar Start */
 .list-group-item {
     border: none;
     padding: 20px 30px;
-  }
+}
 
-  .list-group-item.active {
+.list-group-item.active {
     background-color: var(--c-dark);
     color: var(--c-brand);
     font-weight: bold;
     border: none;
-  }
-
+}
 
 .list-group-item .fas {
     margin-right: 1rem;
 }
 
-.list-group-item:hover{
-  color: var(--c-brand);
+.list-group-item:hover {
+    color: var(--c-brand);
 }
 
 .sidebar {
-  height: 100vh;
-  background-color: #fff6f0;
-  border-right: 1px solid #e0e0e0;
+    height: 100vh;
+    background-color: #fff6f0;
+    border-right: 1px solid #e0e0e0;
 }
 .sidebar a {
-  color: #333;
-  text-decoration: none;
+    color: #333;
+    text-decoration: none;
 }
 .sidebar .nav-link {
-  padding: 15px;
-  border-bottom: 1px solid #e0e0e0;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 /* Sidebar Ends */
-
-.company-logo img{
+/* Top Bar */
+.company-logo img {
     margin-right: 1rem;
 }
 .content {
-  padding: 20px;
-  
+    padding: 20px;
 }
 
-.btn-primary{
-  padding: 10px;
-  border-radius: 10px;
-  background-color: var(--c-brand);
-  border-color: transparent;
+.btn-primary {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--c-brand);
+    border-color: transparent;
+    font-weight: 600;
 }
 
-.btn-primary:hover{
-  background-color: var(--c-brand-light);
-  border-color: transparent;
+.btn-primary:hover {
+    background-color: var(--c-brand-light);
+    border-color: transparent;
 }
-.btn-primary:hover{
-  background-color: var(--c-brand-light);
-  border-color: transparent;
+/* top-bar End */
+.content .btn {
+    margin-right: 2.5rem;
 }
-
-
-.content .btn{
-  margin-right: 2.5rem;
-}
-
 .card {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .chart-bar {
-  height: 150px;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
 }
 .chart-bar div {
-  width: 14%;
-  margin: 0 2px;
-  background-color: #6c757d;
-  text-align: center;
-  color: #fff;
+    width: 14%;
+    margin: 0 2px;
+    background-color: #6c757d;
+    text-align: center;
+    color: #fff;
 }
 .chart-bar .applied {
-  background-color: #f0ad4e;
+    background-color: #f0ad4e;
 }
 .user-profile {
-  display: flex;
-  align-items: center;
-  padding: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 .user-profile img {
-  border-radius: 50%;
-  margin-right: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
 }

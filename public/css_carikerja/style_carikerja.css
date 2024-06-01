@@ -31,6 +31,17 @@ body {
     font-weight: 350;
 }
 
+.nav-item .profile {
+    color: black !important;
+}
+
+.dropdown-item {
+    font-weight: 500;
+}
+.text-danger {
+    font-weight: 700 !important;
+}
+
 .btn-daftar {
     background-color: transparent;
     color: #ff6000;
@@ -40,6 +51,10 @@ body {
     background-color: transparent;
     color: #ff914f;
     font-weight: 500;
+}
+
+.dropdown-item:hover {
+    color: var(--c-brand);
 }
 
 .btn-login {
@@ -61,6 +76,16 @@ body {
 .mt-3 {
     font-weight: 400;
     font-size: 15px;
+}
+
+.active {
+    font-weight: bolder !important;
+    color: var(--c-brand) !important;
+}
+
+.navbar-nav .second:hover a {
+    color: var(--c-brand) !important;
+    font-weight: 500 !important;
 }
 
 .iconbox {
@@ -296,6 +321,9 @@ p.d {
     font-family: "Epilogue";
     font-size: 14px;
     font-weight: 600;
+}
+.box-status {
+    padding: 2px 7px 5px;
 }
 /* pembatas */
 .vertical-line {

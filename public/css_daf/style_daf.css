@@ -1,263 +1,292 @@
 :root {
-  --c-dark: #212529;
-  --c-brand: #ff6000;
-  --c-brand-light: #ff914f;
-  --c-brand-rgb: 255, 96, 0;
-  --body: #727272;
-  --c-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
-  --transition: all 0.5s ease;
+    --c-dark: #212529;
+    --c-brand: #ff6000;
+    --c-brand-light: #ff914f;
+    --c-brand-rgb: 255, 96, 0;
+    --body: #727272;
+    --c-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+    --transition: all 0.5s ease;
 }
 
 body {
-  background-color: #ffffff;
-  font-family: "Epilogue", sans-serif;
+    background-color: #ffffff;
+    font-family: "Epilogue", sans-serif;
 }
 
 .profil-gambar {
-  max-width: 28px;
-  max-height: 28px;
-  border-radius: 14px;
+    max-width: 28px;
+    max-height: 28px;
+    border-radius: 14px;
 }
 
-.dropdown-menu{
-  width: 200px;
-  position:absolute;
-  top: 0%d;
+.dropdown-menu {
+    width: 200px;
+    position: absolute;
+    top: 0%d;
 }
 
 .theme-shadow {
-  box-shadow: var(--c-box-shadow);
+    box-shadow: var(--c-box-shadow);
 }
 
 .navbar-brand img {
-  max-height: 40px;
+    max-height: 40px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  font-weight: 350;
+    font-weight: 350;
+}
+
+.active {
+    font-weight: bolder !important;
+    color: var(--c-brand) !important;
+}
+
+.navbar-nav .second:hover a {
+    color: var(--c-brand) !important;
+    font-weight: 500 !important;
+}
+
+.nav-item .profile {
+    color: black !important;
 }
 
 .jargon {
-  font-weight: bolder;
-  font-size: 60px;
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.dropdown-item {
+    font-weight: 500;
+}
+.dropdown-item:hover {
+    color: var(--c-brand);
+}
+.text-danger {
+    font-weight: 700 !important;
 }
 
 .mt-3 {
-  font-weight: 400;
-  font-size: 15px;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 .iconbox {
-  width: 70px;
-  height: 70px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(var(--c-brand-rgb), 0.1);
-  color: var(--c-brand);
-  font-size: 34px;
-  flex: none;
-  border-radius: 8px;
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--c-brand-rgb), 0.1);
+    color: var(--c-brand);
+    font-size: 34px;
+    flex: none;
+    border-radius: 8px;
 }
 
 /* kategori perusahaan */
+.side-text:hover a {
+    color: var(--c-brand-light);
+}
+.job-box a {
+    text-decoration: none;
+}
 .category {
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-  border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    border-radius: 8px;
 }
 
 .category::after {
-  content: "";
-  width: 40px;
-  height: 40px;
-  background: rgba(var(--c-brand-rgb), 0.2);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transition: var(--transition);
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: rgba(var(--c-brand-rgb), 0.2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: var(--transition);
 }
 
 .category:hover::after {
-  width: 100%;
-  height: 100%;
-  background: var(--c-brand);
-  z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: var(--c-brand);
+    z-index: -1;
 }
 
 .category:hover h5 {
-  color: #fff;
+    color: #fff;
 }
 
 .category:hover .iconbox {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
 } /*# sourceMappingURL=main.css.map */
 
 .d-flex {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
 }
-span.input-group-text{
-  background: transparent;
-  border: 0px;
+span.input-group-text {
+    background: transparent;
+    border: 0px;
 }
 
-input.form-control{
-  border: 0px;
-  border-radius: 0px;
-  border-bottom: 1px solid #BDBDBD;
-  padding-bottom: 5px;
-  
+input.form-control {
+    border: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #bdbdbd;
+    padding-bottom: 5px;
 }
 /* Daftar Perusahaan */
 .head {
-  padding: 144px;
-  position: relative;
+    padding: 144px;
+    position: relative;
 }
 
 .bg-dark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../image/bg1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.5);
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.5);
+    z-index: -1;
 }
 
 .image-thumnail {
-  width: 300px; /* Lebar container gambar */
-  height: 200px; /* Tinggi container gambar */
-  background-image: url('path/to/image.jpg'); /* URL gambar yang akan ditampilkan */
-  background-size: cover; /* Menyesuaikan gambar agar sesuai dengan ukuran container */
-  background-position: left; /* Posisi gambar di tengah container */
-  background-repeat: no-repeat; /* Tidak mengulang gambar */
+    width: 300px; /* Lebar container gambar */
+    height: 200px; /* Tinggi container gambar */
+    background-image: url("path/to/image.jpg"); /* URL gambar yang akan ditampilkan */
+    background-size: cover; /* Menyesuaikan gambar agar sesuai dengan ukuran container */
+    background-position: left; /* Posisi gambar di tengah container */
+    background-repeat: no-repeat; /* Tidak mengulang gambar */
 }
-.btn-primary{
-  background-color: var(--c-brand);
-  border-color: var(--c-brand);
-}
-
-.btn-primary:hover{
-  background-color: var(--c-brand-light);
-  border-color: var(--c-brand-light);
+.btn-primary {
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
 }
 
-.mt-4{
-  color: var(--c-dark);
+.btn-primary:hover {
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
 }
 
-h6{
-  color: var(--body);
+.mt-4 {
+    color: var(--c-dark);
+}
+
+h6 {
+    color: var(--body);
 }
 
 /* Perusahaan rekomendasi */
 
 .section-tittle h1 {
-  font-weight: 650;
+    font-weight: 650;
 }
 
 .section-tittle a {
-  color: #ff6000;
-  font-family: "Epilogue", sans-serif;
-  font-weight: 500;
+    color: #ff6000;
+    font-family: "Epilogue", sans-serif;
+    font-weight: 500;
 }
 
 .section-tittle span {
-  color: #ff6000;
+    color: #ff6000;
 }
 
 .card {
-  border-radius: 15px;
-  padding-bottom: 2rem;
+    border-radius: 15px;
+    padding-bottom: 2rem;
 }
 
 .card-body a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .card-body a:hover {
-  background-color: var(--c-brand-light);
-  color: white;
+    background-color: var(--c-brand-light);
+    color: white;
 }
 
 .card-body {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
 }
 
 .company-logo img {
-  width: 70px;
-  height: auto;
+    width: 70px;
+    height: auto;
 }
 
 .job-card {
-  margin-bottom: 1rem;
-  font-family: outfit;
+    margin-bottom: 1rem;
+    font-family: outfit;
 }
 
 .job-category {
-  background-color: #ff6c00;
-  color: white;
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  font-size: 1rem;
-  font-family: outfit;
+    background-color: #ff6c00;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    font-family: outfit;
 }
 
 .company-logo {
-  border-radius: 50%;
-  padding: none;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
+    border-radius: 50%;
+    padding: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
 }
 
 /* footer */
 .footer-dark .row img {
-  width: 200px;
-  height: auto;
-  margin-bottom: 1.5rem;
+    width: 200px;
+    height: auto;
+    margin-bottom: 1.5rem;
 }
 
 .footer-dark {
-  background-color: #343a40;
-  color: white;
-  padding: 2rem 0;
-  font-family: epilogue;
+    background-color: #343a40;
+    color: white;
+    padding: 2rem 0;
+    font-family: epilogue;
 }
 
 .footer-dark .footer-column {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .footer-dark a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .footer-dark a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer-dark .social-icons {
-  text-align: right;
+    text-align: right;
 }
 
 .footer-dark .social-icons a {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  margin-left: 0.5rem;
-  color: white;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-left: 0.5rem;
+    color: white;
 }

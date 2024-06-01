@@ -40,10 +40,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item a">
               <a class="nav-link" href="/Cari-Kerja">Cari Kerja</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item a">
               <a class="nav-link" href="/Daftar-Perusahaan" >Daftar Perusahaan</a>
             </li>
           </ul>
@@ -58,7 +58,7 @@
         </div>
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="#" alt="profile" />
               {{ Auth::user()->first_name }}
             </a>
@@ -66,14 +66,9 @@
               <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
               <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+              <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
             </ul>
           </li>
-            <div class="notif">
-              <button class="btn btn-light">
-                <i data-feather="bell"></i>
-              </button>
-            </div>
           
 
         <!-- <button class="btn btn-outline-success" type="button">Masuk</button> -->

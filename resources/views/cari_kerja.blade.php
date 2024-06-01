@@ -71,11 +71,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#" style="color: #ff6000">Cari Kerja</a>
+            <li class="nav-item ">
+              <a class="nav-link active" href="#">Cari Kerja</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Daftar-Perusahaan" >Daftar Perusahaan</a>
+            <li class="nav-item second">
+              <a class="nav-link " href="/Daftar-Perusahaan" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -89,7 +89,7 @@
         </div>
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="image/contoh.png" class="profil-gambar" alt="profile" />
               {{ Auth::user()->first_name }}
             </a>
@@ -99,14 +99,9 @@
               <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
               <li><a class="dropdown-item" href="#">Pengaturan</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/">Log Out</a></li>
+              <li><a class="dropdown-item text-danger" href="/">Log Out</a></li>
             </ul>
           </li>
-            <div class="notif">
-              <button class="btn btn-light">
-                <i data-feather="bell"></i>
-              </button>
-            </div>
           
 
         <!-- <button class="btn btn-outline-success" type="button">Masuk</button> -->
@@ -240,16 +235,16 @@
                         <i class="icon-circle" data-feather="circle"></i>
                       <p class="bb d-inline">Semarang Indonesia</p>
                     </div>
-                    <div class="box-waktu">
+                    <div class="box-waktu box-status">
                       <p class="c">Penuh waktu</p>
                     </div>
                     <div class="col-lg-1">
                         <p class="vertical-line"></p>
                     </div>
-                    <div class="box-bidang">
+                    <div class="box-bidang box-status">
                       <p class="d">Teknologi</p>
                     </div>
-                    <div class="box-pengalaman">
+                    <div class="box-pengalaman box-status">
                       <p class="e">Pemula</p>
                     </div>
                   </div>
@@ -265,16 +260,16 @@
                         <i class="icon-circle" data-feather="circle"></i>
                       <p class="bb d-inline">Semarang Indonesia</p>
                     </div>
-                    <div class="box-waktu">
+                    <div class="box-waktu box-status">
                       <p class="c">Penuh waktu</p>
                     </div>
                     <div class="col-lg-1">
                         <p class="vertical-line"></p>
                     </div>
-                    <div class="box-bidang">
+                    <div class="box-bidang box-status">
                       <p class="d">Teknologi</p>
                     </div>
-                    <div class="box-pengalaman">
+                    <div class="box-pengalaman box-status">
                       <p class="e">Pemula</p>
                     </div>
                   </div>
@@ -290,16 +285,16 @@
                         <i class="icon-circle" data-feather="circle"></i>
                       <p class="bb d-inline">Semarang Indonesia</p>
                     </div>
-                    <div class="box-waktu">
+                    <div class="box-waktu box-status">
                       <p class="c">Penuh waktu</p>
                     </div>
                     <div class="col-lg-1">
                         <p class="vertical-line"></p>
                     </div>
-                    <div class="box-bidang">
+                    <div class="box-bidang box-status">
                       <p class="d">Teknologi</p>
                     </div>
-                    <div class="box-pengalaman">
+                    <div class="box-pengalaman box-status">
                       <p class="e">Pemula</p>
                     </div>
                   </div>

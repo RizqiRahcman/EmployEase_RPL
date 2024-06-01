@@ -81,8 +81,8 @@
               </div>
             </div>
             <div class="col-md-6 d-flex justify-content-end align-items-center">
-              <button class="btn btn-primary">
-                <i class="fas fa-plus me-3"></i> Tambah Lowongan
+              <button class="btn btn-primary" onclick="redirectToPage()">
+                <i class="fas fa-plus me-3 fw-bold"></i> Tambah Lowongan
               </button>
             </div>
           </div>
@@ -122,6 +122,46 @@
             </div>
           </div>
           <!-- Job Listings -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Pelamar Terbaru</h5>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="mb-1">Social Media Assistant</h6>
+                      <small>Nomad - Paris, France - Full-Time</small>
+                    </div>
+                    <small class="text-muted">In Review</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="mb-1">Social Media Assistant</h6>
+                      <small>Nomad - Paris, France - Full-Time</small>
+                    </div>
+                    <small class="text-muted">In Review</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="mb-1">Social Media Assistant</h6>
+                      <small>Nomad - Paris, France - Full-Time</small>
+                    </div>
+                    <small class="text-muted">In Review</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Lowongan</h5>
@@ -171,6 +211,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="jquery/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-  </body>
+    <script>
+        function redirectToPage() {
+            window.location.href = '/Up-Loker'; // Ganti dengan URL tujuan
+        }
+    </script>
   </body>
 </html>

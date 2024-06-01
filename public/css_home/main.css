@@ -21,7 +21,7 @@ body {
     max-width: 28px;
     max-height: 28px;
     border-radius: 14px;
-  }
+}
 .navbar-brand img {
     max-height: 40px;
 }
@@ -60,6 +60,23 @@ body {
     background-color: #ff914f;
     color: #fff;
     font-weight: 500;
+}
+
+.a:hover a {
+    color: var(--c-brand) !important;
+    font-weight: 500 !important;
+}
+.nav-item .profile {
+    color: black !important;
+}
+.dropdown-item {
+    font-weight: 500;
+}
+.dropdown-item:hover {
+    color: var(--c-brand);
+}
+.text-danger {
+    font-weight: 700 !important;
 }
 
 .jargon {

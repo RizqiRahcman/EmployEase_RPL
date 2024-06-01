@@ -78,11 +78,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item second">
               <a class="nav-link" href="/Cari-Kerja">Cari Kerja</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Daftar-Perusahaan" style="color: #ff6000" >Daftar Perusahaan</a>
+              <a class="nav-link active" href="/Daftar-Perusahaan" >Daftar Perusahaan</a>
             </li>
           </ul>
           <!-- Mobile Button -->
@@ -96,7 +96,7 @@
         </div>
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="#" alt="profile" />
               {{ Auth::user()->first_name }}
             </a>
@@ -104,14 +104,9 @@
               <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
               <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Log Out</a></li>
+              <li><a class="dropdown-item text-danger" href="/">Log Out</a></li>
             </ul>
           </li>
-            <div class="notif">
-              <button class="btn btn-light">
-                <i data-feather="bell"></i>
-              </button>
-            </div>
           
 
         <!-- <button class="btn btn-outline-success" type="button">Masuk</button> -->
@@ -142,18 +137,18 @@
     </div>
     
     <!-- Kategori perusahaan -->
-    <div class="container py-5">
+    <div class="container py-5 job-box">
       {{-- <h1 style="color: #454545; font-weight: bold;  margin: 100px 0px 20px;">Kategori <span>Perusahaan</span></h1> --}}
       <div class="section-tittle mt-3">
         <h1>Katergori <span>Pekerjaan</span></h1>
-        <p class="text-right">
-          <a href="#">Lihat semua lowongan </a>
+        <p class="text-right side-text">
+          <a href="/Cari-Kerja">Lihat semua lowongan </a>
         </p>
       </div>
       <div class="row g-4 text-center" style="margin-top: 24px;">
         
         <!-- row 1 kategori -->
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-lg-3 col-sm-6 ">
           <a href="#">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
