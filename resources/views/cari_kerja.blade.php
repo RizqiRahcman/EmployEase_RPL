@@ -159,24 +159,36 @@
                     <h5 class="klasifikasi">Kategori Pekerjaan</h5>
                     <!-- Checkbox filters for job type -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="fullTimeCheck">
-                        <label class="form-check-label" for="fullTimeCheck">Desain</label>
+                        <input class="form-check-input" type="checkbox" value="" id="desainCheck">
+                        <label class="form-check-label" for="desainCheck">Desain</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="partTimeCheck">
-                        <label class="form-check-label" for="partTimeCheck">Teknologi</label>
+                        <input class="form-check-input" type="checkbox" value="" id="pemasaranCheck">
+                        <label class="form-check-label" for="pemasaranCheck">Pemasaran</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="contractCheck">
-                        <label class="form-check-label" for="contractCheck">Pemasaran</label>
+                        <input class="form-check-input" type="checkbox" value="" id="salesCheck">
+                        <label class="form-check-label" for="salesCheck">Sales</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="internshipCheck">
-                        <label class="form-check-label" for="internshipCheck">Keuangan</label>
+                        <input class="form-check-input" type="checkbox" value="" id="keuanganCheck">
+                        <label class="form-check-label" for="keuanganCheck">Keuangan</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="internshipCheck">
-                        <label class="form-check-label" for="internshipCheck">Lainnya</label>
+                        <input class="form-check-input" type="checkbox" value="" id="teknologiCheck">
+                        <label class="form-check-label" for="teknologiCheck">Teknologi</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="teknologiCheck">
+                        <label class="form-check-label" for="teknologiCheck">Teknisi</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="bisnisCheck">
+                        <label class="form-check-label" for="bisnisCheck">Bisnis</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="kesehatanCheck">
+                        <label class="form-check-label" for="kesehatanCheck">Kesehatan</label>
                     </div>
                     <!-- Add more filters as needed -->
                 </aside>
@@ -184,24 +196,24 @@
                     <h5 class="klasifikasi">Pengalaman</h5>
                     <!-- Checkbox filters for job type -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="fullTimeCheck">
-                        <label class="form-check-label" for="fullTimeCheck">Tingkat pemula</label>
+                        <input class="form-check-input" type="checkbox" value="" id="pumulaCheck">
+                        <label class="form-check-label" for="pemulaCheck">Tingkat pemula</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="partTimeCheck">
-                        <label class="form-check-label" for="partTimeCheck">1-2 Tahun pengalaman</label>
+                        <input class="form-check-input" type="checkbox" value="" id="seniorCheck">
+                        <label class="form-check-label" for="seniorCheck">Senior</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="contractCheck">
-                        <label class="form-check-label" for="contractCheck">3-5 Tahun pengalaman</label>
+                        <input class="form-check-input" type="checkbox" value="" id="satuCheck">
+                        <label class="form-check-label" for="satuCheck">1-2 Tahun pengalaman</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="internshipCheck">
-                        <label class="form-check-label" for="internshipCheck">>5 Tahun pengalaman</label>
+                        <input class="form-check-input" type="checkbox" value="" id="tigaCheck">
+                        <label class="form-check-label" for="tigaCheck">3-5 Tahun pengalaman</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="internshipCheck">
-                        <label class="form-check-label" for="internshipCheck">Senior</label>
+                        <input class="form-check-input" type="checkbox" value="" id="limaCheck">
+                        <label class="form-check-label" for="limaCheck">>5 Tahun pengalaman</label>
                     </div>
                     <!-- Add more filters as needed  -->
                 </aside>
