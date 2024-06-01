@@ -8,7 +8,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\PekerjaanController;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home',['pekerjaans' => Pekerjaan::all()]);
 });
 
 Route::get('/logedin', function () {
@@ -20,7 +20,7 @@ Route::get('/Daftar-Perusahaan', function () {
 });
 
 Route::get('/Cari-Kerja', function () {
-    return view('cari_kerja');
+    return view('cari_kerja',['pekerjaans' => Pekerjaan::all()]);
 });
 
 // Route::get('/login', function () {
