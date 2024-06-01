@@ -29,9 +29,37 @@
         <div class="col-lg-8">
             <div class="card border-0 rounded-3 shadow-lg">
             <div class="card-body p-4">
-                <div class="text-center">
-                <div class="h1 fw-light">Form Lamaran Pekerjaan</div>
-                <p class="mb-4 text-muted">#Ini nama posisi || perusahaan</p>
+                <div class="text-left">
+                <div class="h6">Form Lamaran Pekerjaan</div>
+                <div class="row head">
+                    <div class="col-3">
+                        <img src="image/pongo.png" class="img-thumbnail" alt="Logo Perusahaan" style="border: 0cap;">
+                        
+                    </div>
+                    <div class="col-7 detail_name">
+                        <div class="h1 judul_pekerjaan D-inline">Nama Pekerjaan</div>
+                        <div class="h6 detail_pekerjaan D-block">Nama perusahaan</div>
+                        <div class="h6 detail_pekerjaan D-block">2 hours ago</div>
+                        <div class="h6 detail_pekerjaan D-block"><i class="fas fa-location-dot"></i>Semarang, Indonesia</div>
+                    </div>
+
+                </div>
+                <div class="konten_form">
+                    <h3>Keterangan Pekerjaan</h3>
+                    <p class="fw-light isi_ket">
+                        Lorem ipsum dolor sit amet consectetur. Odio posuere arcu odio est nulla elementum proin. 
+                        Fermentum arcu diam dolor massa adipiscing. Vulputate dui adipiscing id pellentesque proin 
+                        pretium a. Euismod egestas platea non urna varius tempor a. Dui posuere gravida nunc augue 
+                        enim dolor. Lectus tincidunt in facilisis sociis tempus habitant id est. Montes tincidunt 
+                        mus lacus nunc massa nunc volutpat. Pellentesque magna faucibus eget donec metus pellentesque 
+                        dictum etiam. Amet scelerisque dolor eget odio at ipsum lectus sagittis pellentesque. 
+                        Vestibulum scelerisque vehicula a venenatis volutpat. Mi dolor lobortis sed aenean potenti 
+                        ullamcorper pellentesque tortor adipiscing. Donec facilisis sed et massa. Turpis ligula 
+                        tincidunt dolor nam scelerisque ut. Quam lacinia sagittis tempor sem a adipiscing. Gravida 
+                        metus enim tincidunt sit amet integer. In eros lacus mattis feugiat turpis nec et iaculis. Et 
+                        pulvinar commodo arcu nunc eget sed at.
+                    </p>
+                </div>
                 </div>
     
                 <!-- * * * * * * * * * * * * * *
@@ -43,9 +71,9 @@
                 // https://startbootstrap.com/solution/contact-forms
                 // to get an API token!
                 -->
-    
+                <div class="konten_form">
                 <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-    
+                <h3>Lamar pekerjaan</h3>
                 <!-- Name Input -->
                 <div class="form-floating mb-3">
                     <label for="name">Nama lengkap Anda</label>
@@ -93,7 +121,7 @@
     
                 <!-- Submit button -->
                 <div class="d-grid">
-                    <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+                    <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Kirim lamaran</button>
                 </div>
                 </form>
                 <!-- End of contact form -->
@@ -103,6 +131,7 @@
         </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/f2c387131d.js" crossorigin="anonymous"></script>
     <!-- CDN Link to SB Forms Scripts -->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
