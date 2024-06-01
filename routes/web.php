@@ -20,7 +20,7 @@ Route::get('/Daftar-Perusahaan', function () {
 });
 
 Route::get('/Cari-Kerja', function () {
-    return view('cari_kerja',['pekerjaans' => Pekerjaan::all()]);
+    return view('cari_kerja',['pekerjaans' => Pekerjaan::all()],['pagpekerjaans' => Pekerjaan::orderByDesc('created_at')->paginate(6)]);
 });
 
 // Route::get('/login', function () {
@@ -63,4 +63,5 @@ Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.
 Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);
 
 Route::post('/pekerjaan', [PekerjaanController::class, 'store'])->name('pekerjaan.store');
-Route::get('/tampilpekerjaan', [PekerjaanController::class, 'index'])->name('pekerjaan.index');
+// Route::get('/tampilpekerjaan', [PekerjaanController::class, 'page'])->name('pekerjaan.page');
+Route::post('/filter-pekerjaan', [PekerjaanController::class, 'filterPekerjaan'])->name('filter.pekerjaan');

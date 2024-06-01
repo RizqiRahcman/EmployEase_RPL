@@ -50,15 +50,52 @@ class PekerjaanController extends Controller
     return redirect()->route('dashboard.company')->with('success', 'Pekerjaan telah diunggah');
     }
 
-    public function index()
+    // public function index()
+    // {
+    //     // Mengambil semua data dari tabel pekerjaan
+    //     $pekerjaans = Pekerjaan::all();
+    //     // $pekerjaans = Pekerjaan::with(['user', 'kota'])->get();
+
+    //     dd($pekerjaans);
+
+    //     // Mengirim data ke view
+    //     return view('pekerjaan.index', compact('pekerjaans'));
+    // }
+
+    // public function page()
+    // {
+    //     $pagpekerjaans = Pekerjaan::orderByDesc('created_at')->paginate(6);
+    //     return view('pekerjaan.page', compact('pagpekerjaans'));
+    // }
+
+    public function filterPekerjaan(Request $request)
     {
-        // Mengambil semua data dari tabel pekerjaan
-        $pekerjaans = Pekerjaan::all();
-        // $pekerjaans = Pekerjaan::with(['user', 'kota'])->get();
+        // Ambil nilai filter dari permintaan AJAX
+        $fullTime = $request->input('fullTime');
+        $partTime = $request->input('partTime');
+        $contract = $request->input('contract');
+        $internship = $request->input('internship');
 
-        dd($pekerjaans);
+        // Query data pekerjaan berdasarkan filter yang dipilih
+        $query = Pekerjaan::query();
 
-        // Mengirim data ke view
-        return view('pekerjaan.index', compact('pekerjaans'));
+        if ($fullTime) {
+            $query->orWhere('tipe', 'Full Time');
+        }
+        if ($partTime) {
+            $query->orWhere('tipe', 'Part Time');
+        }
+        if ($contract) {
+            $query->orWhere('tipe', 'Contract');
+        }
+        if ($internship) {
+            $query->orWhere('tipe', 'Internship');
+        }
+
+        // Eksekusi query dan ambil data pekerjaan
+        $pekerjaans = $query->paginate(10);
+
+        // Kembalikan data pekerjaan dalam bentuk tampilan Blade
+        return view('pekerjaan.filter_result', compact('pekerjaans'))->render();
     }
 }

@@ -348,13 +348,12 @@
                             <h5 class="card-title mb-0">{{ $pekerjaan->posisi }}</h5>
                         </div>
                         <h6 class="card-subtitle mb-2 text-muted">
-                            {{ $pekerjaan->user->first_name }} - {{ $pekerjaan->kota->nama }}
+                            {{ $pekerjaan->user->first_name }} - {{ $pekerjaan->kota->nama }}, Indonesia
                         </h6>
                         <p class="card-text">
                             {{ \Illuminate\Support\Str::limit($pekerjaan->desc_pekerjaan, 30) }}
                         </p>
-                        <a href="#" class="job-category me-2">Marketing</a>
-                        <a href="#" class="job-category">Design</a>
+                        <a href="#" class="job-category me-2">{{ $pekerjaan->kategori }}</a>
                     </div>
                 </div>
             </div> 

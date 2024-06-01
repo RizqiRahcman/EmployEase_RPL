@@ -92,19 +92,19 @@
                 <label class="form-label">Tipe Pekerjaan</label>
                 <div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipe" id="fullTime" value="fullTime">
+                        <input class="form-check-input" type="radio" name="tipe" id="fullTime" value="Full Time">
                         <label class="form-check-label" for="fullTime">Full Time</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipe" id="partTime" value="partTime">
+                        <input class="form-check-input" type="radio" name="tipe" id="partTime" value="Part Time">
                         <label class="form-check-label" for="partTime">Part Time</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipe" id="contract" value="contract">
+                        <input class="form-check-input" type="radio" name="tipe" id="contract" value="Contract">
                         <label class="form-check-label" for="contract">Contract</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="tipe" id="internship" value="internship">
+                        <input class="form-check-input" type="radio" name="tipe" id="internship" value="Internship">
                         <label class="form-check-label" for="internship">Internship</label>
                     </div>
                 </div>
@@ -113,23 +113,23 @@
                 <label class="form-label">Kategori Pekerjaan</label>
                 <div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="kategori" id="design" value="design">
+                        <input class="form-check-input" type="radio" name="kategori" id="design" value="Desain">
                         <label class="form-check-label" for="design">Desain</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="kategori" id="technology" value="technology">
+                        <input class="form-check-input" type="radio" name="kategori" id="technology" value="Teknologi">
                         <label class="form-check-label" for="technology">Teknologi</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="kategori" id="marketing" value="marketing">
+                        <input class="form-check-input" type="radio" name="kategori" id="marketing" value="Pemasaran">
                         <label class="form-check-label" for="marketing">Pemasaran</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="kategori" id="finance" value="finance">
+                        <input class="form-check-input" type="radio" name="kategori" id="finance" value="Keuangan">
                         <label class="form-check-label" for="finance">Keuangan</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="kategori" id="other" value="other">
+                        <input class="form-check-input" type="radio" name="kategori" id="other" value="Lainnya">
                         <label class="form-check-label" for="other">Lainnya</label>
                         <input type="text" class="form-control" id="otherCategory" placeholder="Kategori lain" style="display:none;">
                     </div>

@@ -43,7 +43,39 @@
           });
       });
     </script>
-
+    <script>
+        $(document).ready(function() {
+            // Fungsi untuk menangani peristiwa klik checkbox
+            function handleFilterChange() {
+                // Ambil nilai dari setiap checkbox
+                var fullTime = $('#fullTimeCheck').prop('checked');
+                var partTime = $('#partTimeCheck').prop('checked');
+                var contract = $('#contractCheck').prop('checked');
+                var internship = $('#internshipCheck').prop('checked');
+    
+                // Kirim permintaan AJAX ke server
+                $.ajax({
+                    url: '/filter-pekerjaan',
+                    method: "POST",
+                    data: {
+                        fullTime: fullTime,
+                        partTime: partTime,
+                        contract: contract,
+                        internship: internship,
+                        _token: '{{ csrf_token() }}' // Token CSRF Laravel
+                    },
+                    success: function(data) {
+                        // Perbarui bagian HTML yang menampilkan daftar pekerjaan
+                        $('#pekerjaan-container').html(data);
+                    }
+                });
+            }
+    
+            // Panggil fungsi handleFilterChange() saat checkbox diubah
+            $('.form-check-input').change(handleFilterChange);
+        });
+    </script>
+  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -138,19 +170,19 @@
                     <h5 class="klasifikasi">Tipe Pekerjaan</h5>
                     <!-- Checkbox filters for job type -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="fullTimeCheck">
+                        <input class="form-check-input" type="checkbox" value="Full Time" id="fullTimeCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="fullTimeCheck">Full Time</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="partTimeCheck">
+                        <input class="form-check-input" type="checkbox" value="Part Time" id="partTimeCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="partTimeCheck">Part Time</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="contractCheck">
+                        <input class="form-check-input" type="checkbox" value="Contract" id="contractCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="contractCheck">Kontrak</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="internshipCheck">
+                        <input class="form-check-input" type="checkbox" value="Internship" id="internshipCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="internshipCheck">Internship</label>
                     </div>
                     <!-- Add more filters as needed -->
@@ -159,35 +191,35 @@
                     <h5 class="klasifikasi">Kategori Pekerjaan</h5>
                     <!-- Checkbox filters for job type -->
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="desainCheck">
+                        <input class="form-check-input" type="checkbox" value="Desain" id="desainCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="desainCheck">Desain</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="pemasaranCheck">
+                        <input class="form-check-input" type="checkbox" value="Pemasaran" id="pemasaranCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="pemasaranCheck">Pemasaran</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="salesCheck">
+                        <input class="form-check-input" type="checkbox" value="Sales" id="salesCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="salesCheck">Sales</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="keuanganCheck">
+                        <input class="form-check-input" type="checkbox" value="Keuangan" id="keuanganCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="keuanganCheck">Keuangan</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="teknologiCheck">
+                        <input class="form-check-input" type="checkbox" value="Teknologi" id="teknologiCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="teknologiCheck">Teknologi</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="teknisiCheck">
+                        <input class="form-check-input" type="checkbox" value="Teknisi" id="teknisiCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="teknisiCheck">Teknisi</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="bisnisCheck">
+                        <input class="form-check-input" type="checkbox" value="Bisnis" id="bisnisCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="bisnisCheck">Bisnis</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="kesehatanCheck">
+                        <input class="form-check-input" type="checkbox" value="Kesehatan" id="kesehatanCheck" onchange="handleFilterChange()">
                         <label class="form-check-label" for="kesehatanCheck">Kesehatan</label>
                     </div>
                     <!-- Add more filters as needed -->
@@ -196,126 +228,74 @@
             </div>
     
             <!-- Kolom untuk melihat semua pekerjaan -->
-            <div class="col-lg-9">
+            <div class="col-lg-9" id="pekerjaan-container">
                 <div class="row">
                     <div class="col-lg-8">
                         <h4>Semua <a class="pekerjaan">Pekerjaan</a></h4>
-                        <h5>Menampilkan <a class="">#</a> hasil</h5>
+                        <h5>Menampilkan {{ $pagpekerjaans->total() }} hasil</h5>
                     </div>
-                    <div class="col-lg-4 text-right">
-                        <span>Sort By : </span>
-                        <select class="border-0">
-                            <option selected>Location</option>
-                            <option selected>1</option>
-                            <option selected>2</option>
-                            <!-- Add more options as needed -->
-                        </select>
-                  </div>
-              </div>
+                </div>
 
                 <!-- pekerjaan -->
-                 <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
+                @foreach ($pagpekerjaans as $pekerjaan)
+                    <div class="box"> 
+                        <div class="box-profile"></div>
+                        <div class="row box-text">
+                            <p class="a nopadding">{{ $pekerjaan->posisi }} </p>
+                            <div class="col-lg-12 nopadding ">
+                                <p class="b d-inline">{{ $pekerjaan->created_at->diffForHumans() }}</p>
+                                <i class="icon-circle" data-feather="circle"></i>
+                                <p class="bb d-inline">{{ $pekerjaan->kota->nama }}, Indonesia</p>
+                            </div>
+                            <div class="box-waktu box-status">
+                                <p class="c">{{ $pekerjaan->tipe }}</p>
+                            </div>
+                            <div class="col-lg-1">
+                                <p class="vertical-line"></p>
+                            </div>
+                            <div class="box-bidang box-status">
+                                <p class="d">{{ $pekerjaan->kategori }}</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-apply" type="button">Apply</button>
                     </div>
-                    <div class="box-waktu box-status">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang box-status">
-                      <p class="d">Teknologi</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-                </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu box-status">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang box-status">
-                      <p class="d">Teknologi</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-                </div>
-                <!-- pekerjaan -->
-                <div class="box"> 
-                  <div class="box-profile"></div>
-                  <div class="row box-text">
-                    <p class="a nopadding">Python Programmer</p>
-                      <div class="col-lg-12 nopadding ">
-                        <p class="b d-inline">2 hari yang lalu</p>
-                        <i class="icon-circle" data-feather="circle"></i>
-                      <p class="bb d-inline">Semarang Indonesia</p>
-                    </div>
-                    <div class="box-waktu box-status">
-                      <p class="c">Penuh waktu</p>
-                    </div>
-                    <div class="col-lg-1">
-                        <p class="vertical-line"></p>
-                    </div>
-                    <div class="box-bidang box-status">
-                      <p class="d">Teknologi</p>
-                    </div>
-                  </div>
-                  <button class="btn btn-apply"type="button">Apply</button>
-                </div>
-          </div>
-        </div>
-
-        <div class="container">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span class="move" data-feather="chevron-left"></span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span class="move" data-feather="chevron-right"></span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+                @endforeach
             </div>
+          </div>
 
-        </div>
+    <div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <!-- Tombol halaman sebelumnya -->
+            <li class="page-item {{ $pagpekerjaans->previousPageUrl() ? '' : 'disabled' }}">
+                <a class="page-link" href="{{ $pagpekerjaans->previousPageUrl() }}" aria-label="Previous">
+                    <span class="move" data-feather="chevron-left"></span>
+                </a>
+            </li>
+
+            <!-- Nomor-nomor halaman -->
+            @for ($i = 1; $i <= $pagpekerjaans->lastPage(); $i++)
+                <li class="page-item {{ $i == $pagpekerjaans->currentPage() ? 'active' : '' }}">
+                    <a class="page-link" href="{{ $pagpekerjaans->url($i) }}">{{ $i }}</a>
+                </li>
+            @endfor
+
+            <!-- Tombol halaman selanjutnya -->
+            <li class="page-item {{ $pagpekerjaans->nextPageUrl() ? '' : 'disabled' }}">
+                <a class="page-link" href="{{ $pagpekerjaans->nextPageUrl() }}" aria-label="Next">
+                    <span class="move" data-feather="chevron-right"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
     </div>
-    
-    
-    
 
-
-
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f2c387131d.js" crossorigin="anonymous"></script>
     <script>
       src="script_carikarja.js"
       feather.replace();
-    </script>  
-
+    </script>
 </body>
 </html>
