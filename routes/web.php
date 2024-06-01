@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Pekerjaan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -11,8 +12,8 @@ Route::get('/', function () {
 });
 
 Route::get('/logedin', function () {
-    return view('home_login');
-});
+    return view('home_login',['pekerjaans' => Pekerjaan::all()]);
+})->name('logendin');
 
 Route::get('/Daftar-Perusahaan', function () {
     return view('dafPerusahaan');
@@ -62,3 +63,4 @@ Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.
 Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);
 
 Route::post('/pekerjaan', [PekerjaanController::class, 'store'])->name('pekerjaan.store');
+Route::get('/tampilpekerjaan', [PekerjaanController::class, 'index'])->name('pekerjaan.index');

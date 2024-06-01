@@ -49,4 +49,16 @@ class PekerjaanController extends Controller
         // Simpan pesan sukses dalam sesi
     return redirect()->route('dashboard.company')->with('success', 'Pekerjaan telah diunggah');
     }
+
+    public function index()
+    {
+        // Mengambil semua data dari tabel pekerjaan
+        $pekerjaans = Pekerjaan::all();
+        // $pekerjaans = Pekerjaan::with(['user', 'kota'])->get();
+
+        dd($pekerjaans);
+
+        // Mengirim data ke view
+        return view('pekerjaan.index', compact('pekerjaans'));
+    }
 }

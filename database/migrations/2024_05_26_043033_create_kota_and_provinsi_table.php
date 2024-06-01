@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Menambahkan foreign key constraint
-            $table->foreign('provinsi_id')->references('id')->on('provinsi')->onDelete('cascade');
+            $table->foreign('provinsi_id')->references('id')->on('provinsis')->onDelete('cascade');
         });
     }
 

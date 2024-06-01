@@ -345,145 +345,28 @@
 
         <div class="row">
           <!-- Job Card -->
-          <div class="cardjob col-md-6 col-lg-4">
-
-            <div class="card job-card">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3 me-3">
-                  <div class="company-logo ">
-                    <img
-                      src="image/logo pertamina.png"
-                      alt="logo pt"
-                    />
-                  </div>
-                  <h5 class="card-title mb-0">Admin</h5>
+          @foreach ($pekerjaans->sortByDesc('created_at')->take(6) as $pekerjaan)
+            <div class="cardjob col-md-6 col-lg-4">
+                <div class="card job-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3 me-3">
+                            <div class="company-logo ">
+                                <img src="image/logo pertamina.png" alt="logo pt"/>
+                            </div>
+                            <h5 class="card-title mb-0">{{ $pekerjaan->posisi }}</h5>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                            {{ $pekerjaan->user->first_name }} - {{ $pekerjaan->kota->nama }}
+                        </h6>
+                        <p class="card-text">
+                            {{ \Illuminate\Support\Str::limit($pekerjaan->desc_pekerjaan, 30) }}
+                        </p>
+                        <a href="#" class="job-category me-2">Marketing</a>
+                        <a href="#" class="job-category">Design</a>
+                    </div>
                 </div>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  Pertamina - Semarang, Jawa Tengah
-                </h6>
-                <p class="card-text">
-                  Pertamina mencari marketer planner yang dapat meny...
-                </p>
-                <a href="#" class="job-category me-2">Marketing</a>
-                <a href="#" class="job-category">Design</a>
-              </div>
-            </div>
-          </div> 
-          <div class="col-md-6 col-lg-4">
-            <div class="card job-card">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="company-logo me-3">
-                    <img
-                      src="image/logo pertamina.png"
-                      alt="logo pt"
-                    />
-                  </div>
-                  <h5 class="card-title mb-0">Human Capital</h5>
-                </div>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  Pertamina - Semarang, Jawa Tengah
-                </h6>
-                <p class="card-text">
-                  Pertamina mencari marketer planner yang dapat meny...
-                </p>
-                <a href="#" class="job-category me-2">Marketing</a>
-                <a href="#" class="job-category">Design</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card job-card">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="company-logo me-3">
-                    <img
-                      src="image/logo pertamina.png"
-                      alt="logo pt"
-                    />
-                  </div>
-                  <h5 class="card-title mb-0">Marketing Planner</h5>
-                </div>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  Pertamina - Semarang, Jawa Tengah
-                </h6>
-                <p class="card-text">
-                  Pertamina mencari marketer planner yang dapat meny...
-                </p>
-                <a href="#" class="job-category me-2">Marketing</a>
-                <a href="#" class="job-category">Design</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card job-card">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="company-logo me-3">
-                    <img
-                      src="image/logo pertamina.png"
-                      alt="logo pt"
-                    />
-                  </div>
-                  <h5 class="card-title mb-0">IT Support</h5>
-                </div>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  Pertamina - Semarang, Jawa Tengah
-                </h6>
-                <p class="card-text">
-                  Pertamina mencari marketer planner yang dapat meny...
-                </p>
-                <a href="#" class="job-category me-2">Marketing</a>
-                <a href="#" class="job-category">Design</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card job-card">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="company-logo me-3">
-                    <img
-                      src="image/logo pertamina.png"
-                      alt="logo pt"
-                    />
-                  </div>
-                  <h5 class="card-title mb-0">Frontend Developer</h5>
-                </div>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  Pertamina - Semarang, Jawa Tengah
-                </h6>
-                <p class="card-text">
-                  Pertamina mencari marketer planner yang dapat meny...
-                </p>
-                <a href="#" class="job-category me-2">Marketing</a>
-                <a href="#" class="job-category">Design</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card job-card">
-              <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="company-logo me-3">
-                    <img
-                      src="image/logo pertamina.png"
-                      alt="logo pt"
-                    />
-                  </div>
-                  <h5 class="card-title mb-0">Ui Designer</h5>
-                </div>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  Pertamina - Semarang, Jawa Tengah
-                </h6>
-                <p class="card-text">
-                  Pertamina mencari marketer planner yang dapat meny...
-                </p>
-                <a href="#" class="job-category me-2">Marketing</a>
-                <a href="#" class="job-category">Design</a>
-              </div>
-            </div>
-          </div>
+            </div> 
+        @endforeach
         </div>
       </div>
     

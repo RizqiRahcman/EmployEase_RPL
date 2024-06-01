@@ -12,8 +12,8 @@ class Kota extends Model
         'nama',
     ];
 
-    public function pekerjaans()
+    public function pekerjaan()
     {
-        return $this->hasMany(Pekerjaan::class);
+        return $this->hasMany(Pekerjaan::class, 'kota_id');
     }
 }

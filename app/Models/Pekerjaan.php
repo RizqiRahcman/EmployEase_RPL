@@ -21,13 +21,15 @@ class Pekerjaan extends Model
         'perusahaan_id'
     ];
 
-    // public function kota()
-    // {
-    //     return $this->belongsTo(Kota::class);
-    // }
+    public function kota()
+    {
+        return $this->belongsTo(Kota::class, 'kota_id');
+    }
 
-    // public function perusahaan()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'perusahaan_id');
+    }
+
+
 }

@@ -31,9 +31,9 @@ class LoginController extends Controller
             // Periksa peran pengguna
             $user = Auth::user();
             if ($user->role == 'pelamar') {
-                return redirect('/logedin');
+                return redirect('logedin');
             } elseif ($user->role == 'perusahaan') {
-                return redirect('/DashComp');
+                return redirect('dashboard.company');
             }
         }    
         return redirect('/signup'); 

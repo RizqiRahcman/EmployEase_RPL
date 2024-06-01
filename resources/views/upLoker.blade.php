@@ -72,7 +72,7 @@
             {{ csrf_field() }}
             <div class="mb-3">
                 <label for="position" class="form-label">Posisi / Jabatan</label>
-                <input type="text" class="form-control" id="position" name="posisi" placeholder="Masukkan posisi atau jabatan yang dibutuhkan (misalnya Cyber Security Analyst)">
+                <input type="text" class="form-control" id="position" name="posisi" placeholder="Masukkan posisi atau jabatan yang dibutuhkan (misalnya Cyber Security Analyst)" maxlength="50">
             </div>
             <div class="mb-3">
                 <label for="jobDescription" class="form-label">Deskripsi Pekerjaan</label>
