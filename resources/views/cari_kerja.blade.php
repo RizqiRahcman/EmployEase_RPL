@@ -179,8 +179,8 @@
                         <label class="form-check-label" for="teknologiCheck">Teknologi</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="teknologiCheck">
-                        <label class="form-check-label" for="teknologiCheck">Teknisi</label>
+                        <input class="form-check-input" type="checkbox" value="" id="teknisiCheck">
+                        <label class="form-check-label" for="teknisiCheck">Teknisi</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="bisnisCheck">
@@ -192,31 +192,7 @@
                     </div>
                     <!-- Add more filters as needed -->
                 </aside>
-                <aside>
-                    <h5 class="klasifikasi">Pengalaman</h5>
-                    <!-- Checkbox filters for job type -->
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="pumulaCheck">
-                        <label class="form-check-label" for="pemulaCheck">Tingkat pemula</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="seniorCheck">
-                        <label class="form-check-label" for="seniorCheck">Senior</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="satuCheck">
-                        <label class="form-check-label" for="satuCheck">1-2 Tahun pengalaman</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="tigaCheck">
-                        <label class="form-check-label" for="tigaCheck">3-5 Tahun pengalaman</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="limaCheck">
-                        <label class="form-check-label" for="limaCheck">>5 Tahun pengalaman</label>
-                    </div>
-                    <!-- Add more filters as needed  -->
-                </aside>
+                
             </div>
     
             <!-- Kolom untuk melihat semua pekerjaan -->
@@ -256,9 +232,6 @@
                     <div class="box-bidang box-status">
                       <p class="d">Teknologi</p>
                     </div>
-                    <div class="box-pengalaman box-status">
-                      <p class="e">Pemula</p>
-                    </div>
                   </div>
                   <button class="btn btn-apply"type="button">Apply</button>
                 </div>
@@ -281,9 +254,6 @@
                     <div class="box-bidang box-status">
                       <p class="d">Teknologi</p>
                     </div>
-                    <div class="box-pengalaman box-status">
-                      <p class="e">Pemula</p>
-                    </div>
                   </div>
                   <button class="btn btn-apply"type="button">Apply</button>
                 </div>
@@ -305,9 +275,6 @@
                     </div>
                     <div class="box-bidang box-status">
                       <p class="d">Teknologi</p>
-                    </div>
-                    <div class="box-pengalaman box-status">
-                      <p class="e">Pemula</p>
                     </div>
                   </div>
                   <button class="btn btn-apply"type="button">Apply</button>
