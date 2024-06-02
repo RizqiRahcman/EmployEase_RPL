@@ -68,34 +68,47 @@ class PekerjaanController extends Controller
     //     return view('pekerjaan.page', compact('pagpekerjaans'));
     // }
 
-    public function filterPekerjaan(Request $request)
+    public function index(Request $request)
     {
-        // Ambil nilai filter dari permintaan AJAX
-        $fullTime = $request->input('fullTime');
-        $partTime = $request->input('partTime');
-        $contract = $request->input('contract');
-        $internship = $request->input('internship');
-
-        // Query data pekerjaan berdasarkan filter yang dipilih
         $query = Pekerjaan::query();
-
-        if ($fullTime) {
-            $query->orWhere('tipe', 'Full Time');
+    
+        if (!empty($request->search)) {
+            $query->where('posisi', 'like', '%' . $request->search . '%');
         }
-        if ($partTime) {
-            $query->orWhere('tipe', 'Part Time');
+    
+        if (!empty($request->search_lokasi)) {
+            $namaKota = $request->search_lokasi;
+            $kota = Kota::where('nama', $namaKota)->first();
+    
+            if ($kota) {
+                $query->where('kota_id', $kota->id);
+            } else {
+                return back()->withErrors(['search_lokasi' => 'Kota tidak ditemukan']);
+            }
         }
-        if ($contract) {
-            $query->orWhere('tipe', 'Contract');
+    
+        $selectedTipe = $request->input('tipe', []);
+        $selectedKategori = $request->input('kategori', []);
+    
+        if (!empty($selectedTipe)) {
+            $query->whereIn('tipe', $selectedTipe);
         }
-        if ($internship) {
-            $query->orWhere('tipe', 'Internship');
+    
+        if (!empty($selectedKategori)) {
+            $query->whereIn('kategori', $selectedKategori);
         }
-
-        // Eksekusi query dan ambil data pekerjaan
-        $pekerjaans = $query->paginate(10);
-
-        // Kembalikan data pekerjaan dalam bentuk tampilan Blade
-        return view('pekerjaan.filter_result', compact('pekerjaans'))->render();
+    
+        $pagpekerjaans = $query->orderByDesc('created_at')->paginate(6);
+        $pagpekerjaans->appends($request->all()); // Append all query parameters to pagination links
+        $jumlah = $pagpekerjaans->count();
+    
+        return view('cari_kerja', [
+            'pagpekerjaans' => $pagpekerjaans,
+            'request' => $request,
+            'jumlah' => $jumlah,
+            'selectedTipe' => $selectedTipe,
+            'selectedKategori' => $selectedKategori
+        ]);
     }
+    
 }

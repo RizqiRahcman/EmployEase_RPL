@@ -33,7 +33,7 @@ class LoginController extends Controller
             if ($user->role == 'pelamar') {
                 return redirect('logedin');
             } elseif ($user->role == 'perusahaan') {
-                return redirect('dashboard.company');
+                return redirect('/DashComp');
             }
         }    
         return redirect('/signup'); 
