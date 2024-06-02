@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarNav"></div>
         
             <!-- Desktop Button -->
-            <button class="btn btn-profil"><a href="#">Kembali ke Profil</a></button>
+            <button class="btn btn-profil"><a href="/DashComp">Kembali ke Profil</a></button>
           </div>
         </nav>
     </div>

@@ -21,8 +21,9 @@
     <body id="page-top py-5">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Tentang" onclick="goBack()">Kembali</a></li>
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="#Tentang" onclick="goBack()">Kembali</a></li>
+                <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="/Edit-Profil">Edit Profil</a></li>
             </ul>
             <script>
                 function goBack() {
