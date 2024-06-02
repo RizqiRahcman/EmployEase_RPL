@@ -58,7 +58,7 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
-.text-danger {
+.text-danger:hover {
     font-weight: bolder;
 }
 
@@ -119,6 +119,16 @@ body {
 .body-atas span {
     color: white;
     font-weight: bolder;
+}
+hr {
+    border: none;
+    height: 1px;
+    background-color: lightslategrey;
+    margin: 5px 0;
+}
+
+.keterangan span {
+    color: var(--c-brand);
 }
 
 /* Ringkasan Pelamar */

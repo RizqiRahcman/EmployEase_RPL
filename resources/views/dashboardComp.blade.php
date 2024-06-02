@@ -41,7 +41,7 @@
               ><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a
             >
             <a
-              href="#"
+              href="/Pelamar"
               class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
               ><i class="fas fa-file me-2"></i>Pelamar</a
             >
@@ -49,6 +49,11 @@
               href="#"
               class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
               ><i class="fas fa-search me-2"></i>Lowongan</a
+            >
+            <a
+              href="/Edit-Company"
+              class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+              ><i class="fas  fa-edit me-2"></i>Edit Profil</a
             >
             <div>
               <a
@@ -89,15 +94,27 @@
 
           <!-- Card-start -->
           <div class="row">
-            <div class="col-md-3">
-              <div class="card card-lowongan mb-3">
+            <div class="col-md-6">
+              <div class="card mb-3">
+                  <div class="card-body">
+                    <h2 class="keterangan">Keterangan <span>Perusahaan</span></h2>
+                    <hr>
+                    <h3 class="mt-3">Alamat</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aut fugiat similique.</p>
+                    <h3 class="mt-3">Nomor Telepon</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h3 class="mt-3">Deskripsi</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium veniam aperiam, qui quod a cupiditate veritatis perferendis eligendi accusantium asperiores?</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-lowongan mb-3">
                   <div class="card-body body-atas card-lowongan">
                     <h5 class="card-title">Lowongan</h5>
                     <h2><span>12</span></h2>
                   </div>
                 </div>
-            </div>
-            <div class="col-md-5">
               <div class="card card-ringkasan">
                 <div class="card-body body-atas pelamar-card"> 
                   <h5 class="card-title">Ringkasan Pelamar</h5>

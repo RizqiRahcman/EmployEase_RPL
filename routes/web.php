@@ -41,10 +41,20 @@ Route::get('/profil', function () {
 });
 
 
-
-
 Route::get('/Up-Loker', function () {
     return view('upLoker');
+});
+
+Route::get('/Pelamar', function () {
+    return view('pelamar');
+});
+
+Route::get('/Edit-Profil', function () {
+    return view('editProfil');
+});
+
+Route::get('/Edit-Company', function () {
+    return view('editProfilCompany');
 });
 
 Route::get('/DashComp', function () {
