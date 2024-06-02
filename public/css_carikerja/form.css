@@ -97,5 +97,5 @@ body {
 
 .d-grid .disabled{
   background-color: var(--c-brand);
-  color: white;
+  color: white ;
 }
