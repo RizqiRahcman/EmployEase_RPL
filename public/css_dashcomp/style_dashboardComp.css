@@ -33,6 +33,16 @@ body {
 .list-group-item:hover {
     color: var(--c-brand);
 }
+.sidebar {
+    position: fixed; /* Menetapkan sidebar pada posisi tetap */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%; /* Sesuaikan dengan lebar sidebar Anda */
+    background-color: #f8f9fa; /* Sesuaikan dengan warna background sidebar Anda */
+    padding: 0;
+    overflow-y: auto; /* Menambahkan scroll jika konten sidebar melebihi tinggi viewport */
+}
 
 .sidebar {
     height: 100vh;
@@ -48,13 +58,18 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
+.text-danger {
+    font-weight: bolder;
+}
+
 /* Sidebar Ends */
 /* Top Bar */
 .company-logo img {
     margin-right: 1rem;
 }
 .content {
-    padding: 20px;
+    margin-left: 16%; /* Sesuaikan dengan lebar sidebar Anda */
+    padding: 15px;
 }
 
 .btn-primary {
@@ -69,28 +84,46 @@ body {
     background-color: var(--c-brand-light);
     border-color: transparent;
 }
+
+.btn-outline-primary {
+    color: #ff6000;
+    border-color: #ff6000;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    background-color: var(--c-brand);
+    border-color: transparent;
+}
 /* top-bar End */
 .content .btn {
     margin-right: 2.5rem;
 }
+.card-lowongan,
+.card-ringkasan {
+    background-color: #6157d9;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .card {
     margin-bottom: 20px;
 }
-.chart-bar {
-    height: 150px;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
+.pelamar-card {
+    padding: 20px 20px 40px 20px;
 }
-.chart-bar div {
-    width: 14%;
-    margin: 0 2px;
-    background-color: #6c757d;
-    text-align: center;
-    color: #fff;
+.body-atas p {
+    margin-right: 10px;
 }
-.chart-bar .applied {
-    background-color: #f0ad4e;
+.body-atas span {
+    color: white;
+    font-weight: bolder;
+}
+
+/* Ringkasan Pelamar */
+.intern {
+    margin-right: 15px;
 }
 .user-profile {
     display: flex;
@@ -100,4 +133,39 @@ body {
 .user-profile img {
     border-radius: 50%;
     margin-right: 10px;
+}
+/* Pelamar */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.contain {
+    font-weight: 500;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.table td button {
+    font-size: 0.875rem;
+    padding: 6px;
+}
+
+.table td .badge {
+    font-size: 0.875rem;
+    padding: 0.4em 0.7em;
+}
+
+.table-sm th,
+.table-sm td {
+    padding: 1.2rem;
 }

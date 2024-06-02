@@ -30,7 +30,7 @@
         <!-- Sidebar Start -->
         <div class="col-md-3 col-lg-2 sidebar p-0">
           <div class="d-flex flex-column align-items-center">
-            <a href="#" class="text-center my-4">
+            <a href="/logedin" class="text-center my-4">
               <img src="image/logo.png" alt="Logo" width="180" />
             </a>
           </div>
@@ -52,7 +52,7 @@
             >
             <div>
               <a
-                href="#"
+                href="/"
                 class=" text-danger list-group-item list-group-item-action bg-transparent second-text fw-bold"
                 ><i class="fas fa-power-off me-2"></i>log Out</a
               >
@@ -87,79 +87,111 @@
             </div>
           </div>
 
-          <!-- Stats Section -->
+          <!-- Card-start -->
           <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Statistik Lowongan</h5>
-                  <div class="chart-bar">
-                    <div class="applied" style="height: 60%">Sen</div>
-                    <div class="applied" style="height: 40%">Sel</div>
-                    <div style="height: 50%">Rab</div>
-                    <div class="applied" style="height: 70%">Kam</div>
-                    <div style="height: 60%">Jum</div>
-                    <div style="height: 30%">Sab</div>
-                    <div style="height: 20%">Min</div>
+            <div class="col-md-3">
+              <div class="card card-lowongan mb-3">
+                  <div class="card-body body-atas card-lowongan">
+                    <h5 class="card-title">Lowongan</h5>
+                    <h2><span>12</span></h2>
                   </div>
                 </div>
-              </div>
             </div>
-            <div class="col-md-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Lowongan Aktif</h5>
-                  <h2>12</h2>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
+            <div class="col-md-5">
+              <div class="card card-ringkasan">
+                <div class="card-body body-atas pelamar-card"> 
                   <h5 class="card-title">Ringkasan Pelamar</h5>
-                  <p>Internship: 32</p>
-                  <p>Contract: 30</p>
+                  <p class = "d-inline fulltime">Full Time: <span>30</span></p>
+                  <p class = "d-inline fulltime">Part Time: <span>30</span></p>
+                  <p class = "d-inline fulltime">Kontrak: <span>30</span></p>
+                  <p class="d-inline intern" >Internship: <span>32</span></p>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Card-end -->
+
           <!-- Job Listings -->
           <div class="card">
-            <div class="card-body">
+            <div class="card-body ">
               <h5 class="card-title">Pelamar Terbaru</h5>
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <h6 class="mb-1">Social Media Assistant</h6>
-                      <small>Nomad - Paris, France - Full-Time</small>
+              
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Nama Lengkap</th>
+
+                  <th>Tanggal</th>
+                  <th>Posisi</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody >
+                <!-- Applicants Rows Start -->
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="image/profile.jpg"
+                        alt="Profile"
+                        class="rounded-circle profile-img"
+                      />
+                      <span class="ms-3">Jake Gyll</span>
                     </div>
-                    <small class="text-muted">In Review</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <h6 class="mb-1">Social Media Assistant</h6>
-                      <small>Nomad - Paris, France - Full-Time</small>
+                  </td>
+                  <td>13 July, 2021</td>
+                  <td>Designer</td>
+                  <td>
+                    <button class="btn btn-outline-primary btn-sm">
+                      Lihat Profil
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="image/profile.jpg"
+                        alt="Profile"
+                        class="rounded-circle profile-img"
+                      />
+                      <span class="ms-3">Abraham</span>
                     </div>
-                    <small class="text-muted">In Review</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <h6 class="mb-1">Social Media Assistant</h6>
-                      <small>Nomad - Paris, France - Full-Time</small>
+                  </td>
+
+                  <td>13 July, 2021</td>
+                  <td>JavaScript Dev</td>
+                  <td>
+                    <button class="btn btn-outline-primary btn-sm">
+                      Lihat Profil
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="image/profile.jpg"
+                        alt="Profile"
+                        class="rounded-circle profile-img"
+                      />
+                      <span class="ms-3">Kinoy</span>
                     </div>
-                    <small class="text-muted">In Review</small>
-                  </div>
-                </a>
-              </div>
+                  </td>
+                  <td>12 July, 2021</td>
+                  <td>Golang Dev</td>
+                  <td>
+                    <button class="btn btn-outline-primary btn-sm">
+                      Lihat Profil
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Applicants Rows End -->
+              </tbody>
+            </table>
+          </div>
             </div>
           </div>
           <div class="card">
