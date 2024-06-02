@@ -57,7 +57,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/signup', [LoginController::class, 'registrasi'])->name('registrasi');
 Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
 Route::get('/Form-Lamaran', [ApplicationController::class, 'index'])->name('index');
-
+Route::get('/lamar/{pekerjaan}', [ApplicationController::class, 'create'])->name('lamaran.create');
 Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');
 Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);
 
