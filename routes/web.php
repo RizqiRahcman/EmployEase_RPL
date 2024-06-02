@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\PekerjaanController;
+use App\Http\Controllers\ApplicationController;
 
 Route::get('/', function () {
     return view('home',['pekerjaans' => Pekerjaan::all()]);
@@ -40,9 +41,6 @@ Route::get('/profil', function () {
 });
 
 
-Route::get('/Form-Lamaran', function () {
-    return view('form_lamaran');
-});
 
 
 Route::get('/Up-Loker', function () {
@@ -58,6 +56,7 @@ Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin'
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/signup', [LoginController::class, 'registrasi'])->name('registrasi');
 Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
+Route::get('/Form-Lamaran', [ApplicationController::class, 'index'])->name('index');
 
 Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');
 Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);

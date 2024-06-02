@@ -1,0 +1,140 @@
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 350;
+}
+
+.navbar-brand {
+  font-family: 'inter';
+  font-size: 32px;
+  font-weight: bold;
+  color: #202430;
+  cursor: none;
+}
+
+.btn-profil {
+  height: 50px;
+  display: inline-flex; /* Menggunakan inline-flex untuk membuat button menyesuaikan panjang teks */
+  align-items: center; /* Vertikal tengah */
+  justify-content: center; /* Horizontal tengah */
+  padding: 10px 20px; /* Sesuaikan padding sesuai kebutuhan */
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: #FF6000; /* Warna teks di dalam button */
+  text-align: center;
+  border-color: #FF6000;
+  border: 1px solid #FF6000; /* Menghilangkan border default button */
+  border-radius: 8px; /* Untuk membuat sudut button melengkung */
+  cursor: pointer; /* Mengubah kursor saat berada di atas button */
+  white-space: nowrap; /* Mencegah teks button menjadi beberapa baris */
+}
+/* Opsional: hover efek untuk button */
+.btn-profil:hover {
+  background-color: #FF6000;
+  color: white;
+}
+.btn-profil a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn-save {
+  height: 50px;
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #FF6000;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap; 
+}
+.btn-save:hover{
+  background-color: white;
+  color: #FF6000;
+  border-color: #FF6000;
+  border: 1px solid #FF6000;
+}
+
+.full-width-container {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+.bottom-line {
+  height: 0.7px; /* Ketebalan garis */
+  background-color: #D6DDEB; /* Warna garis */
+}
+
+.judul{
+  font-family: 'epilogue';
+  font-size: 18px;
+  font-weight: 600;
+}
+.keterangan{
+  font-family: 'epilogue';
+  font-size: 16px;
+  font-weight: 400;
+  color: #515B6F;
+}
+
+.form-control {
+  resize: none; /* Prevent manual resizing by the user */
+  overflow-wrap: break-word; /* Ensure words break correctly */
+}
+
+.profile-picture {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #ddd;
+}
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.file-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.file-input-container .profile-picture {
+  flex-shrink: 0;
+}
+.file-input-container .file-input {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+/* #profilePicture {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: 50%;
+} */
+
+.form-label {
+  font-family: 'epilogue';
+  font-size: 16px;
+  font-weight: 600;
+}
+.form-control:focus {
+  border-color: #FFE6C7;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 38, 0, 0.11);
+}
