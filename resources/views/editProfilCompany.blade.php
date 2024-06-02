@@ -22,7 +22,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
           <div class="container d-flex justify-content-between mt-2 me-0">
-            <a class="navbar-brand" href="#">Edit Profil Company</a>
+            <a class="navbar-brand" href="#">Edit Profil perusahaan</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -49,7 +49,7 @@
     <div class="row">
         <!-- keterangan -->
         <div class="col-lg-5 mt-5">
-            <h1 class="judul mt-2">Foto Profil Company</h1>
+            <h1 class="judul mt-2">Foto Profil Perusahaan</h1>
             <h2 class="keterangan">Gambar ini akan ditampilkan secara publik sebagai foto profil perusahaan Anda, membantu para pencari kerja mengenali perusahaan Anda!</h2>
         </div>
         <!-- input -->
@@ -74,13 +74,13 @@
     <div class="row">
       <!-- keterangan -->
       <div class="col-lg-5 mt-5">
-        <h1 class="judul mt-2">Deskripsi Company</h1>
+        <h1 class="judul mt-2">Deskripsi Perusahaan</h1>
         <h2 class="keterangan"> Isi informasi mengenai perusahaan Anda dengan lengkap dan akurat agar pencari kerja dapat mengenal perusahaan Anda lebih baik.</h2>
       </div>
       <!-- input -->
       <div class="col-lg-7 mt-5">
         <!-- input nama company -->
-        <label for="namaCompany" class="form-label">Nama Company</label>
+        <label for="namaCompany" class="form-label">Nama Perusahaan</label>
         <input class="form-control" type="text"  placeholder=" " required>
         <!-- input alamat -->
         <label for="alamat" class="form-label d-inline">Alamat</label>
