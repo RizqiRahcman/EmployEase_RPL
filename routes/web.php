@@ -19,9 +19,9 @@ Route::get('/Daftar-Perusahaan', function () {
     return view('dafPerusahaan');
 });
 
-Route::get('/Cari-Kerja', function () {
-    return view('cari_kerja',['pekerjaans' => Pekerjaan::all()],['pagpekerjaans' => Pekerjaan::orderByDesc('created_at')->paginate(6)]);
-});
+Route::get('/Cari-Kerja', [PekerjaanController::class, 'index'])->name('cari_kerja');
+
+// Route::get('/Cari-Kerja-filter', [PekerjaanController::class, 'filter'])->name('apply_filter');
 
 // Route::get('/login', function () {
 //     return view('login');
