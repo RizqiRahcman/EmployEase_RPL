@@ -11,31 +11,31 @@ class LamaranController extends Controller
 {
     public function create(Pekerjaan $pekerjaan)
     {
-        return view('lamaran.create', compact('pekerjaan'));
+        return view('form_lamaran', compact('pekerjaan'));
     }
 
     public function store(Request $request)
     {
-        // Validasi input
+        // Validasi data yang diterima dari request
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20',
-            'message' => 'required|string',
-            'pekerjaan_id' => 'required|exists:pekerjaans,id',
+            'phone' => 'required|string|max:15',
+            'message' => 'required|string|max:5000',
         ]);
 
-        // Simpan data lamaran
+        // Dapatkan ID pengguna yang sedang login
+        $userId = Auth::id();
+
+        // Simpan data lamaran ke dalam tabel `lamarans`
         Lamaran::create([
-            'pekerjaan_id' => $request->pekerjaan_id,
-            'user_id' => Auth::id(),  // Ambil ID user yang sedang login
-            'nama' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'surat_lamaran' => $request->message,
+            'nama' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
+            'email' => Auth::user()->email,
+            'phone' => $request->input('phone'),
+            'surat_lamaran' => $request->input('message'),
+            'pekerjaan_id' => $request->input('pekerjaan_id'),
+            'user_id' => $userId,
         ]);
 
-        // Redirect dengan pesan sukses
-        return redirect()->route('index')->with('success', 'Lamaran telah berhasil dikirim');
+        // Redirect ke halaman form dengan pesan sukses
+        return redirect()->route('lamaran.create', ['pekerjaan' => $request->input('pekerjaan_id')])->with('success', 'Lamaran berhasil dikirim.');
     }
 }

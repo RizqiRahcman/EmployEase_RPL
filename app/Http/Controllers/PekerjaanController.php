@@ -110,5 +110,10 @@ class PekerjaanController extends Controller
             'selectedKategori' => $selectedKategori
         ]);
     }
+    public function showForm($id)
+    {
+        $pekerjaan = Pekerjaan::findOrFail($id);
+        return view('form_lamaran', compact('pekerjaan'));
+    }
     
 }

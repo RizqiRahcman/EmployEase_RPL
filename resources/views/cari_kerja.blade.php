@@ -221,7 +221,7 @@
                                     <p class="d">{{ $pekerjaan->kategori }}</p>
                                 </div>
                             </div>
-                            <button class="btn btn-apply" type="button">Apply</button>
+                            <button class="btn btn-apply" type="button" onclick="location.href='{{ route('apply.form', ['id' => $pekerjaan->id]) }}'">Apply</button>
                         </div>
                     @endforeach
                 @else
