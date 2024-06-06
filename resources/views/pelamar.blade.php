@@ -51,13 +51,13 @@
                             ><i class="fas fa-search me-2"></i>Lowongan</a
                         >
                         <a
-                            href="#"
+                            href="/Edit-Company"
                             class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                             ><i class="fas  fa-edit me-2"></i>Edit Profil</a
                             >
                         <div>
                             <a
-                                href="#"
+                                href="/"
                                 class="text-danger list-group-item list-group-item-action bg-transparent second-text fw-bold"
                                 ><i class="fas fa-power-off me-2"></i>log Out</a
                             >

@@ -50,12 +50,6 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" name="password" placeholder="Enter password">
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                              Remember me
-                            </label>
-                        </div>
                         <button type="submit" class="login btn">Login</button>
                     </form>
                     <h3 class="sign-up-text"> Don't have an account? <a id="sign-up-link" href="/signup">Sign Up</a></h3>

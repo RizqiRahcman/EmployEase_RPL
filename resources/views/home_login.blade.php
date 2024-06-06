@@ -66,7 +66,7 @@
               <li><a class="dropdown-item" href="/profil">Lihat Akun</a></li>
               <li><a class="dropdown-item" href="#">Lamaran Tersampai</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="/">Log Out</a></li>
+              <li><a class="dropdown-item text-danger" href="{{ route('logout') }}">Log Out</a></li>
             </ul>
           </li>
           
@@ -329,7 +329,7 @@
     <section class="section-padding mt-5">
       <div class="container py-5">
         <div class="section-tittle mt-3">
-          <h1>Pekerjaan <span>Favorit</span></h1>
+          <h1>Pekerjaan <span>Terbaru</span></h1>
           <p class="text-right">
             <a href="#">Lihat semua lowongan </a>
           </p>
