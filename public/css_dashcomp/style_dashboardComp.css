@@ -99,6 +99,22 @@ body {
 .content .btn {
     margin-right: 2.5rem;
 }
+.card-tittle-link a {
+    text-align: end;
+    margin-bottom: 2px;
+    text-decoration: none;
+    color: var(--c-brand);
+}
+
+.card-tittle-link:hover a {
+    color: var(--c-brand-light);
+}
+
+.card-tittle-link p {
+    margin-bottom: 4px;
+    font-size: 15px;
+    margin-right: 5px;
+}
 .card-lowongan,
 .card-ringkasan {
     background-color: #6157d9;
@@ -129,6 +145,7 @@ hr {
 
 .keterangan span {
     color: var(--c-brand);
+    font-weight: 700;
 }
 
 /* Ringkasan Pelamar */
