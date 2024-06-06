@@ -37,9 +37,9 @@ Route::get('/Company-Profile', function () {
     return view('profilePerusahaan');
 });
 
-Route::get('/profil', function () {
+Route::get('/prof', function () {
     return view('profil_jobseeker');
-});
+})->name('profil.jobseeker');
 
 
 Route::get('/Up-Loker', function () {
@@ -50,9 +50,9 @@ Route::get('/Pelamar', function () {
     return view('pelamar');
 });
 
-Route::get('/Edit-Profil', function () {
-    return view('editProfil');
-});
+// Route::get('/Edit-Profil', function () {
+//     return view('editProfil');
+// });
 
 Route::get('/Edit-Company', function () {
     return view('editProfilCompany');
@@ -73,13 +73,11 @@ Route::middleware(['auth'])->group(function () {
 
     // Rute untuk menyimpan data lamaran
     Route::post('/lamar', [LamaranController::class, 'store'])->name('lamaran.store');
-
-    Route::get('/edit-profil', [ProfileController::class, 'edit'])->name('profile.edit');
-
-    Route::post('/edit-profil', [ProfileController::class, 'update'])->name('profile.update');
-    Route::post('/user/update-image', [UserController::class, 'updateImage'])->name('update.image');
-
 });
+Route::get('/edit-profil', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('/user/update-image', [UserController::class, 'updateImage'])->name('update.image');
+
 Route::get('/apply/{id}', [PekerjaanController::class, 'showForm'])->name('apply.form');
 Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');
 Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);
@@ -87,3 +85,7 @@ Route::get('/ajax-autocomplete', [SearchController::class, 'cari']);
 Route::post('/pekerjaan', [PekerjaanController::class, 'store'])->name('pekerjaan.store');
 // Route::get('/tampilpekerjaan', [PekerjaanController::class, 'page'])->name('pekerjaan.page');
 Route::post('/filter-pekerjaan', [PekerjaanController::class, 'filterPekerjaan'])->name('filter.pekerjaan');
+
+Route::post('/test', function () {
+    return view('dashboardComp');
+});

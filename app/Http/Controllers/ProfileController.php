@@ -22,78 +22,62 @@ class ProfileController extends Controller
         $userProfile = $user->jobseeker->first();
 
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'first_name' => 'nullable|string|max:255',
+            'last_name' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'alamat' => 'required|string|max:255',
-            'no' => 'required|numeric|min:11',
-            'tgl_lahir' => 'required|date',
-            'jk' => 'required|string',
-            'desc' => 'nullable|string',
-            'pengalaman_id' => 'nullable|integer',
-            'pendidikan_id' => 'nullable|integer',
+            'alamat' => 'nullable|string|max:255',
+            'no' => 'nullable|numeric|min:11',
+            'tgl_lahir' => 'nullable|date',
+            'jk' => 'nullable|string', // tambahkan validasi untuk jenis kelamin
+            'desc' => 'nullable|string', // tambahkan validasi untuk deskripsi
             'keterampilan' => 'nullable|string',
         ]);
 
+        // Handle image upload if provided
         if ($request->hasFile('image')) {
-            $image = file_get_contents($request->file('image'));
-            $mime = $request->file('image')->getMimeType();
-            $user->image = $image;
-            $user->image_mime = $mime;
+            $file = $request->file('image');
+            $filename = time().'.'.$file->getClientOriginalExtension();
+
+            $path = 'gambar/';
+            $file->move(public_path($path), $filename);
+            
+            // Set the image path for the user
+            $user->image = $path.$filename;
         }
 
         // Update data user
+        $firstName = $request->filled('first_name') ? $request->input('first_name') : $user->first_name;
+        $lastName = $request->filled('last_name') ? $request->input('last_name') : $user->last_name;
+
         $user->update([
-            'first_name' => $request->input('first_name'),
-            'last_name' => $request->input('last_name'),
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'image' => isset($user->image) ? $user->image : $user->image, // Only update if the image was set
         ]);
 
-        // Update data user profile
-        $userProfile->update([
-            'alamat' => $request->input('alamat'),
-            'no' => $request->input('no'),
-            'tgl_lahir' => $request->input('tgl_lahir'),
-            'jk' => $request->input('jenisKelamin'),
-            'desc' => $request->input('desc'),
-            'pengalaman_id' => $request->pengalaman_id,
-            'pendidikan_id' => $request->pendidikan_id,
-            'keterampilan' => $request->keterampilan,
-        ]);
-
-        return redirect()->route('profile.edit')->with('success', 'Profile updated successfully!');
-    }
-    public function updateImage(Request $request)
-    {
-        // Validasi request
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048', // Ubah sesuai kebutuhan Anda
-        ]);
-
-        // Ambil pengguna dari sesi atau identitas pengguna yang sedang masuk
-        $user = auth()->user();
-
-        // Ambil gambar profil lama dari basis data
-        $oldImage = $user->image;
-
-        // Simpan gambar baru ke basis data sebagai blob
-        $image = file_get_contents($request->file('image')->getRealPath());
-
-        // Update informasi gambar profil pengguna
-        $user->image = $image;
-        $user->image_mime = $request->file('image')->getClientMimeType();
-        $user->save();
-
-        // Hapus gambar profil lama dari basis data
-        // Pastikan Anda telah mengambil keputusan untuk menghapus gambar lama
-        // Jika tidak, Anda dapat menghapus bagian ini
-        if ($oldImage) {
-            // Contoh jika menggunakan Eloquent
-            $user->update(['image' => null, 'image_mime' => null]);
-            
-            // Contoh jika menggunakan query builder
-            // DB::table('users')->where('id', $user->id)->update(['image' => null, 'image_mime' => null]);
+        // Update data user profile if exists
+        if ($userProfile) {
+            $userProfile->update([
+                'alamat' => $request->input('alamat'),
+                'no' => $request->input('no'),
+                'tgl_lahir' => $request->input('tgl_lahir'),
+                'jk' => $request->input('jenisKelamin'),
+                'desc' => $request->input('desc'),
+                'keterampilan' => $request->input('keterampilan'),
+            ]);
+        } else {
+            // If user profile does not exist, create new
+            $userProfile = UserProfile::create([
+                'user_id' => $user->id,
+                'alamat' => $request->input('alamat'),
+                'no' => $request->input('no'),
+                'tgl_lahir' => $request->input('tgl_lahir'),
+                'jk' => $request->input('jenisKelamin'),
+                'desc' => $request->input('desc'),
+                'keterampilan' => $request->input('keterampilan'),
+            ]);
         }
 
-        return redirect()->back()->with('success', 'Gambar profil berhasil diperbarui.');
+        return redirect()->route('profil.jobseeker')->with('success', 'Profile updated successfully!');
     }
 }

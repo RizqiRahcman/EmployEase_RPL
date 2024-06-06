@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('userprofiles', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('alamat');
-            $table->string('no');
-            $table->date('tgl_lahir');
-            $table->enum('jk', ['Laki-laki', 'Perempuan']);
-            $table->longText('desc');
-            $table->unsignedBigInteger('pengalaman_id');
-            $table->unsignedBigInteger('pendidikan_id');
-            $table->string('keterampilan');
+            $table->string('alamat')->nullable();
+            $table->string('no')->nullable();
+            $table->date('tgl_lahir')->nullable();
+            $table->enum('jk', ['Laki-laki', 'Perempuan'])->nullable();
+            $table->longText('desc')->nullable();
+            $table->unsignedBigInteger('pengalaman_id')->nullable();
+            $table->unsignedBigInteger('pendidikan_id')->nullable();
+            $table->string('keterampilan')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

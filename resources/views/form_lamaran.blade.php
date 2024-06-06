@@ -53,7 +53,7 @@
         
                         <div class="konten_form">
                             <form method="POST" action="{{ route('lamaran.store') }}" id="contactForm">
-                                @csrf
+                                {{ csrf_field() }}
                                 <h3>Lamar pekerjaan</h3>
 
                                 <!-- Hidden pekerjaan_id Input -->
