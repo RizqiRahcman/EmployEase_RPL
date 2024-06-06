@@ -18,7 +18,7 @@
     />
     
     <!-- CSS style  -->
-    <link rel="stylesheet" href="css/style_Com.css" />
+    <link rel="stylesheet" href="css_profComp/style_Com.css" />
     
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -102,7 +102,8 @@
               <span class="location"><i data-feather="map-pin" style="padding-right: 0;"></i></span>
               <p>Lokasi perusahaan</p>
             </div>
-        </div>
+          </div>
+          <h3 class="sub_judul mt-2">TEST</h3>
       </div>
       
 
