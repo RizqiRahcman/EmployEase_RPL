@@ -57,7 +57,7 @@
             >
             <div>
               <a
-                href="/"
+                href="{{ route('logout') }}"
                 class=" text-danger list-group-item list-group-item-action bg-transparent second-text fw-bold"
                 ><i class="fas fa-power-off me-2"></i>log Out</a
               >

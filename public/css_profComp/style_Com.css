@@ -11,6 +11,11 @@
 body {
   background-color: #ffffff;
   font-family: "Epilogue", sans-serif;
+  margin-top: 12px;
+}
+
+.kembali{
+  margin-right: 12px;
 }
 
 .theme-shadow {
@@ -55,6 +60,15 @@ body {
 .mt-3 {
   font-weight: 400;
   font-size: 15px;
+}
+
+.lowongan{
+  background-color: #ff6000;
+  border: 0cap;
+}
+
+.lowongan:hover{
+  background-color: #ff914f;
 }
 
 .iconbox {
@@ -139,6 +153,55 @@ body {
 
 /* Keterangan */
 .sub_judul{
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
+}
+
+/* pekerjaan */
+.card {
+  border-radius: 15px;
+  padding-bottom: 2rem;
+}
+
+.card-body a {
+  text-decoration: none;
+}
+
+.card-body a:hover {
+  background-color: var(--c-brand-light);
+  color: white;
+}
+
+.card-body {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.company-logo img {
+  width: 70px;
+  height: auto;
+}
+
+.job-card {
+  margin-bottom: 1rem;
+  font-family: outfit;
+}
+
+.job-category {
+  font-family: "Epilogue", sans-serif;
+  background-color: #ff6c00;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  font-family: outfit;
+}
+
+.company-logo {
+  border-radius: 50%;
+  padding: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
 }
