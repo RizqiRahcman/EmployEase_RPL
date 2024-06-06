@@ -24,13 +24,11 @@
             <ul class="navbar-nav d-flex">
                 <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="/logedin" >Kembali</a></li>
                 <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="/edit-profil">Edit Profil</a></li>
-                <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="#Tentang" onclick="goBack()">Kembali</a></li>
-                <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="/Edit-Profil">Edit Profil</a></li>
             </ul>
             
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Clarence Taylor</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="image/contoh.png" alt="..." /></span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ Auth::user()->image }}" alt="..." /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -52,16 +50,11 @@
                         <span class="text-primary">{{ Auth::user()->last_name }}</span>
                     </h1>
                     <div class="subheading mb-5">
-                        3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-                        <a href="mailto:name@email.com">{{ Auth::user()->email }}</a>   
+                        {{ $userProfile->alamat ?? 'Alamat belum diisi' }} · 
+                        {{ $userProfile->no ?? 'No HP belum diisi' }} · 
+                        {{ Auth::user()->email }}
                     </div>
-                    <p class="lead mb-5">I am berpengalaman in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                    <p class="lead mb-5">{{ $userProfile->desc ?? 'Deskripsi belum diisi' }}</p>
                 </div>
             </section>
             <hr class="m-0" />

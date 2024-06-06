@@ -60,6 +60,7 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
+            'image'=> "gambar/contoh.png"
         ]); 
         
 

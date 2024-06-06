@@ -59,7 +59,7 @@
         <!-- Dekstop Button -->
           <li class="nav-item dropdown my-lg-0 d-none d-lg-block">
             <a class="nav-link dropdown-toggle profile" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="#" alt="profile" />
+              <img class="rounded-circle" src="{{ Auth::user()->image }}" style="width: 35px; height: 35px" alt="Profile Image" alt="profile" />
               {{ Auth::user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

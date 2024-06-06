@@ -37,7 +37,7 @@ Route::get('/Profil-Perusahaan', function () {
     return view('profilePerusahaan');
 });
 
-Route::get('/prof', function () {
+Route::get('/profil', function () {
     return view('profil_jobseeker');
 })->name('profil.jobseeker');
 
