@@ -282,6 +282,28 @@
       </div>
       </section>
     </div>
+    <!-- pagination -->
+    <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <i data-feather="chevron-left"></i>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">6</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <i data-feather="chevron-right"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
       <!-- Footer -->
       <footer class="footer-dark">
         <div class="container mt-3">

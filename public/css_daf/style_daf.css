@@ -252,3 +252,23 @@ h6 {
     margin-left: 0.5rem;
     color: white;
 }
+
+.pagination .page-link {
+    font-family: "Epilogue";
+    font-size: 16px;
+    color: #7c8493;
+    font-weight: 600;
+    border: none; /* Menghapus border kotak */
+    box-shadow: none; /* Menghapus shadow kotak */
+}
+
+.pagination .page-link:focus {
+    font-family: "Epilogue";
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    border: none; /* Menghapus border kotak */
+    border-radius: 8px;
+    background-color: #ff6000;
+    box-shadow: none; /* Menghapus shadow kotak */
+}
