@@ -136,3 +136,9 @@ body {
 .location{
   padding-right: 1rem;
 }
+
+/* Keterangan */
+.sub_judul{
+  font-size: 24px;
+  font-weight: bold;
+}
