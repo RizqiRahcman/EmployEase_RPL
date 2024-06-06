@@ -22,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <ul class="navbar-nav d-flex">
-                <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="#Tentang" onclick="goBack()">Kembali</a></li>
+                <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="/logedin" >Kembali</a></li>
                 <li class="nav-item d-flex"><a class="nav-link js-scroll-trigger" href="/Edit-Profil">Edit Profil</a></li>
             </ul>
             <script>
