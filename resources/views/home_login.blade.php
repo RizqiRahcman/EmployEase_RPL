@@ -173,7 +173,7 @@
             <div class="section-tittle mt-3">
               <h1>Katergori <span>Pekerjaan</span></h1>
               <p class="text-right">
-                <a href="#">Lihat semua lowongan </a>
+                <a href="/Cari-Kerja">Lihat semua lowongan </a>
               </p>
             </div>
           </div>

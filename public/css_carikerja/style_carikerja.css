@@ -403,3 +403,15 @@ p.e {
     background-color: #bdbdbd;
     color: white; /* Warna default ikon */
 }
+
+.apply-filter {
+    margin-top: 2rem;
+}
+
+.page-item.active .page-link {
+    background-color: var(--c-brand) !important;
+}
+
+.page-item a {
+    background-color: var(--c-brand);
+}
