@@ -403,3 +403,7 @@ p.e {
     background-color: #bdbdbd;
     color: white; /* Warna default ikon */
 }
+
+.apply-filter {
+    margin-top: 2rem;
+}

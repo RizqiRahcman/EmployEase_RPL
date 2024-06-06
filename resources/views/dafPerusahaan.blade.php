@@ -135,112 +135,11 @@
       </form>
       
     </div>
-    
-    <!-- Kategori perusahaan -->
-    <div class="container py-5 job-box">
-      {{-- <h1 style="color: #454545; font-weight: bold;  margin: 100px 0px 20px;">Kategori <span>Perusahaan</span></h1> --}}
-      <div class="section-tittle mt-3">
-        <h1>Katergori <span>Pekerjaan</span></h1>
-        <p class="text-right side-text">
-          <a href="/Cari-Kerja">Lihat semua lowongan </a>
-        </p>
-      </div>
-      <div class="row g-4 text-center" style="margin-top: 24px;">
-        
-        <!-- row 1 kategori -->
-        <div class="col-lg-3 col-sm-6 ">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-              <div class="iconbox">
-                <i data-feather="monitor"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Teknologi</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-              <div class="iconbox">
-                <i data-feather="pen-tool"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Desain</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-              <div class="iconbox">
-                <i data-feather="shopping-cart"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Pemasaran</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-              <div class="iconbox">
-                <i data-feather="dollar-sign"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Keuangan</h5>
-            </div>
-          </a>
-        </div>
-      </div> 
-
-        <!-- row 2 kategori -->
-      <div class="row g-5 text-center" style="margin-top: 24px; margin-bottom: 24px;">
-
-        <div class="col-lg-3 col-sm-6 ">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-              <div class="iconbox">
-                <i data-feather="database"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Bisnis</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-                <div class="iconbox">
-                  <i data-feather="truck"></i>
-                </div>
-              <h5 class="mt-4 mb-3">Logistik</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-              <div class="iconbox">
-                <i data-feather="activity"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Kesehatan</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <a href="#">
-            <div class="category theme-shadow p-lg-5 p-4">
-              <div class="iconbox">
-                <i data-feather="shuffle"></i>
-              </div>
-              <h5 class="mt-4 mb-3">Lain-lain</h5>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </a>
 
     <!-- perusahaan rekomendasi -->
     <div class="container py-5">
       <section class="section-padding mt-5">
-      <h1 style="color: #454545; font-weight: bold;  margin: 100px 0px 20px;">Perusahaan Rekomendasi</h1>
+      <h1 style="color: #454545; font-weight: bold;  margin: 0px 0px 20px;">Perusahaan Rekomendasi</h1>
       <div class="row g-4 text-left" style="margin-top: 24px;">
         <div class="cardjob col-md-6 col-lg-4">
           <div class="card job-card">

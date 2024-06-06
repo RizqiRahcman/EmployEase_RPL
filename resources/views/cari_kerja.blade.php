@@ -106,7 +106,7 @@
     <div class="head">
         <div class="bg-dark"></div>
         <figure class="text-center">
-            <h1 style="color: #FFE6C7; font-weight: bold;">A well-known quote, contained in a blockquote element.</h1>
+            <h1 style="color: #FFE6C7; font-weight: bold;">Build your dream career by finding the perfect job.</h1>
             <p style="color: #FFE6C7;">Loren ipsum</p>
         </figure>
         <form action="{{ route('cari_kerja') }}" method="GET" class="d-flex">
@@ -185,7 +185,7 @@
                             {{ in_array('Marketing', old('kategori', $selectedKategori)) ? 'checked' : '' }}>
                         <label class="form-check-label" for="marketingCheck">Marketing</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Apply Filter</button>
+                    <button type="submit" class="btn btn-primary apply-filter">Apply Filter</button>
                 </aside>
             </form>
             </div>
