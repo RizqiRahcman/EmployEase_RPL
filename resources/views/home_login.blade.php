@@ -329,7 +329,7 @@
     <section class="section-padding mt-5">
       <div class="container py-5">
         <div class="section-tittle mt-3">
-          <h1>Pekerjaan <span>Favorit</span></h1>
+          <h1>Pekerjaan <span>Terbaru</span></h1>
           <p class="text-right">
             <a href="#">Lihat semua lowongan </a>
           </p>
