@@ -213,7 +213,10 @@
           </div>
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Lowongan</h5>
+              <div class="card-tittle-link">
+                  <h5 class="card-title">Lowongan</h5>
+                  <a href="#"><p class="text-end">Lowongan Selengkapnya</p></a>
+              </div>
               <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action">
                   <div
