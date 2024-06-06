@@ -71,7 +71,53 @@
             <!-- Pengalaman-->
             <section class="resume-section" id="Pengalaman">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Pengalaman</h2>
+                    <h2 class="mb-5">
+                        Pengalaman
+                        <button id="editPengalaman" class="btn btn-tambah btn-sm">Tambah</button>
+                    </h2>
+                    <!-- Dropdown Edit Form -->
+                    <div id="editPengalamanDropdown" class="container mb-5">
+                        <!-- Form Pendidikan -->
+                        <form id="formPengalaman">
+                            <div class="pengalaman-item border-bottom border-3">
+                                <!-- input nama instansi -->
+                                <label for="namaPekerjaan1" class="form-label">Nama Pekerjaan</label>
+                                <input class="form-control" id="namaPekerjaan1" name="namaPekerjaan[]" type="text" placeholder=" " required>
+
+                                <!-- input jurusan -->
+                                <label for="divisi1" class="form-label">Divisi</label>
+                                <input class="form-control" id="divisi1" name="divisi[]" type="text" placeholder=" " required>
+                                    
+                                <!-- input periode -->
+                                <div class="row periode-pair">
+                                    <div class="col-md-6">
+                                        <!-- input awal periode-->
+                                        <label for="mulaiPeriode1" class="form-label">Mulai Periode</label>
+                                        <input class="form-control mulai-periode" name="mulaiPeriode[]" type="date" placeholder=" " required>
+                                    </div>
+                                    <!-- input akhir periode -->
+                                    <div class="col-md-6">
+                                        <label for="akhirPeriode1" class="form-label">Akhir Periode</label>
+                                        <input class="form-control akhir-periode" type="date" placeholder=" " required>
+                                    </div>
+                                </div>
+
+                                <!-- Keterangan -->
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
+                                </div>
+
+                            </div>
+                        </form>
+
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end">
+                                <button id="tambahPendidikan" class="btn btn-save mt-3">Tambah Pendidikan</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Dropdown Edit Form -->
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Senior Web Developer</h3>
@@ -110,7 +156,53 @@
             <!-- Pendidikan-->
             <section class="resume-section" id="Pendidikan">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Pendidikan</h2>
+                    <h2 class="mb-5">
+                        Pendidikan
+                        <button id="editPendidikan" class="btn btn-tambah btn-sm">Tambah</button>
+                    </h2>
+                    <!-- Dropdown Edit Form -->
+                    <div id="editPendidikanDropdown" class="container mb-5">
+                        <!-- Form Pendidikan -->
+                        <form id="formPendidikan">
+                            <div class="pendidikan-item border-bottom border-3">
+                                <!-- input nama instansi -->
+                                <label for="namaInstansi1" class="form-label">Nama Instansi</label>
+                                <input class="form-control" id="namaInstansi1" name="namaInstansi[]" type="text" placeholder=" " required>
+
+                                <!-- input jurusan -->
+                                <label for="jurusan1" class="form-label">Jurusan</label>
+                                <input class="form-control" id="jurusan1" name="jurusan[]" type="text" placeholder=" " required>
+                                    
+                                <!-- input periode -->
+                                <div class="row periode-pair">
+                                    <div class="col-md-6">
+                                        <!-- input awal periode-->
+                                        <label for="mulaiPeriode2" class="form-label">Mulai Periode</label>
+                                        <input class="form-control mulai-periode" name="mulaiPeriode[]" type="date" placeholder=" " required>
+                                    </div>
+                                    <!-- input akhir periode -->
+                                    <div class="col-md-6">
+                                        <label for="akhirPeriode2" class="form-label">Akhir Periode</label>
+                                        <input class="form-control akhir-periode" type="date" placeholder=" " required>
+                                    </div>
+                                </div>
+
+                                <!-- Keterangan -->
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-end">
+                                <button id="tambahPendidikan" class="btn btn-save mt-3">Tambah Pendidikan</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Dropdown Edit Form -->
+
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">University of Colorado Boulder</h3>
@@ -128,8 +220,11 @@
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
                     </div>
+
+
                 </div>
             </section>
+
             <hr class="m-0" />
             <!-- Keterampilan-->
             <section class="resume-section" id="Keterampilan">
