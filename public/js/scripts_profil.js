@@ -32,3 +32,37 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+document.getElementById("editPendidikan").addEventListener("click", function() {
+    var dropdown = document.getElementById("editPendidikanDropdown");
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+});
+
+document.getElementById("editPengalaman").addEventListener("click", function() {
+    var dropdown = document.getElementById("editPengalamanDropdown");
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+});
+
+// Ambil semua elemen pasangan periode
+var periodePairs = document.querySelectorAll('.periode-pair');
+
+// Loop melalui setiap pasangan
+periodePairs.forEach(function(pair) {
+    var mulaiPeriode = pair.querySelector('.mulai-periode');
+    var akhirPeriode = pair.querySelector('.akhir-periode');
+
+    akhirPeriode.addEventListener('change', function() {
+        if (akhirPeriode.value < mulaiPeriode.value) {
+            alert('Tanggal akhir periode tidak boleh sebelum tanggal mulai periode.');
+            akhirPeriode.value = ''; // Reset nilai input tanggal akhir periode
+        }
+    });
+});

@@ -10970,3 +10970,63 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+#editPendidikanDropdown {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+#editPengalamanDropdown {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+.btn-save {
+  height: 50px;
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #FF6000;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap; 
+}
+.btn-save:hover{
+  background-color: white;
+  color: #FF6000;
+  border-color: #FF6000;
+  border: 1px solid #FF6000;
+}
+.btn-tambah {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #ff6000;
+  --bs-btn-border-color: #ff6000;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #c77556;
+  --bs-btn-hover-border-color: #c46d4c;
+  --bs-btn-focus-shadow-rgb: 161, 79, 48;
+  --bs-btn-active-color: #FDF3EA;
+  --bs-btn-active-bg: #ca7d60;
+  --bs-btn-active-border-color: #c46d4c;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #ff6000;
+  --bs-btn-disabled-border-color: #FDF3EA;
+}
+/* .btn-tambah:hover {
+  outline: 1px solid #FDF3EA;
+} */
+textarea {
+  resize: none; /* Nonaktifkan resizing */
+  overflow-wrap: break-word; /* Pastikan word wrap */
+  width: 100%; /* Pastikan textarea mengambil 100% lebar container */
+}

@@ -33,7 +33,7 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
-Route::get('/Company-Profile', function () {
+Route::get('/Profil-Perusahaan', function () {
     return view('profilePerusahaan');
 });
 
