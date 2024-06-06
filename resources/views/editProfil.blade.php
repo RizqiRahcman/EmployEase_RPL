@@ -43,7 +43,7 @@
     </div>
 
     <div class="container-fluid full-width-container bottom-line"></div>
-
+<form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
 <!-- foto profil -->
     <div class="container mb-4">
         <div class="row">
@@ -56,12 +56,17 @@
             <div class="col-lg-7 mt-5">
               <div class="file-input-container">
                   <div class="profile-picture" id="profilePicture">
-                        <img id="profileImage" src="" alt=" ">
+                        <img id="profileImage" src="{{ $user->image ? 'data:' . $user->image_mime . ';base64,' . base64_encode($user->image) : '' }}" alt=" ">
                   </div>
-                  <div class="mb-3 file-input">
-                        <label for="formFile" class="form-label">Input Foto Profil</label>
-                        <input class="form-control" type="file" id="formFile" accept="image/*">
-                  </div>
+                
+                <!-- Form untuk mengubah gambar profil -->
+                <form id="formImage" action="{{ route('update.image') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3 file-input">
+                        <label for="image" class="form-label">Ganti Foto Profil</label>
+                        <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                    </div>
+                </form>
               </div>
             </div>
         </div>
@@ -81,22 +86,22 @@
         <div class="col-lg-7 mt-5">
           <!-- input nama depan -->
           <label for="namaDepan" class="form-label">Nama Depan</label>
-          <input class="form-control" type="text"  placeholder=" " required>
+          <input class="form-control" type="text" name='first_name'  placeholder="{{ $user->first_name }}"  required>
           <!-- input nama belakang -->
           <label for="namaBelakang" class="form-label">Nama Belakang</label>
-          <input class="form-control" type="text" placeholder=" " required>
+          <input class="form-control" type="text" name='last_name' placeholder="{{ $user->last_name }}"  required>
           <!-- input alamat -->
           <label for="namaBelakang" class="form-label d-inline">Alamat</label>
-          <input class="form-control" type="text" placeholder=" " required>
+          <input class="form-control" type="text" name='alamat' placeholder=" " required>
           <!-- input no hp -->
           <label for="noHP" class="form-label d-inline">Nomor HP</label>
-          <input class="form-control" type="number" id="noHP" placeholder=" " minlength="11" maxlength="13" required onkeypress="return isNumberKey(event)">
+          <input class="form-control" type="number" id="noHP" name='no' placeholder=" " minlength="11" maxlength="13" required onkeypress="return isNumberKey(event)">
 
           <!-- input tanggal lahir-->
           <div class="row">
             <div class="col-md-6">
               <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
-              <input class="form-control" type="date" min="1" max="31" required>
+              <input class="form-control" name='tgl_lahir' type="date" min="1" max="31" required>
             </div>
             <!-- input jenis kelamin -->
             <div class="col-md-6">
@@ -110,7 +115,7 @@
                   <li><a class="dropdown-item" href="#" onclick="pilihJenisKelamin('Perempuan')">Perempuan</a></li>
                 </ul>
               </div>
-              <input type="hidden" id="jenisKelaminInput" name="jenisKelamin" value="">
+              <input type="hidden" id="jenisKelaminInput" name="jenisKelamin">
             </div>
           </div>
         </div>
@@ -132,7 +137,7 @@
         <div class="col-lg-7 mt-5">
           <div class="mb-3">
               <label for="exampleFormControlTextarea2" class="form-label">Deskripsikan diri Anda</label>
-              <textarea class="form-control" id="exampleFormControlTextarea2" rows="4" placeholder=" "></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea2" nama='desc' rows="4" placeholder=" "></textarea>
           </div>
         </div>
       </div>
@@ -153,28 +158,28 @@
       <!-- Form Pengalaman -->
       <form id="formPengalaman">
         <div class="pengalaman-item border-bottom border-3">
-          <!-- input nama pekerjaan -->
-          <label for="namaPekerjaan1" class="form-label">Nama Pekerjaan</label>
-          <input class="form-control" id="namaPekerjaan1" type="text" name="namaPekerjaan[]" placeholder=" " required>
+            <!-- input nama pekerjaan -->
+            <label for="namaPekerjaan1" class="form-label">Nama Pekerjaan</label>
+            <input class="form-control" id="namaPekerjaan1" type="text" name="namaPekerjaan[]" placeholder=" " required>
 
-          <!-- input divisi -->
-          <label for="divisi1" class="form-label">Divisi</label>
-          <input class="form-control" id="divisi1" type="text" name="divisi[]" placeholder=" " required>
+            <!-- input divisi -->
+            <label for="divisi1" class="form-label">Divisi</label>
+            <input class="form-control" id="divisi1" type="text" name="divisi[]" placeholder=" " required>
 
-          <div class="row">
-            <div class="col-md-6">
-              <label for="mulaiPeriode1" class="form-label">Mulai Periode</label>
-              <input class="form-control" id="mulaiPeriode1" type="date" name="mulaiPeriode[]" placeholder=" " required>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="mulaiPeriode1" class="form-label">Mulai Periode</label>
+                    <input class="form-control" id="mulaiPeriode1" type="date" name="mulaiPeriode[]" placeholder=" " required>
+                </div>
+                <div class="col-md-6">
+                    <label for="akhirPeriode1" class="form-label mt-2">Akhir Periode</label>
+                    <input class="form-control" type="date" id="akhirPeriode1" name="akhirPeriode[]" placeholder=" " required>
+                </div>
             </div>
-            <div class="col-md-6">
-              <label for="akhirPeriode1" class="form-label mt-2">Akhir Periode</label>
-              <input class="form-control" type="date" id="akhirPeriode1" name="akhirPeriode[]" placeholder=" " required>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
             </div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
-          </div>
         </div>
       </form>
 
@@ -202,33 +207,32 @@
       <!-- Form Pendidikan -->
       <form id="formPendidikan">
         <div class="pendidikan-item border-bottom border-3">
-          <!-- input nama instansi -->
-          <label for="namaInstansi1" class="form-label">Nama Instansi</label>
-          <input class="form-control" id="namaInstansi1" name="namaInstansi[]" type="text" placeholder=" " required>
+            <!-- input nama instansi -->
+            <label for="namaInstansi1" class="form-label">Nama Instansi</label>
+            <input class="form-control" id="namaInstansi1" name="namaInstansi[]" type="text" placeholder=" " required>
 
-          <!-- input jurusan -->
-          <label for="jurusan1" class="form-label">Jurusan</label>
-          <input class="form-control" id="jurusan1" name="jurusan[]" type="text" placeholder=" " required>
-          
-          <!-- input periode -->
-          <div class="row">
-            <div class="col-md-6">
-              <!-- input mulai periode-->
-              <label for="mulaiPeriode1" class="form-label">Mulai Periode</label>
-              <input class="form-control" id="mulaiPeriode1" name="mulaiPeriode[]" type="date" placeholder=" " required>
+            <!-- input jurusan -->
+            <label for="jurusan1" class="form-label">Jurusan</label>
+            <input class="form-control" id="jurusan1" name="jurusan[]" type="text" placeholder=" " required>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- input mulai periode-->
+                    <label for="mulaiPeriode1" class="form-label">Mulai Periode</label>
+                    <input class="form-control" id="mulaiPeriode1" name="mulaiPeriode[]" type="date" placeholder=" " required>
+                </div>
+                <!-- input akhir periode -->
+                <div class="col-md-6">
+                    <label for="akhirPeriode1" class="form-label mt-2">Akhir Periode</label>
+                    <input class="form-control" type="date" id="akhirPeriode1" name="akhirPeriode[]" placeholder=" " required>
+                </div>
             </div>
-            <!-- input akhir periode -->
-            <div class="col-md-6">
-              <label for="akhirPeriode1" class="form-label mt-2">Akhir Periode</label>
-              <input class="form-control" type="date" id="akhirPeriode1" name="akhirPeriode[]" placeholder=" " required>
-            </div>
-          </div>
 
-          <!-- Keterangan -->
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
-          </div>
+            <!-- Keterangan -->
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
+            </div>
         </div>
       </form>
 
@@ -268,7 +272,7 @@
 <div class="container d-flex justify-content-end align-items-right mt-4 mb-4">
   <button class="btn btn-save">Simpan Perubahan</button>
 </div>
-  
+</form>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/f2c387131d.js" crossorigin="anonymous"></script>
@@ -276,6 +280,18 @@
   <script src="js/bootstrap.js"></script>
   <script src="js/script_editProfil.js"></script>
   <script>feather.replace();</script>
+  <script>
+    document.getElementById('image').addEventListener('change', function() {
+        const file = this.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            document.getElementById('profileImage').src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    });
+</script>
 
 </body>
 </html>

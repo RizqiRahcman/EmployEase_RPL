@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('role', ['perusahaan', 'pelamar']);
             $table->string('email')->unique();
             $table->binary('image')->nullable();
+            $table->string('image_mime')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\LamaranController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('home',['pekerjaans' => Pekerjaan::all()]);
@@ -72,6 +73,12 @@ Route::middleware(['auth'])->group(function () {
 
     // Rute untuk menyimpan data lamaran
     Route::post('/lamar', [LamaranController::class, 'store'])->name('lamaran.store');
+
+    Route::get('/edit-profil', [ProfileController::class, 'edit'])->name('profile.edit');
+
+    Route::post('/edit-profil', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/user/update-image', [UserController::class, 'updateImage'])->name('update.image');
+
 });
 Route::get('/apply/{id}', [PekerjaanController::class, 'showForm'])->name('apply.form');
 Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');
