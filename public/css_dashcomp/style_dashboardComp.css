@@ -106,6 +106,10 @@ body {
     color: var(--c-brand);
 }
 
+.card-tittle-link h3 {
+    margin-left: 1rem;
+}
+
 .card-tittle-link:hover a {
     color: var(--c-brand-light);
 }
@@ -126,6 +130,14 @@ body {
 .card {
     margin-bottom: 20px;
 }
+
+.card-tittle {
+    font-weight: 600;
+}
+
+.card-judul span {
+    color: var(--c-brand);
+}
 .pelamar-card {
     padding: 20px 20px 40px 20px;
 }
@@ -136,6 +148,7 @@ body {
     color: white;
     font-weight: bolder;
 }
+
 hr {
     border: none;
     height: 1px;

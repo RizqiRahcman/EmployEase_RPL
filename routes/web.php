@@ -61,6 +61,10 @@ Route::get('/View-Profil', function () {
     return view('viewprofil_jobseeker');
 });
 
+Route::get('/DashLowongan', function () {
+    return view('dashLowongan');
+});
+
 Route::get('/DashComp', function () {
     return view('dashboardComp');
 })->name('dashboard.company');

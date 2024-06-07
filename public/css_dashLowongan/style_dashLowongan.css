@@ -53,6 +53,10 @@ body {
 }
 
 /* Sidebar Ends */
+
+.lowongan .list-group-item {
+    padding-left: 12px !important;
+}
 /* Top Bar */
 .company-logo img {
     margin-right: 1rem;
@@ -60,7 +64,9 @@ body {
 .content {
     padding: 20px;
 }
-
+.card-body {
+    padding: 10px;
+}
 .btn-primary {
     padding: 10px;
     border-radius: 10px;
@@ -76,58 +82,3 @@ body {
 }
 
 /* top-bar End */
-
-.profile-img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-.table-responsive {
-    margin-top: 20px;
-}
-
-.table th,
-.table td {
-    vertical-align: middle;
-}
-
-.table td button {
-    font-size: 0.875rem;
-    padding: 6px;
-}
-
-.table td .badge {
-    font-size: 0.875rem;
-    padding: 0.4em 0.7em;
-}
-
-.table-sm th,
-.table-sm td {
-    padding: 1.2rem;
-}
-
-h1.h2 {
-    margin-bottom: 0;
-}
-
-.btn-toolbar {
-    display: flex;
-    align-items: center;
-}
-
-.btn-group .btn {
-    margin-right: 5px;
-}
-
-.btn-outline-primary {
-    color: #ff6000;
-    border-color: #ff6000;
-}
-
-.btn-outline-primary:hover {
-    color: white;
-    background-color: var(--c-brand);
-    border-color: transparent;
-}

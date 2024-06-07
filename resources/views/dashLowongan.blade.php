@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pelamar</title>
+        <title>Dashboard-Lowongan</title>
 
         <!-- bs5 -->
         <link rel="stylesheet" href="css/bootstrap.css" />
@@ -20,7 +20,7 @@
         />
 
         <!-- CSS style  -->
-        <link rel="stylesheet" href="css_pelamar/style_pelamar.css" />
+        <link rel="stylesheet" href="css_dashLowongan/style_dashLowongan.css" />
     </head>
 
     <body>
@@ -41,13 +41,13 @@
                             >Dashboard</a
                         >
                         <a
-                            href="#"
-                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"
+                            href="/Pelamar"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                             ><i class="fas fa-file me-2"></i>Pelamar</a
                         >
                         <a
-                            href="/DashLowongan"
-                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+                            href="#"
+                            class="list-group-item list-group-item-action bg-transparent second-text fw-bold active"
                             ><i class="fas fa-search me-2"></i>Lowongan</a
                         >
                         <a
@@ -99,90 +99,48 @@
                             </button>
                         </div>
                     </div>
-                    <!-- top bar end -->
+                    <!-- top bar end --> 
+                     
                     <!-- Main Content -->
 
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
-                            <thead>
-                                <tr>
-                                    <th>Nama Lengkap</th>
-
-                                    <th>Tanggal</th>
-                                    <th>Posisi</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Applicants Rows Start -->
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img
-                                                src="image/profile.jpg"
-                                                alt="Profile"
-                                                class="rounded-circle profile-img"
-                                            />
-                                            <span class="ms-3">Jake Gyll</span>
-                                        </div>
-                                    </td>
-                                    <td>13 July, 2021</td>
-                                    <td>Designer</td>
-                                    <td>
-                                        <button
-                                            class="btn btn-outline-primary btn-sm"
-                                        >
-                                            Lihat Profil
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img
-                                                src="image/profile.jpg"
-                                                alt="Profile"
-                                                class="rounded-circle profile-img"
-                                            />
-                                            <span class="ms-3">Abraham</span>
-                                        </div>
-                                    </td>
-
-                                    <td>13 July, 2021</td>
-                                    <td>JavaScript Dev</td>
-                                    <td>
-                                        <button
-                                            class="btn btn-outline-primary btn-sm"
-                                        >
-                                            Lihat Profil
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img
-                                                src="image/profile.jpg"
-                                                alt="Profile"
-                                                class="rounded-circle profile-img"
-                                            />
-                                            <span class="ms-3">Kinoy</span>
-                                        </div>
-                                    </td>
-                                    <td>12 July, 2021</td>
-                                    <td>Golang Dev</td>
-                                    <td>
-                                        <button
-                                            class="btn btn-outline-primary btn-sm"
-                                        >
-                                            Lihat Profil
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <!-- Applicants Rows End -->
-                            </tbody>
-                        </table>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="list-group lowongan">
+                                <a href="#" class="list-group-item list-group-item-action">
+                                <div
+                                    class="d-flex justify-content-between align-items-center"
+                                >
+                                    <div>
+                                    <h6 class="mb-1">Social Media Assistant</h6>
+                                    <small>Nomad - Paris, France - Full-Time</small>
+                                    </div>
+                                    <small class="text-muted">In Review</small>
+                                </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                <div
+                                    class="d-flex justify-content-between align-items-center"
+                                >
+                                    <div>
+                                    <h6 class="mb-1">Social Media Assistant</h6>
+                                    <small>Nomad - Paris, France - Full-Time</small>
+                                    </div>
+                                    <small class="text-muted">In Review</small>
+                                </div>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                <div
+                                    class="d-flex justify-content-between align-items-center"
+                                >
+                                    <div>
+                                    <h6 class="mb-1">Social Media Assistant</h6>
+                                    <small>Nomad - Paris, France - Full-Time</small>
+                                    </div>
+                                    <small class="text-muted">In Review</small>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Main Content End -->

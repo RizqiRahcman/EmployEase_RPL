@@ -46,7 +46,7 @@
               ><i class="fas fa-file me-2"></i>Pelamar</a
             >
             <a
-              href="#"
+              href="/DashLowongan"
               class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
               ><i class="fas fa-search me-2"></i>Lowongan</a
             >
@@ -130,92 +130,97 @@
 
           <!-- Job Listings -->
           <div class="card">
-            <div class="card-body ">
-              <h5 class="card-title">Pelamar Terbaru</h5>
+            <div class="card-body card-tittle-link ">
+              <div class="card-judul" >
+                <h3 class="card-title">Pelamar <span>Terbaru</span></h3>
+              </div>
+              <a href="/Pelamar"><p class="text-end mb-2">Selengkapnya</p></a>
               
-          <div class="table-responsive">
-            <table class="table table-striped table-sm">
-              <thead>
-                <tr>
-                  <th>Nama Lengkap</th>
+              <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th>Nama Lengkap</th>
 
-                  <th>Tanggal</th>
-                  <th>Posisi</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody >
-                <!-- Applicants Rows Start -->
-                <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img
-                        src="image/profile.jpg"
-                        alt="Profile"
-                        class="rounded-circle profile-img"
-                      />
-                      <span class="ms-3">Jake Gyll</span>
-                    </div>
-                  </td>
-                  <td>13 July, 2021</td>
-                  <td>Designer</td>
-                  <td>
-                    <button class="btn btn-outline-primary btn-sm">
-                      Lihat Profil
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img
-                        src="image/profile.jpg"
-                        alt="Profile"
-                        class="rounded-circle profile-img"
-                      />
-                      <span class="ms-3">Abraham</span>
-                    </div>
-                  </td>
+                      <th>Tanggal</th>
+                      <th>Posisi</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody >
+                    <!-- Applicants Rows Start -->
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="image/profile.jpg"
+                            alt="Profile"
+                            class="rounded-circle profile-img"
+                          />
+                          <span class="ms-3">Jake Gyll</span>
+                        </div>
+                      </td>
+                      <td>13 July, 2021</td>
+                      <td>Designer</td>
+                      <td>
+                        <button class="btn btn-outline-primary btn-sm">
+                          Lihat Profil
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="image/profile.jpg"
+                            alt="Profile"
+                            class="rounded-circle profile-img"
+                          />
+                          <span class="ms-3">Abraham</span>
+                        </div>
+                      </td>
 
-                  <td>13 July, 2021</td>
-                  <td>JavaScript Dev</td>
-                  <td>
-                    <button class="btn btn-outline-primary btn-sm">
-                      Lihat Profil
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img
-                        src="image/profile.jpg"
-                        alt="Profile"
-                        class="rounded-circle profile-img"
-                      />
-                      <span class="ms-3">Kinoy</span>
-                    </div>
-                  </td>
-                  <td>12 July, 2021</td>
-                  <td>Golang Dev</td>
-                  <td>
-                    <button class="btn btn-outline-primary btn-sm">
-                      Lihat Profil
-                    </button>
-                  </td>
-                </tr>
+                      <td>13 July, 2021</td>
+                      <td>JavaScript Dev</td>
+                      <td>
+                        <button class="btn btn-outline-primary btn-sm">
+                          Lihat Profil
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="image/profile.jpg"
+                            alt="Profile"
+                            class="rounded-circle profile-img"
+                          />
+                          <span class="ms-3">Kinoy</span>
+                        </div>
+                      </td>
+                      <td>12 July, 2021</td>
+                      <td>Golang Dev</td>
+                      <td>
+                        <button class="btn btn-outline-primary btn-sm">
+                          Lihat Profil
+                        </button>
+                      </td>
+                    </tr>
 
-                <!-- Applicants Rows End -->
-              </tbody>
-            </table>
-          </div>
+                    <!-- Applicants Rows End -->
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <div class="card-tittle-link">
-                  <h5 class="card-title">Lowongan</h5>
-                  <a href="#"><p class="text-end">Lowongan Selengkapnya</p></a>
+              <div class="card-tittle-link border-bottom">
+                <div class="card-judul">
+                  <h3 class="card-title">Lowongan <span>Terbaru</span></h3>
+                </div>  
+                  <a href="/DashLowongan"><p class="text-end mb-2">Selengkapnya</p></a>
               </div>
               <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action">
