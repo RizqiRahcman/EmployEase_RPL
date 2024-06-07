@@ -58,6 +58,10 @@ Route::get('/Edit-Company', function () {
     return view('editProfilCompany');
 });
 
+Route::get('/View-Profil', function () {
+    return view('viewprofil_jobseeker');
+});
+
 Route::get('/DashComp', function () {
     return view('dashboardComp');
 })->name('dashboard.company');

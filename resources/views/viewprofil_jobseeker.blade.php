@@ -46,14 +46,18 @@
                 <div class="resume-section-content">
                     <h1 class="mb-0">
                         {{ Auth::user()->first_name }}
-                        <span class="text-primary">{{ Auth::user()->last_name }}</span>
+                        <span class="text-primary">
+                        {{ Auth::user()->last_name }}
+                    </span>
                     </h1>
                     <div class="subheading mb-5">
                         {{ $userProfile->alamat ?? 'Alamat belum diisi' }} · 
                         {{ $userProfile->no ?? 'No HP belum diisi' }} · 
                         {{ Auth::user()->email }}
                     </div>
-                    <p class="lead mb-5">{{ $userProfile->desc ?? 'Deskripsi belum diisi' }}</p>
+                    <p class="lead mb-5">
+                    {{ $userProfile->desc ?? 'Deskripsi belum diisi' }}
+                </p>
                 </div>
             </section>
             <hr class="m-0" />
@@ -138,6 +142,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts_viewprofil.js"></script>
+        <script src="js/scripts_profil.js"></script>
     </body>
 </html>
