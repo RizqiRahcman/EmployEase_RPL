@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Pendidikan extends Model
 {
     use HasFactory;
+    protected $table = 'pendidikans';
     protected $fillable = [
         'instansi',
         'jurusan',
+        'ipk',
         'mulai',
         'selesai',
         'desc',

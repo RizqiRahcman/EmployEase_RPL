@@ -68,78 +68,67 @@
                     <!-- Dropdown Edit Form -->
                     <div id="editPengalamanDropdown" class="container mb-5">
                         <!-- Form Pendidikan -->
-                        <form id="formPengalaman">
+                        <form method="POST" action="{{ route('post.pengalaman') }}" id="formPengalaman">
+                            {{ csrf_field() }}
                             <div class="pengalaman-item border-bottom border-3">
                                 <!-- input nama instansi -->
                                 <label for="namaPekerjaan1" class="form-label">Nama Pekerjaan</label>
-                                <input class="form-control" id="namaPekerjaan1" name="namaPekerjaan[]" type="text" placeholder=" " required>
+                                <input class="form-control" id="namaPekerjaan1" name="pekerjaan" type="text" placeholder=" " required>
 
                                 <!-- input jurusan -->
                                 <label for="divisi1" class="form-label">Divisi</label>
-                                <input class="form-control" id="divisi1" name="divisi[]" type="text" placeholder=" " required>
+                                <input class="form-control" id="divisi1" name="divisi" type="text" placeholder=" " required>
                                     
                                 <!-- input periode -->
                                 <div class="row periode-pair">
                                     <div class="col-md-6">
                                         <!-- input awal periode-->
                                         <label for="mulaiPeriode1" class="form-label">Mulai Periode</label>
-                                        <input class="form-control mulai-periode" name="mulaiPeriode[]" type="date" placeholder=" " required>
+                                        <input class="form-control mulai-periode" name="mulai" type="date" placeholder=" " required>
                                     </div>
                                     <!-- input akhir periode -->
                                     <div class="col-md-6">
                                         <label for="akhirPeriode1" class="form-label">Akhir Periode</label>
-                                        <input class="form-control akhir-periode" type="date" placeholder=" " required>
+                                        <input class="form-control akhir-periode" type="date" placeholder=" " name="selesai" >
                                     </div>
                                 </div>
 
                                 <!-- Keterangan -->
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3" placeholder=" "></textarea>
                                 </div>
 
                             </div>
-                        </form>
+                        
 
                         <div class="row">
                             <div class="col-12 d-flex justify-content-end">
-                                <button id="tambahPendidikan" class="btn btn-save mt-3">Tambah Pendidikan</button>
+                                <button id="tambahPendidikan" class="btn btn-save mt-3" type="submit">Tambah Pendidikan</button>
                             </div>
                         </div>
+                    </form>
                     </div>
                     <!-- End of Dropdown Edit Form -->
+                    @if ($pengalamans->isEmpty())
+                    <p>Pengalaman belum diisi</p>
+                    @else
+                    @foreach ($pengalamans as $datapengalaman)
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Senior Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                            <div class="flex-grow-1">
+                                <h3 class="mb-0">{{ $datapengalaman->pekerjaan }}</h3>
+                                <div class="subheading mb-3">{{ $datapengalaman->divisi }}</div>
+                                <p>{{ $datapengalaman->desc }}</p>
+                            </div>
+                            <div class="flex-shrink-0"><span class="text-primary">{{ $datapengalaman->mulai }} - {{ $datapengalaman->selesai }}</span></div>
+                            <form action="{{ route('pengalaman.delete', $datapengalaman->id) }}" method="POST" style="display:inline;">
+                                {{ csrf_field() }}
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">December 2011 - March 2013</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Junior Web Designer</h3>
-                            <div class="subheading mb-3">Shout! Media Productions</div>
-                            <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">July 2010 - December 2011</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Web Design Intern</h3>
-                            <div class="subheading mb-3">Shout! Media Productions</div>
-                            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>
-                    </div>
+                    @endforeach
+                    @endif
                 </div>
             </section>
             <hr class="m-0" />
@@ -153,65 +142,76 @@
                     <!-- Dropdown Edit Form -->
                     <div id="editPendidikanDropdown" class="container mb-5">
                         <!-- Form Pendidikan -->
-                        <form id="formPendidikan">
-                            <div class="pendidikan-item border-bottom border-3">
-                                <!-- input nama instansi -->
-                                <label for="namaInstansi1" class="form-label">Nama Instansi</label>
-                                <input class="form-control" id="namaInstansi1" name="namaInstansi[]" type="text" placeholder=" " required>
+                        <form method="POST" action="{{ route('post.pendidikan') }}" id="formPendidikan">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" id="pendidikanId">
+                            <!-- input nama instansi -->
+                            <label for="instansi" class="form-label">Nama Instansi</label>
+                            <input class="form-control" id="instansi" name="instansi" type="text" placeholder=" " required>
 
-                                <!-- input jurusan -->
-                                <label for="jurusan1" class="form-label">Jurusan</label>
-                                <input class="form-control" id="jurusan1" name="jurusan[]" type="text" placeholder=" " required>
-                                    
-                                <!-- input periode -->
-                                <div class="row periode-pair">
-                                    <div class="col-md-6">
-                                        <!-- input awal periode-->
-                                        <label for="mulaiPeriode2" class="form-label">Mulai Periode</label>
-                                        <input class="form-control mulai-periode" name="mulaiPeriode[]" type="date" placeholder=" " required>
-                                    </div>
-                                    <!-- input akhir periode -->
-                                    <div class="col-md-6">
-                                        <label for="akhirPeriode2" class="form-label">Akhir Periode</label>
-                                        <input class="form-control akhir-periode" type="date" placeholder=" " required>
-                                    </div>
+                            <div class="row periode-pair">
+                                <div class="col-md-6">
+                                    <!-- input jurusan -->
+                                    <label for="jurusan" class="form-label">Jurusan</label>
+                                    <input class="form-control" id="jurusan" name="jurusan" type="text" placeholder=" " required>
                                 </div>
+                                <div class="col-md-6">
+                                    <!-- input jurusan -->
+                                    <label for="ipk" class="form-label">IPK</label>
+                                    <input class="form-control" id="ipk" name="ipk" type="text" placeholder=" " required>
+                                </div>
+                            </div>
 
-                                <!-- Keterangan -->
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Keterangan</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea[]" rows="3" placeholder=" "></textarea>
+                            <!-- input periode -->
+                            <div class="row periode-pair">
+                                <div class="col-md-6">
+                                    <!-- input awal periode-->
+                                    <label for="mulai" class="form-label">Mulai Periode</label>
+                                    <input class="form-control mulai-periode" name="mulai" id="mulai" type="date" placeholder=" " required>
+                                </div>
+                                <!-- input akhir periode -->
+                                <div class="col-md-6">
+                                    <label for="selesai" class="form-label">Akhir Periode</label>
+                                    <input class="form-control akhir-periode" name="selesai" id="selesai" type="date" placeholder=" ">
+                                </div>
+                            </div>
+
+                            <!-- Keterangan -->
+                            <div class="mb-3">
+                                <label for="keterangan" class="form-label">Keterangan</label>
+                                <textarea class="form-control" id="keterangan" name="desc" rows="3" placeholder=" "></textarea>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-save mt-3">Tambah Pendidikan</button>
                                 </div>
                             </div>
                         </form>
-
-                        <div class="row">
-                            <div class="col-12 d-flex justify-content-end">
-                                <button id="tambahPendidikan" class="btn btn-save mt-3">Tambah Pendidikan</button>
-                            </div>
-                        </div>
                     </div>
-                    <!-- End of Dropdown Edit Form -->
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Colorado Boulder</h3>
-                            <div class="subheading mb-3">Bachelor of Science</div>
-                            <div>Computer Science - Web Development Track</div>
-                            <p>GPA: 3.23</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">James Buchanan High School</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                    </div>
-
-
+                        <!-- Daftar Pendidikan -->
+                        @if ($pendidikans->isEmpty())
+                            <p>Pendidikan belum diisi</p>
+                        @else
+                            @foreach ($pendidikans as $datapendidikan)
+                                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                                    <div class="flex-grow-1">
+                                        <h3 class="mb-0">{{ $datapendidikan->instansi }}</h3>
+                                        <div class="subheading mb-3">{{ $datapendidikan->jurusan }}</div>
+                                        <p>IPK: {{ $datapendidikan->ipk }}</p>
+                                        <p>{{ $datapendidikan->desc }}</p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <span class="text-primary">{{ $datapendidikan->mulai }} - {{ $datapendidikan->selesai }}</span>
+                                    </div>
+                                    <form action="{{ route('pendidikan.delete', $datapendidikan->id) }}" method="POST" style="display:inline;">
+                                        {{ csrf_field() }}
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
+                                </div>
+                            @endforeach
+                        @endif
                 </div>
             </section>
 
@@ -220,9 +220,7 @@
             <section class="resume-section" id="Keterampilan">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Keterampilan</h2>
-                    <p>Apart from being a web developer, I enjoy most of my time being outdoors. 
-                        In the winter, I am an avid skier and novice ice climber. During the warmer 
-                        months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+                    <p>{{ $userProfile->keterampilan ?? 'Keterampilan belum diisi' }}</p>
             </section>
             <hr class="m-0" />
         </div>

@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('pengalamans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('pekerjaan');
             $table->string('divisi');
             $table->date('mulai');
-            $table->date('selesai');
-            $table->longText('desc');
+            $table->date('selesai')->nullable();
+            $table->longText('desc')->nullable();
             $table->timestamps();
         });
     }

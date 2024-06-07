@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CvController;
 use App\Models\Pekerjaan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -35,10 +36,9 @@ Route::get('/Profil-Perusahaan', function () {
     return view('profilePerusahaan');
 });
 
-Route::get('/profil', function () {
-    return view('profil_jobseeker');
-})->name('profil.jobseeker');
-
+Route::get('/profil', [CvController::class, 'index'])->name('profil.jobseeker');
+Route::post('/pengalaman', [CvController::class, 'pengalaman'])->name('post.pengalaman');
+Route::post('/pendidikan', [CvController::class, 'pendidikan'])->name('post.pendidikan');
 
 Route::get('/Up-Loker', function () {
     return view('upLoker');
@@ -90,6 +90,5 @@ Route::post('/pekerjaan', [PekerjaanController::class, 'store'])->name('pekerjaa
 // Route::get('/tampilpekerjaan', [PekerjaanController::class, 'page'])->name('pekerjaan.page');
 Route::post('/filter-pekerjaan', [PekerjaanController::class, 'filterPekerjaan'])->name('filter.pekerjaan');
 
-Route::post('/test', function () {
-    return view('dashboardComp');
-});
+Route::delete('/pendidikan/delete/{id}', [CvController::class, 'deletePendidikan'])->name('pendidikan.delete');
+Route::delete('/pengalaman/delete/{id}', [CvController::class, 'deletePengalaman'])->name('pengalaman.delete');

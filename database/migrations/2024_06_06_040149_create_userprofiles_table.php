@@ -19,14 +19,10 @@ return new class extends Migration
             $table->date('tgl_lahir')->nullable();
             $table->enum('jk', ['Laki-laki', 'Perempuan'])->nullable();
             $table->longText('desc')->nullable();
-            $table->unsignedBigInteger('pengalaman_id')->nullable();
-            $table->unsignedBigInteger('pendidikan_id')->nullable();
             $table->string('keterampilan')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('pengalaman_id')->references('id')->on('pengalamans')->onDelete('cascade');
-            $table->foreign('pendidikan_id')->references('id')->on('pendidikans')->onDelete('cascade');
         });
     }
 

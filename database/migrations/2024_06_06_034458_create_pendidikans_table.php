@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('pendidikans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('instansi');
             $table->string('jurusan');
             $table->date('mulai');
-            $table->date('selesai');
-            $table->longText('desc');
+            $table->string('ipk')->nullable();
+            $table->date('selesai')->nullable();
+            $table->longText('desc')->nullable();
             $table->timestamps();
         });
     }

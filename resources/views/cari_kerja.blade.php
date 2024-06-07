@@ -207,7 +207,7 @@
                                 <img src="{{ $pekerjaan->user->image }}" class="box-profile" alt="profile">
                             </div>
                             <div class="row box-text">
-                                <p class="a nopadding">{{ $pekerjaan->posisi }} </p>
+                                <p class="a nopadding">{{ $pekerjaan->posisi }}</p>
                                 <div class="col-lg-12 nopadding ">
                                     <p class="b d-inline">{{ $pekerjaan->created_at->diffForHumans() }}</p>
                                     <i class="icon-circle" data-feather="circle"></i>
