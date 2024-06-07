@@ -203,7 +203,9 @@
                 @if ($pagpekerjaans->count() > 0)
                     @foreach ($pagpekerjaans as $pekerjaan)
                         <div class="box"> 
-                            <div class="box-profile"></div>
+                            <div>
+                                <img src="{{ $pekerjaan->user->image }}" class="box-profile" alt="profile">
+                            </div>
                             <div class="row box-text">
                                 <p class="a nopadding">{{ $pekerjaan->posisi }} </p>
                                 <div class="col-lg-12 nopadding ">

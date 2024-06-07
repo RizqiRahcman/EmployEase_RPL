@@ -58,7 +58,7 @@
               <div class="col-lg-7 mt-5">
                   <div class="file-input-container">
                       <div class="profile-picture" id="profilePicture">
-                          <img id="profileImage" src="{{ $user->image ? 'data:' . $user->image_mime . ';base64,' . base64_encode($user->image) : '' }}" alt=" ">
+                          <img id="profileImage" src="{{ $user->image ? 'data:'. base64_encode($user->image) : '' }}" alt=" ">
                       </div>
                   
                       <!-- Form untuk mengubah gambar profil -->

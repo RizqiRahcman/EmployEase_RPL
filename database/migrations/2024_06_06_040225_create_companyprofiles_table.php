@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('companyprofiles', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('alamat');
-            $table->string('no');
-            $table->longText('desc');
+            $table->string('alamat')->nullable();
+            $table->string('no')->nullable();
+            $table->longText('desc')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

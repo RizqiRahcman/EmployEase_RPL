@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin123'),
             'remember_token' => Str::random(60),
-            'image' => 'contoh.png',
+            'image' => 'gambar/contoh.png',
         ]);
         User::create([
             'first_name' => 'Grazedu',
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'email' => 'grazedu@mail.com',
             'password' => bcrypt('grazedu123'),
             'remember_token' => Str::random(60),
-            'image' => 'contoh.png',
+            'image' => 'gambar/grazedu.jpeg',
         ]);
         User::create([
             'first_name' => 'Pertamina',
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
             'email' => 'pertamina@mail.com',
             'password' => bcrypt('pertamina123'),
             'remember_token' => Str::random(60),
-            'image' => 'contoh.png',
+            'image' => 'gambar/logo pertamina.png',
         ]);
         User::create([
             'first_name' => 'LLDIKTI IX',
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             'email' => 'dikti9@mail.com',
             'password' => bcrypt('dikti123'),
             'remember_token' => Str::random(60),
-            'image' => 'contoh.png',
+            'image' => 'gambar/kemdikbud.png',
         ]);
     }
 }

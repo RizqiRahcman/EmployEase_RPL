@@ -17,9 +17,7 @@ Route::get('/logedin', function () {
     return view('home_login',['pekerjaans' => Pekerjaan::all()]);
 })->name('logendin');
 
-Route::get('/Daftar-Perusahaan', function () {
-    return view('dafPerusahaan');
-});
+Route::get('/Daftar-Perusahaan', [ProfileController::class, 'company'])->name('dafPerusahaan');
 
 Route::get('/Cari-Kerja', [PekerjaanController::class, 'index'])->name('cari_kerja');
 
@@ -54,9 +52,9 @@ Route::get('/Pelamar', function () {
 //     return view('editProfil');
 // });
 
-Route::get('/Edit-Company', function () {
-    return view('editProfilCompany');
-});
+// Route::get('/Edit-Company', function () {
+//     return view('editProfilCompany');
+// });
 
 Route::get('/DashComp', function () {
     return view('dashboardComp');
@@ -76,7 +74,9 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::get('/edit-profil', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-Route::post('/user/update-image', [UserController::class, 'updateImage'])->name('update.image');
+
+Route::get('/edit-profil-company', [ProfileController::class, 'editcompany'])->name('profilecompany.edit');
+Route::post('/profile/update-company', [ProfileController::class, 'updatecompany'])->name('profilecompany.update');
 
 Route::get('/apply/{id}', [PekerjaanController::class, 'showForm'])->name('apply.form');
 Route::get('/user/image/{id}', [UserController::class, 'getImage'])->name('user.image');

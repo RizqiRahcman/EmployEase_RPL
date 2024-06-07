@@ -121,16 +121,8 @@
       <form class="d-flex">
         <div class="input-group" style="margin-right: 4px;">
           <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input class="form-control me-2" type="Kata Kunci" placeholder="Kata Kunci" aria-label="Kata Kunci">
+          <input class="form-control me-2" type="Kata Kunci" name="search" id="search" placeholder="Kata Kunci" aria-label="Kata Kunci" value="{{ $request->search }}">
         </div>
-        <div class="input-group" style="margin-right: 12px;">
-          <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
-          <input type="search" class="form-control" list="nama" name="search_lokasi" id="search_lokasi" placeholder="Lokasi" aria-label="Lokasi" aria-describedby="basic-addon1">
-          <div id="autocomplete-results" class="dropdown-menu position-absolute"  style="display: none; z-index: 1000;"></div>
-            <meta name="csrf-token" content="{{ csrf_token() }}">
-        </div>
-        <div id="autocomplete-results" class="dropdown-menu" style="display: none; position: absolute;"></div>
-        <meta name="csrf-token" content="{{ csrf_token() }}">
         <button class="btn btn-primary btn-carip" type="submit">Cari Perusahaan</button>
       </form>
       
@@ -141,168 +133,62 @@
       <section class="section-padding mt-5">
       <h1 style="color: #454545; font-weight: bold;  margin: 0px 0px 20px;">Perusahaan Rekomendasi</h1>
       <div class="row g-4 text-left" style="margin-top: 24px;">
-        <div class="cardjob col-md-6 col-lg-4">
-          <div class="card job-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3 me-3">
-                <div class="company-logo ">
-                  <img
-                    src="image/logo pertamina.png"
-                    alt="logo pt"
-                  />
+        @if ($pagperusahaan->count() > 0)
+          @foreach ($pagperusahaan as $perusahaan)
+          <div class="cardjob col-md-6 col-lg-4">
+            <div class="card job-card">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3 me-3">
+                  <div class="company-logo ">
+                    <img
+                      src="{{ $perusahaan->company->image }}"
+                      alt="logo pt"
+                    />
+                  </div>
+                  <h5 class="card-title mb-0">{{ $perusahaan->company->first_name }}</h5>
                 </div>
-                <h5 class="card-title mb-0">Admin</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                   {{ \Illuminate\Support\Str::limit($perusahaan->alamat,30)}}
+                </h6>
+                <p class="card-text">
+                  {{ \Illuminate\Support\Str::limit($perusahaan->desc,62) }}
+                </p>
+                {{-- <a href="#" class="job-category me-2">Marketing</a>
+                <a href="#" class="job-category">Design</a> --}}
               </div>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Pertamina - Semarang, Jawa Tengah
-              </h6>
-              <p class="card-text">
-                Pertamina mencari marketer planner yang dapat meny...
-              </p>
-              <a href="#" class="job-category me-2">Marketing</a>
-              <a href="#" class="job-category">Design</a>
             </div>
           </div>
-        </div> 
-        <div class="col-md-6 col-lg-4">
-          <div class="card job-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="company-logo me-3">
-                  <img
-                    src="image/logo pertamina.png"
-                    alt="logo pt"
-                  />
-                </div>
-                <h5 class="card-title mb-0">Human Capital</h5>
+          @endforeach
+        @else
+              <div class="alert alert-warning">
+                  Perusahaan tidak ditemukan.
               </div>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Pertamina - Semarang, Jawa Tengah
-              </h6>
-              <p class="card-text">
-                Pertamina mencari marketer planner yang dapat meny...
-              </p>
-              <a href="#" class="job-category me-2">Marketing</a>
-              <a href="#" class="job-category">Design</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card job-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="company-logo me-3">
-                  <img
-                    src="image/logo pertamina.png"
-                    alt="logo pt"
-                  />
-                </div>
-                <h5 class="card-title mb-0">Marketing Planner</h5>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Pertamina - Semarang, Jawa Tengah
-              </h6>
-              <p class="card-text">
-                Pertamina mencari marketer planner yang dapat meny...
-              </p>
-              <a href="#" class="job-category me-2">Marketing</a>
-              <a href="#" class="job-category">Design</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card job-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="company-logo me-3">
-                  <img
-                    src="image/logo pertamina.png"
-                    alt="logo pt"
-                  />
-                </div>
-                <h5 class="card-title mb-0">IT Support</h5>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Pertamina - Semarang, Jawa Tengah
-              </h6>
-              <p class="card-text">
-                Pertamina mencari marketer planner yang dapat meny...
-              </p>
-              <a href="#" class="job-category me-2">Marketing</a>
-              <a href="#" class="job-category">Design</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card job-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="company-logo me-3">
-                  <img
-                    src="image/logo pertamina.png"
-                    alt="logo pt"
-                  />
-                </div>
-                <h5 class="card-title mb-0">Frontend Developer</h5>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Pertamina - Semarang, Jawa Tengah
-              </h6>
-              <p class="card-text">
-                Pertamina mencari marketer planner yang dapat meny...
-              </p>
-              <a href="#" class="job-category me-2">Marketing</a>
-              <a href="#" class="job-category">Design</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card job-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-3">
-                <div class="company-logo me-3">
-                  <img
-                    src="image/logo pertamina.png"
-                    alt="logo pt"
-                  />
-                </div>
-                <h5 class="card-title mb-0">Ui Designer</h5>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">
-                Pertamina - Semarang, Jawa Tengah
-              </h6>
-              <p class="card-text">
-                Pertamina mencari marketer planner yang dapat meny...
-              </p>
-              <a href="#" class="job-category me-2">Marketing</a>
-              <a href="#" class="job-category">Design</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      </section>
-    </div>
+        @endif
     <!-- pagination -->
     <nav aria-label="Page navigation example" class="d-flex justify-content-center">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <i data-feather="chevron-left"></i>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">4</a></li>
-        <li class="page-item"><a class="page-link" href="#">5</a></li>
-        <li class="page-item"><a class="page-link" href="#">6</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <i data-feather="chevron-right"></i>
-          </a>
-        </li>
+      <ul class="pagination justify-content-center">
+          <!-- Tombol halaman sebelumnya -->
+          <li class="page-item {{ $pagperusahaan->previousPageUrl() ? '' : 'disabled' }}">
+              <a class="page-link" href="{{ $pagperusahaan->previousPageUrl() }}" aria-label="Previous">
+                  <span class="move" data-feather="chevron-left"></span>
+              </a>
+          </li>
+
+          <!-- Nomor-nomor halaman -->
+          @for ($i = 1; $i <= $pagperusahaan->lastPage(); $i++)
+              <li class="page-item {{ $i == $pagperusahaan->currentPage() ? 'active' : '' }}">
+                  <a class="page-link" href="{{ $pagperusahaan->url($i) }}">{{ $i }}</a>
+              </li>
+          @endfor
+
+          <!-- Tombol halaman selanjutnya -->
+          <li class="page-item {{ $pagperusahaan->nextPageUrl() ? '' : 'disabled' }}">
+              <a class="page-link" href="{{ $pagperusahaan->nextPageUrl() }}" aria-label="Next">
+                  <span class="move" data-feather="chevron-right"></span>
+              </a>
+          </li>
       </ul>
-    </nav>
+  </nav>
 
       <!-- Footer -->
       <footer class="footer-dark">
