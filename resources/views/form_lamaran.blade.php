@@ -155,7 +155,7 @@
         
                         <div class="konten_form">
                             <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action="{{ route('lamaran.store') }}" id="contactForm">
-                                @csrf
+                                {{ csrf_field() }}
                                 <h3>Lamar pekerjaan</h3>
 
                                 <!-- Hidden pekerjaan_id Input -->

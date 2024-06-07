@@ -136,7 +136,7 @@
         @if ($pagperusahaan->count() > 0)
           @foreach ($pagperusahaan as $perusahaan)
           <div class="cardjob col-md-6 col-lg-4">
-            <div class="card job-card">
+            <div class="card job-card" onclick="window.location.href='{{ route('profil.perusahaan', ['id' => $perusahaan->company->id]) }}'" style="cursor: pointer;">
               <div class="card-body">
                 <div class="d-flex align-items-center mb-3 me-3">
                   <div class="company-logo ">
@@ -149,6 +149,7 @@
                 </div>
                 <h6 class="card-subtitle mb-2 text-muted">
                    {{ \Illuminate\Support\Str::limit($perusahaan->alamat,30)}}
+                   ID Pengguna: {{ $perusahaan->company->id }}
                 </h6>
                 <p class="card-text">
                   {{ \Illuminate\Support\Str::limit($perusahaan->desc,62) }}
