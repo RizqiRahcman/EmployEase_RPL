@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\UserProfile;
-use App\Models\Pekerjaan;
 use App\Models\CompanyProfile;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +12,7 @@ class ProfileController extends Controller
     public function edit()
     {
         $user = Auth::user();
-        $userProfile = $user->jobseeker->first();
+        $userProfile = $user->jobseeker;
 
         return view('editProfil', compact('user', 'userProfile'));
     }
@@ -22,7 +20,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $user = Auth::user();
-        $userProfile = $user->jobseeker->first();
+        $userProfile = $user->jobseeker;
 
         $request->validate([
             'first_name' => 'nullable|string|max:255',

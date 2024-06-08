@@ -74,14 +74,14 @@
           >
             <div class="col-md-6 d-flex align-items-center company-logo">
               <img
-                src="image/logo pertamina.png"
+                src="{{ $user->image }}"
                 alt="Company Logo"
                 class="me-2"
                 width="40"
               />
               <div>
                 <span class="text-muted d-block">Company</span>
-                <span class="h5 mb-0">{{ Auth::user()->first_name }}</span>
+                <span class="h5 mb-0">{{ $user->first_name }}</span>
                 <i class="bi bi-chevron-down"></i>
               </div>
             </div>
@@ -100,11 +100,11 @@
                     <h2 class="keterangan">Keterangan <span>Perusahaan</span></h2>
                     <hr>
                     <h3 class="mt-3">Alamat</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aut fugiat similique.</p>
+                    <p>{{ $user->company->alamat }}</p>
                     <h3 class="mt-3">Nomor Telepon</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>{{ $user->company->no }}</p>
                     <h3 class="mt-3">Deskripsi</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium veniam aperiam, qui quod a cupiditate veritatis perferendis eligendi accusantium asperiores?</p>
+                    <p>{{ $user->company->desc }}</p>
                   </div>
                 </div>
             </div>
@@ -112,17 +112,17 @@
                 <div class="card card-lowongan mb-3">
                   <div class="card-body body-atas card-lowongan">
                     <h5 class="card-title">Lowongan</h5>
-                    <h2><span>12</span></h2>
+                    <h2><span>{{ $pekerjaans->count() }}</span></h2>
                   </div>
                 </div>
               <div class="card card-ringkasan">
-                <div class="card-body body-atas pelamar-card"> 
+                <div class="card-body body-atas pelamar-card">
                   <h5 class="card-title">Ringkasan Pelamar</h5>
-                  <p class = "d-inline fulltime">Full Time: <span>30</span></p>
-                  <p class = "d-inline fulltime">Part Time: <span>30</span></p>
-                  <p class = "d-inline fulltime">Kontrak: <span>30</span></p>
-                  <p class="d-inline intern" >Internship: <span>32</span></p>
-                </div>
+                  <p class="d-inline fulltime">Full Time: <span>{{ $fullTimeCount }}</span></p>
+                  <p class="d-inline fulltime">Part Time: <span>{{ $partTimeCount }}</span></p>
+                  <p class="d-inline fulltime">Kontrak: <span>{{ $kontrakCount }}</span></p>
+                  <p class="d-inline intern">Internship: <span>{{ $internshipCount }}</span></p>
+              </div>
               </div>
             </div>
           </div>
@@ -149,65 +149,27 @@
                   </thead>
                   <tbody >
                     <!-- Applicants Rows Start -->
+                    @foreach ($lamarans as $lamaran)
                     <tr>
                       <td>
                         <div class="d-flex align-items-center">
                           <img
-                            src="image/profile.jpg"
+                            src="{{ $lamaran->user->image }}"
                             alt="Profile"
                             class="rounded-circle profile-img"
                           />
-                          <span class="ms-3">Jake Gyll</span>
+                          <span class="ms-3">{{ $lamaran->user->first_name }} {{ $lamaran->user->last_name }}</span>
                         </div>
                       </td>
-                      <td>13 July, 2021</td>
-                      <td>Designer</td>
+                      <td>{{ $lamaran->created_at->format('d-m-Y') }}</td>
+                      <td>{{ $lamaran->pekerjaan->posisi }}</td>
                       <td>
                         <button class="btn btn-outline-primary btn-sm">
                           Lihat Profil
                         </button>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="image/profile.jpg"
-                            alt="Profile"
-                            class="rounded-circle profile-img"
-                          />
-                          <span class="ms-3">Abraham</span>
-                        </div>
-                      </td>
-
-                      <td>13 July, 2021</td>
-                      <td>JavaScript Dev</td>
-                      <td>
-                        <button class="btn btn-outline-primary btn-sm">
-                          Lihat Profil
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="d-flex align-items-center">
-                          <img
-                            src="image/profile.jpg"
-                            alt="Profile"
-                            class="rounded-circle profile-img"
-                          />
-                          <span class="ms-3">Kinoy</span>
-                        </div>
-                      </td>
-                      <td>12 July, 2021</td>
-                      <td>Golang Dev</td>
-                      <td>
-                        <button class="btn btn-outline-primary btn-sm">
-                          Lihat Profil
-                        </button>
-                      </td>
-                    </tr>
-
+                    @endforeach
                     <!-- Applicants Rows End -->
                   </tbody>
                 </table>
@@ -223,39 +185,19 @@
                   <a href="/DashLowongan"><p class="text-end mb-2">Selengkapnya</p></a>
               </div>
               <div class="list-group">
+                @foreach ($pekerjaans->sortByDesc('created_at')->take(6) as $pekerjaan)
                 <a href="#" class="list-group-item list-group-item-action">
                   <div
                     class="d-flex justify-content-between align-items-center"
                   >
                     <div>
-                      <h6 class="mb-1">Social Media Assistant</h6>
-                      <small>Nomad - Paris, France - Full-Time</small>
+                      <h6 class="mb-1">{{ $pekerjaan->posisi }}</h6>
+                      <small>{{ $pekerjaan->kota->nama }}, Indonesia - {{ $pekerjaan->tipe }}</small>
                     </div>
-                    <small class="text-muted">In Review</small>
+                    <small class="text-muted">{{ $pekerjaan->created_at->diffForHumans() }}</small>
                   </div>
                 </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <h6 class="mb-1">Social Media Assistant</h6>
-                      <small>Nomad - Paris, France - Full-Time</small>
-                    </div>
-                    <small class="text-muted">In Review</small>
-                  </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div>
-                      <h6 class="mb-1">Social Media Assistant</h6>
-                      <small>Nomad - Paris, France - Full-Time</small>
-                    </div>
-                    <small class="text-muted">In Review</small>
-                  </div>
-                </a>
+                @endforeach
               </div>
             </div>
           </div>

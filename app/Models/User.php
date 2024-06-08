@@ -55,11 +55,16 @@ class User extends Authenticatable
 
     public function jobseeker()
     {
-        return $this->hasMany(UserProfile::class, 'user_id');
+        return $this->hasOne(UserProfile::class, 'user_id');
     }
 
     public function company()
     {
-        return $this->hasMany(CompanyProfile::class, 'user_id');
+        return $this->hasOne(CompanyProfile::class, 'user_id');
+    }
+
+    public function lamarans()
+    {
+        return $this->hasMany(Lamaran::class);
     }
 }

@@ -31,6 +31,11 @@ class Pekerjaan extends Model
         return $this->belongsTo(User::class, 'perusahaan_id');
     }
 
+    public function lamaran()
+    {
+        return $this->hasMany(Lamaran::class);
+    }
+
     public function details()
     {
         return $this->belongsTo(CompanyProfile::class);

@@ -51,7 +51,7 @@
                             ><i class="fas fa-search me-2"></i>Lowongan</a
                         >
                         <a
-                            href="/Edit-Company"
+                            href="/edit-profil-company"
                             class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                             ><i class="fas  fa-edit me-2"></i>Edit Profil</a
                             >
@@ -115,71 +115,27 @@
                             </thead>
                             <tbody>
                                 <!-- Applicants Rows Start -->
+                                @foreach ($lamarans as $lamaran)
                                 <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img
-                                                src="image/profile.jpg"
-                                                alt="Profile"
-                                                class="rounded-circle profile-img"
-                                            />
-                                            <span class="ms-3">Jake Gyll</span>
-                                        </div>
-                                    </td>
-                                    <td>13 July, 2021</td>
-                                    <td>Designer</td>
-                                    <td>
-                                        <button
-                                            class="btn btn-outline-primary btn-sm"
-                                        >
-                                            Lihat Profil
-                                        </button>
-                                    </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                    <img
+                                        src="{{ $lamaran->user->image }}"
+                                        alt="Profile"
+                                        class="rounded-circle profile-img"
+                                    />
+                                    <span class="ms-3">{{ $lamaran->user->first_name }} {{ $lamaran->user->last_name }}</span>
+                                    </div>
+                                </td>
+                                <td>{{ $lamaran->created_at->format('d-m-Y') }}</td>
+                                <td>{{ $lamaran->pekerjaan->posisi }}</td>
+                                <td>
+                                    <button class="btn btn-outline-primary btn-sm">
+                                    Lihat Profil
+                                    </button>
+                                </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img
-                                                src="image/profile.jpg"
-                                                alt="Profile"
-                                                class="rounded-circle profile-img"
-                                            />
-                                            <span class="ms-3">Abraham</span>
-                                        </div>
-                                    </td>
-
-                                    <td>13 July, 2021</td>
-                                    <td>JavaScript Dev</td>
-                                    <td>
-                                        <button
-                                            class="btn btn-outline-primary btn-sm"
-                                        >
-                                            Lihat Profil
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img
-                                                src="image/profile.jpg"
-                                                alt="Profile"
-                                                class="rounded-circle profile-img"
-                                            />
-                                            <span class="ms-3">Kinoy</span>
-                                        </div>
-                                    </td>
-                                    <td>12 July, 2021</td>
-                                    <td>Golang Dev</td>
-                                    <td>
-                                        <button
-                                            class="btn btn-outline-primary btn-sm"
-                                        >
-                                            Lihat Profil
-                                        </button>
-                                    </td>
-                                </tr>
-
+                                @endforeach
                                 <!-- Applicants Rows End -->
                             </tbody>
                         </table>

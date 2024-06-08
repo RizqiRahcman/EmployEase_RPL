@@ -117,5 +117,13 @@ class PekerjaanController extends Controller
         $pekerjaan = Pekerjaan::findOrFail($id);
         return view('form_lamaran', compact('pekerjaan'));
     }
+
+    public function destroy($id)
+    {
+        $pekerjaan = Pekerjaan::findOrFail($id);
+        $pekerjaan->delete();
+
+        return redirect()->back()->with('success', 'Pekerjaan berhasil dihapus');
+    }
     
 }

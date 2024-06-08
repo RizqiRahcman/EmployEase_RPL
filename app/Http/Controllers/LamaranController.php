@@ -36,6 +36,6 @@ class LamaranController extends Controller
         ]);
 
         // Redirect ke halaman form dengan pesan sukses
-        return redirect()->route('lamaran.create', ['pekerjaan' => $request->input('pekerjaan_id')])->with('success', 'Lamaran berhasil dikirim.');
+        return redirect()->route('cari_kerja')->with('success', 'Lamaran berhasil dikirim.');
     }
 }

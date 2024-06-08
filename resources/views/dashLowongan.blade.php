@@ -51,7 +51,7 @@
                             ><i class="fas fa-search me-2"></i>Lowongan</a
                         >
                         <a
-                            href="/Edit-Company"
+                            href="/edit-profil-company"
                             class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                             ><i class="fas  fa-edit me-2"></i>Edit Profil</a
                             >
@@ -75,7 +75,7 @@
                             class="col-md-6 d-flex align-items-center company-logo"
                         >
                             <img
-                                src="image/logo pertamina.png"
+                                src="{{ $user->image }}"
                                 alt="Company Logo"
                                 class="me-2"
                                 width="40"
@@ -83,7 +83,7 @@
                             <div>
                                 <span class="text-muted d-block">Company</span>
                                 <span class="h5 mb-0"
-                                    >{{ Auth::user()->first_name }}</span
+                                    >{{ $user->first_name }}</span
                                 >
                                 <i class="bi bi-chevron-down"></i>
                             </div>
@@ -106,39 +106,26 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="list-group lowongan">
+                                @foreach ($pekerjaans->sortByDesc('created_at')->take(6) as $pekerjaan)
                                 <a href="#" class="list-group-item list-group-item-action">
                                 <div
                                     class="d-flex justify-content-between align-items-center"
                                 >
                                     <div>
-                                    <h6 class="mb-1">Social Media Assistant</h6>
-                                    <small>Nomad - Paris, France - Full-Time</small>
+                                    <h6 class="mb-1">{{ $pekerjaan->posisi }}</h6>
+                                    <small>{{ $pekerjaan->kota->nama }}, Indonesia - {{ $pekerjaan->tipe }}</small>
                                     </div>
-                                    <small class="text-muted">In Review</small>
+                                    <div class="d-flex align-items-center">
+                                        <small class="text-muted mr-3">{{ $pekerjaan->created_at->diffForHumans() }}</small>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $pekerjaan->id }})">Hapus</button>
+                                        <form id="delete-form-{{ $pekerjaan->id }}" action="{{ route('pekerjaan.destroy', $pekerjaan->id) }}" method="POST" style="display: none;">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
+                                    </div>
                                 </div>
                                 </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                <div
-                                    class="d-flex justify-content-between align-items-center"
-                                >
-                                    <div>
-                                    <h6 class="mb-1">Social Media Assistant</h6>
-                                    <small>Nomad - Paris, France - Full-Time</small>
-                                    </div>
-                                    <small class="text-muted">In Review</small>
-                                </div>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action">
-                                <div
-                                    class="d-flex justify-content-between align-items-center"
-                                >
-                                    <div>
-                                    <h6 class="mb-1">Social Media Assistant</h6>
-                                    <small>Nomad - Paris, France - Full-Time</small>
-                                    </div>
-                                    <small class="text-muted">In Review</small>
-                                </div>
-                                </a>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -154,6 +141,30 @@
         function redirectToPage() {
             window.location.href = '/Up-Loker'; // Ganti dengan URL tujuan
         }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            function confirmDelete(id) {
+                Swal.fire({
+                    title: "Hapus pekerjaan ini?",
+                    text: "Pekerjaan yang dihapus tidak bisa dikembalikan",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    cancelButtonText: "Tidak",
+                    confirmButtonText: "Ya, Hapus!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('delete-form-' + id).submit();
+                        Swal.fire({
+                            title: "HAPUS",
+                            text: "Pekerjaan Telah dihapus",
+                            icon: "success"
+                        });
+                    }
+                });
+            }
         </script>
     </body>
 </html>

@@ -104,14 +104,16 @@
 
                         <div class="row">
                             <div class="col-12 d-flex justify-content-end">
-                                <button id="tambahPendidikan" class="btn btn-save mt-3" type="submit">Tambah Pendidikan</button>
+                                <button id="tambahPendidikan" class="btn btn-save mt-3" type="submit">Tambah Pengalaman</button>
                             </div>
                         </div>
                     </form>
                     </div>
                     <!-- End of Dropdown Edit Form -->
                     @if ($pengalamans->isEmpty())
-                    <p>Pengalaman belum diisi</p>
+                        <div class="alert alert-warning">
+                            Pengalaman belum diisi
+                        </div>
                     @else
                     @foreach ($pengalamans as $datapengalaman)
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -191,7 +193,9 @@
                     </div>
                         <!-- Daftar Pendidikan -->
                         @if ($pendidikans->isEmpty())
-                            <p>Pendidikan belum diisi</p>
+                            <div class="alert alert-warning">
+                                Pendidikan belum diisi
+                            </div>
                         @else
                             @foreach ($pendidikans as $datapendidikan)
                                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">

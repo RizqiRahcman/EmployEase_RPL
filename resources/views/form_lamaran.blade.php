@@ -136,7 +136,7 @@
                             <div class="h6">Form Lamaran Pekerjaan</div>
                             <div class="row head">
                                 <div class="col-3">
-                                    <img src="image/pongo.png" class="img-thumbnail" alt="Logo Perusahaan" style="border: 0cap;">
+                                    <img src="{{ $pekerjaan->user->image }}" class="img-thumbnail" alt="Logo Perusahaan" style="border: 0cap;">
                                 </div>
                                 <div class="col-7 detail_name">
                                     <div class="h1 judul_pekerjaan d-inline">{{ $pekerjaan->posisi }}</div>

@@ -6,6 +6,8 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\CompanyProfile;
+use App\Models\UserProfile;
 
 class LoginController extends Controller
 {
@@ -53,7 +55,7 @@ class LoginController extends Controller
         ]);
 
         // Buat pengguna baru
-        User::create([
+        $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'role' => $request->role,
@@ -62,6 +64,27 @@ class LoginController extends Controller
             'remember_token' => Str::random(60),
             'image'=> "gambar/contoh.png"
         ]); 
+
+        if ($user->role === 'perusahaan') {
+            CompanyProfile::create([
+                'user_id' => $user->id,
+                'alamat' => null,
+                'no' => null,
+                'desc' => null,
+            ]);
+        }
+
+        if ($user->role === 'pelamar') {
+            UserProfile::create([
+                'user_id' => $user->id,
+                'alamat' => null,
+                'no' => null,
+                'tgl_lahir' => null,
+                'jk' => null,
+                'desc' => null,
+                'keteterampilan'=> null,
+            ]);
+        }
         
 
         return view('login');

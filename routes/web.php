@@ -10,6 +10,7 @@ use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\LamaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CompanyProfController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('home',['pekerjaans' => Pekerjaan::all()]);
@@ -33,9 +34,9 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
-Route::get('/Profil-Perusahaan', function () {
-    return view('profilePerusahaan');
-})->name=('profile.perusahaan');
+// Route::get('/Profil-Perusahaan', function () {
+//     return view('profilePerusahaan');
+// })->name=('profile.perusahaan');
 
 Route::get('/profil', [CvController::class, 'index'])->name('profil.jobseeker');
 Route::post('/pengalaman', [CvController::class, 'pengalaman'])->name('post.pengalaman');
@@ -45,9 +46,6 @@ Route::get('/Up-Loker', function () {
     return view('upLoker');
 });
 
-Route::get('/Pelamar', function () {
-    return view('pelamar');
-});
 
 // Route::get('/Edit-Profil', function () {
 //     return view('editProfil');
@@ -61,13 +59,9 @@ Route::get('/View-Profil', function () {
     return view('viewprofil_jobseeker');
 });
 
-Route::get('/DashLowongan', function () {
-    return view('dashLowongan');
-});
-
-Route::get('/DashComp', function () {
-    return view('dashboardComp');
-})->name('dashboard.company');
+Route::get('/DashLowongan', [DashboardController::class, 'lowongan'])->name('dashboard.lowongan');
+Route::get('/Pelamar', [DashboardController::class, 'pelamar'])->name('dashboard.pelamar');
+Route::get('/DashComp', [DashboardController::class, 'dashcom'])->name('dashboard.company');
 
 Route::get('/login', [LoginController::class, 'halamanlogin'])->name('login');
 Route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
@@ -97,6 +91,7 @@ Route::post('/filter-pekerjaan', [PekerjaanController::class, 'filterPekerjaan']
 
 Route::delete('/pendidikan/delete/{id}', [CvController::class, 'deletePendidikan'])->name('pendidikan.delete');
 Route::delete('/pengalaman/delete/{id}', [CvController::class, 'deletePengalaman'])->name('pengalaman.delete');
+Route::delete('/pekerjaan/{id}', [PekerjaanController::class, 'destroy'])->name('pekerjaan.destroy');
 
 Route::get('/profil_perusahaan', [CompanyProfController::class, 'index'])->name('profil.perusahaan');
 
