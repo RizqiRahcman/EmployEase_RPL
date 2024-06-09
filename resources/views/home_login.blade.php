@@ -93,61 +93,6 @@
                 their careers and are enthusiastic <br />
                 about the startup scene.
               </p>
-              <!-- Search Bar -->
-              <form class="d-flex mt-4 p-0">
-                <div class="input-group" style="margin-right: 4px">
-                  <span class="input-group-text"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="23"
-                      height="23"
-                      fill="currentColor"
-                      class="bi bi-search"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
-                      /></svg
-                  ></span>
-                  <input
-                    class="form-control me-2"
-                    type="Kata Kunci"
-                    placeholder="Posisi Kerja"
-                    aria-label="Posisi Kerja"
-                  />
-                </div>
-                <div class="input-group" style="margin-right: 10px">
-                  <span class="input-group-text"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="23"
-                      height="23"
-                      fill="currentColor"
-                      class="bi bi-geo-alt-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
-                      /></svg
-                  ></span>
-                  <input
-                    class="form-control me-2"
-                    type="Lokasi"
-                    placeholder="Lokasi"
-                    aria-label="Lokasi"
-                  />
-                </div>
-                <button class="btn btn-primary btn-lg btn-carip" type="submit">
-                  Cari
-                </button>
-              </form>
-              <p class="popular">
-                Populer: <a href="#"> UI/UX Designer</a>,<a href="#">
-                  Ux Researcher</a
-                >
-                ,<a href="#"> Android</a> ,
-                <a href="#"> Admin</a>
-              </p>
             </div>
           </div>
 
@@ -181,7 +126,7 @@
         <!-- Row 1 -->
         <div class="company-card row g-4 text-center">
           <div class="col-lg-3 col-sm-6">
-            <a href="#">
+            <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Desain">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <i data-feather="pen-tool"></i>
@@ -190,7 +135,7 @@
             </div></a>
           </div>
           <div class="col-lg-3 col-sm-6">
-            <a href="#">
+            <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Pemasaran">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -210,7 +155,7 @@
             </div> </a>
           </div>
           <div class="col-lg-3 col-sm-6">
-            <a href="#">
+            <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Sales">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -231,7 +176,7 @@
             </div> </a>
           </div>
           <div class="col-lg-3 col-sm-6">
-            <a href="#">
+            <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Keuangan">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -259,7 +204,7 @@
           class="company-cardd row g-5 text-center"
           style="margin-top: 24px; margin-bottom: 24px"
         >
-          <div class="col-lg-3 col-sm-6"> <a href="#">
+          <div class="col-lg-3 col-sm-6"> <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Teknologi">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <i data-feather="monitor"></i>
@@ -268,7 +213,7 @@
             </div>
           </div> </a>
 
-          <div class="col-lg-3 col-sm-6"> <a href="#">
+          <div class="col-lg-3 col-sm-6"> <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Teknisi">
 
           
             <div class="category theme-shadow p-lg-5 p-4">
@@ -290,7 +235,7 @@
             </div></a>
           </div>
 
-          <div class="col-lg-3 col-sm-6"> <a href="#">
+          <div class="col-lg-3 col-sm-6"> <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Bisnis">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
                 <svg
@@ -309,7 +254,7 @@
               <h5 class="mt-4 mb-3">Bisnis</h5>
             </div> </a>
           </div>
-          <div class="col-lg-3 col-sm-6"> <a href="#">
+          <div class="col-lg-3 col-sm-6"> <a href="/Cari-Kerja?_token=p1vRGaXMqLJj1MRUHGmio4fQfLWXJNzUv8ia58X2&kategori%5B%5D=Kesehatan">
             <div class="category theme-shadow p-lg-5 p-4">
               <div class="iconbox">
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-pulse" viewBox="0 0 16 16">
@@ -331,7 +276,7 @@
         <div class="section-tittle mt-3">
           <h1>Pekerjaan <span>Terbaru</span></h1>
           <p class="text-right">
-            <a href="#">Lihat semua lowongan </a>
+            <a href="/Cari-Kerja">Lihat semua lowongan </a>
           </p>
         </div>
 
@@ -343,7 +288,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3 me-3">
                             <div class="company-logo ">
-                                <img src="image/logo pertamina.png" alt="logo pt"/>
+                                <img src="{{ asset($pekerjaan->user->image) }}" alt="logo pt"/>
                             </div>
                             <h5 class="card-title mb-0">{{ $pekerjaan->posisi }}</h5>
                         </div>

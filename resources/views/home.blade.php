@@ -135,9 +135,9 @@
                     aria-label="Lokasi"
                   />
                 </div>
-                <button class="btn btn-primary btn-lg btn-carip" type="submit">
+                <a href="{{ route('login') }}" class="btn btn-primary btn-lg btn-carip" type="submit">
                   Cari
-                </button>
+                </a>
               </form>
               <p class="popular">
                 Populer: <a href="{{ route('login') }}"> UI/UX Designer</a>,<a href="{{ route('login') }}">
@@ -337,11 +337,11 @@
           <!-- Job Card -->
           @foreach ($pekerjaans->sortByDesc('created_at')->take(6) as $pekerjaan)
             <div class="cardjob col-md-6 col-lg-4">
-                <div class="card job-card">
+                <div class="card job-card" onclick="window.location='{{ route('login') }}'">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3 me-3">
                             <div class="company-logo ">
-                                <img src="image/logo pertamina.png" alt="logo pt"/>
+                                <img src="{{ asset($pekerjaan->user->image) }}" alt="logo pt"/>
                             </div>
                             <h5 class="card-title mb-0">{{ $pekerjaan->posisi }}</h5>
                         </div>
@@ -351,8 +351,7 @@
                         <p class="card-text">
                             {{ \Illuminate\Support\Str::limit($pekerjaan->desc_pekerjaan, 30) }}
                         </p>
-                        <a href="{{ route('login') }}" class="job-category me-2">Marketing</a>
-                        <a href="{{ route('login') }}" class="job-category">Design</a>
+                        <a href="{{ route('login') }}" class="job-category me-2">{{ $pekerjaan->kategori }}</a>
                     </div>
                 </div>
             </div> 
