@@ -149,7 +149,6 @@
                 </div>
                 <h6 class="card-subtitle mb-2 text-muted">
                    {{ \Illuminate\Support\Str::limit($perusahaan->alamat,30)}}
-                   ID Pengguna: {{ $perusahaan->company->id }}
                 </h6>
                 <p class="card-text">
                   {{ \Illuminate\Support\Str::limit($perusahaan->desc,62) }}

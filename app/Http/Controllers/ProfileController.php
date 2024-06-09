@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\UserProfile;
 use App\Models\CompanyProfile;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\Pendidikan;
+use App\Models\Pengalaman;
 
 class ProfileController extends Controller
 {
@@ -170,5 +173,15 @@ class ProfileController extends Controller
             'request' => $request,
             'jumlah' => $jumlah,
         ]);
+    }
+
+    public function show($user_id)
+    {
+        $user = User::findOrFail($user_id);
+        $userProfile = $user->jobseeker;
+        $pendidikans = Pendidikan::where('user_id', $user->id)->get();
+        $pengalamans = Pengalaman::where('user_id', $user->id)->get();
+
+        return view('viewprofil_jobseeker', compact('user','userProfile','pendidikans','pengalamans'));
     }
 }

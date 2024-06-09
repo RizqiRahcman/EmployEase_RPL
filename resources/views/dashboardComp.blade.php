@@ -164,9 +164,9 @@
                       <td>{{ $lamaran->created_at->format('d-m-Y') }}</td>
                       <td>{{ $lamaran->pekerjaan->posisi }}</td>
                       <td>
-                        <button class="btn btn-outline-primary btn-sm">
+                        <a href="{{ route('profile.show', ['user_id' => $lamaran->user->id]) }}" class="btn btn-outline-primary btn-sm">
                           Lihat Profil
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     @endforeach

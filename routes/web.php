@@ -11,6 +11,8 @@ use App\Http\Controllers\LamaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CompanyProfController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ViewProfileController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('home',['pekerjaans' => Pekerjaan::all()]);
@@ -94,7 +96,4 @@ Route::delete('/pengalaman/delete/{id}', [CvController::class, 'deletePengalaman
 Route::delete('/pekerjaan/{id}', [PekerjaanController::class, 'destroy'])->name('pekerjaan.destroy');
 
 Route::get('/profil_perusahaan', [CompanyProfController::class, 'index'])->name('profil.perusahaan');
-
-Route::get('/test', function () {
-    return view('profil_com');
-});
+Route::get('/profile/{user_id}', [ProfileController::class, 'show'])->name('profile.show');
