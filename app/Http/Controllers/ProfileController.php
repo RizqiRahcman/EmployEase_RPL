@@ -88,7 +88,7 @@ class ProfileController extends Controller
     public function editcompany()
     {
         $user = Auth::user();
-        $companyProfile = $user->company->first();
+        $companyProfile = $user->company;
 
         return view('editProfilCompany', compact('user', 'companyProfile'));
     }
@@ -96,7 +96,7 @@ class ProfileController extends Controller
     public function updatecompany(Request $request)
     {
         $user = Auth::user();
-        $companyProfile = $user->company->first();
+        $companyProfile = $user->company;
 
         $request->validate([
             'first_name' => 'nullable|string|max:255',
@@ -129,18 +129,19 @@ class ProfileController extends Controller
         // Update data user profile if exists
         if ($companyProfile) {
             $companyProfile->update([
-                'alamat' => $request->input('alamat'),
-                'no' => $request->input('no'),
-                'desc' => $request->input('desc'),
+                'alamat' => $request->input('alamat') ?? $companyProfile->alamat,
+                'no' => $request->input('no') ?? $companyProfile->no,
+                'desc' => $request->input('desc') ?? $companyProfile->desc,
             ]);
         } else {
             // If user profile does not exist, create new
-            $companyProfile = CompanyProfile::create([
+            $companyProfile = new CompanyProfile([
                 'user_id' => $user->id,
                 'alamat' => $request->input('alamat'),
                 'no' => $request->input('no'),
                 'desc' => $request->input('desc'),
             ]);
+            $companyProfile->save();
         }
 
         return redirect()->route('dashboard.company')->with('success', 'Profile updated successfully!');
