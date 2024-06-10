@@ -50,11 +50,11 @@
                         <span class="text-primary">{{ Auth::user()->last_name }}</span>
                     </h1>
                     <div class="subheading mb-5">
-                        {{ $userProfile->alamat ?? 'Alamat belum diisi' }} · 
-                        {{ $userProfile->no ?? 'No HP belum diisi' }} · 
+                        {{ Auth::user()->jobseeker->alamat ?? 'Alamat belum diisi' }} · 
+                        {{ Auth::user()->jobseeker->no ?? 'No HP belum diisi' }} · 
                         {{ Auth::user()->email }}
                     </div>
-                    <p class="lead mb-5">{{ $userProfile->desc ?? 'Deskripsi belum diisi' }}</p>
+                    <p class="lead mb-5">{{ Auth::user()->jobseeker->desc ?? 'Deskripsi belum diisi' }}</p>
                 </div>
             </section>
             <hr class="m-0" />
@@ -224,7 +224,7 @@
             <section class="resume-section" id="Keterampilan">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Keterampilan</h2>
-                    <p>{{ $userProfile->keterampilan ?? 'Keterampilan belum diisi' }}</p>
+                    <p>{{ Auth::user()->jobseeker->keterampilan ?? 'Keterampilan belum diisi' }}</p>
             </section>
             <hr class="m-0" />
         </div>
