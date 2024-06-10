@@ -62,12 +62,12 @@ class ProfileController extends Controller
         // Update data user profile if exists
         if ($userProfile) {
             $userProfile->update([
-                'alamat' => $request->input('alamat'),
-                'no' => $request->input('no'),
-                'tgl_lahir' => $request->input('tgl_lahir'),
-                'jk' => $request->input('jenisKelamin'),
-                'desc' => $request->input('desc'),
-                'keterampilan' => $request->input('keterampilan'),
+                'alamat' => $request->input('alamat') ?? $userProfile->alamat,
+                'no' => $request->input('no') ?? $userProfile->no,
+                'tgl_lahir' => $request->input('tgl_lahir') ?? $userProfile->tgl_lahir,
+                'jk' => $request->input('jenisKelamin') ?? $userProfile->jk,
+                'desc' => $request->input('desc') ?? $userProfile->desc,
+                'keterampilan' => $request->input('keterampilan') ?? $userProfile->keterampilan,
             ]);
         } else {
             // If user profile does not exist, create new
