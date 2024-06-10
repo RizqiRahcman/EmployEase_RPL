@@ -115,7 +115,7 @@
       <div class="bg-dark"></div>
       <figure class="text-center">
         <h1 style="color: #FFE6C7; font-weight: bold;">A well-known quote, contained in a blockquote element.</h1>
-        <p style="color: #FFE6C7;">Loren ipsum</p>
+        <p style="color: #FFE6C7;">Unlock Your Next Career Opportunity Today!</p>
       </figure>
       <form class="d-flex">
         <div class="input-group" style="margin-right: 4px;">

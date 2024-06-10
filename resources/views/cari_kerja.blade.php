@@ -104,7 +104,7 @@
         <div class="bg-dark"></div>
         <figure class="text-center">
             <h1 style="color: #FFE6C7; font-weight: bold;">Build your dream career by finding the perfect job.</h1>
-            <p style="color: #FFE6C7;">Loren ipsum</p>
+            <p style="color: #FFE6C7;">Unlock Your Next Career Opportunity Today!</p>
         </figure>
         <form action="{{ route('cari_kerja') }}" method="GET" class="d-flex">
             <div class="input-group" style="margin-right: 4px;">
