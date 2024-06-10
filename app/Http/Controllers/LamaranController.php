@@ -19,7 +19,7 @@ class LamaranController extends Controller
         // Validasi data yang diterima dari request
         $request->validate([
             'phone' => 'required|string|max:15',
-            'message' => 'required|string|max:5000',
+            // 'message' => 'required|string|max:5000',
         ]);
 
         // Dapatkan ID pengguna yang sedang login

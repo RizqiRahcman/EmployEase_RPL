@@ -82,13 +82,13 @@
                                     </div>
                                 </div>
 
-                                <!-- Message Input -->
+                                {{-- <!-- Message Input -->
                                 <div class="form-floating mb-3">
                                     <div class="col" class="mb-2">
                                     <label for="message">Surat lamaran</label>
                                     <textarea class="form-control" id="message" name="message" placeholder="Tuliskan surat lamaran anda" style="height: 10rem;" required></textarea>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Submit button -->
                                 <div class="d-grid">
