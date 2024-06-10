@@ -157,37 +157,40 @@
               </div>
             </div>
           </div>
-          @endforeach
-        @else
-              <div class="alert alert-warning">
-                  Perusahaan tidak ditemukan.
-              </div>
-        @endif
+            @endforeach
+            @else
+            <div class="alert alert-warning">
+              Perusahaan tidak ditemukan.
+            </div>
+            @endif
+      </div>
+    </div>
+
     <!-- pagination -->
-    <nav aria-label="Page navigation example" class="d-flex justify-content-center">
-      <ul class="pagination justify-content-center">
-          <!-- Tombol halaman sebelumnya -->
-          <li class="page-item {{ $pagperusahaan->previousPageUrl() ? '' : 'disabled' }}">
-              <a class="page-link" href="{{ $pagperusahaan->previousPageUrl() }}" aria-label="Previous">
+      <div class="container">
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+          <ul class="pagination justify-content-center">
+              <!-- Tombol halaman sebelumnya -->
+              <li class="page-item {{ $pagperusahaan->previousPageUrl() ? '' : 'disabled' }}">
+                <a class="page-link" href="{{ $pagperusahaan->previousPageUrl() }}" aria-label="Previous">
                   <span class="move" data-feather="chevron-left"></span>
-              </a>
-          </li>
-
-          <!-- Nomor-nomor halaman -->
-          @for ($i = 1; $i <= $pagperusahaan->lastPage(); $i++)
-              <li class="page-item {{ $i == $pagperusahaan->currentPage() ? 'active' : '' }}">
-                  <a class="page-link" href="{{ $pagperusahaan->url($i) }}">{{ $i }}</a>
+                </a>
               </li>
-          @endfor
-
-          <!-- Tombol halaman selanjutnya -->
-          <li class="page-item {{ $pagperusahaan->nextPageUrl() ? '' : 'disabled' }}">
-              <a class="page-link" href="{{ $pagperusahaan->nextPageUrl() }}" aria-label="Next">
+              <!-- Nomor-nomor halaman -->
+              @for ($i = 1; $i <= $pagperusahaan->lastPage(); $i++)
+              <li class="page-item {{ $i == $pagperusahaan->currentPage() ? 'active' : '' }}">
+                <a class="page-link" href="{{ $pagperusahaan->url($i) }}">{{ $i }}</a>
+              </li>
+              @endfor
+              <!-- Tombol halaman selanjutnya -->
+              <li class="page-item {{ $pagperusahaan->nextPageUrl() ? '' : 'disabled' }}">
+                <a class="page-link" href="{{ $pagperusahaan->nextPageUrl() }}" aria-label="Next">
                   <span class="move" data-feather="chevron-right"></span>
-              </a>
-          </li>
-      </ul>
-  </nav>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
 
       <!-- Footer -->
       <footer class="footer-dark">
@@ -280,11 +283,6 @@
           </div>
         </div>
       </footer>
-      
-
-    </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f2c387131d.js" crossorigin="anonymous"></script>
