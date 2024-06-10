@@ -114,7 +114,7 @@
     <div class="head">
       <div class="bg-dark"></div>
       <figure class="text-center">
-        <h1 style="color: #FFE6C7; font-weight: bold;">uild your dream career by finding the perfect company.</h1>
+        <h1 style="color: #FFE6C7; font-weight: bold;">Build your dream career by finding the perfect company.</h1>
         <p style="color: #FFE6C7;">Discover Your Dream Job Here!</p>
       </figure>
       <form class="d-flex">
